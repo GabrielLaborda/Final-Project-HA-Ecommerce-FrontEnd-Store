@@ -1,11 +1,15 @@
 import React from 'react'
 import CarouselHome from './CarouselHome'
-import Features from './Features'
+import FeaturesHome from './FeaturesHome'
+import Footer from './Footer'
+import CategoryHome from './CategoryHome'
 function Home() {
   return (
     <>
     <CarouselHome />
-    <Features />
+    <FeaturesHome />
+    <CategoryHome />
+    <Footer />
     </>
   )
 }
