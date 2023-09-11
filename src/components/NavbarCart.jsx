@@ -9,7 +9,7 @@ import "./Navbar.css";
 
 function NavbarCart() {
   return (
-    <Navbar expand="lg" className="bg-dark">
+    <Navbar fixed="top" expand="lg" className="bg-black">
       <Container fluid>
         <Navbar.Brand href="#">
           <img
@@ -30,14 +30,13 @@ function NavbarCart() {
               Home
             </Nav.Link>
             <Nav.Link className="text-light" href="#action2">
-              Abou ouer proyect
+              About our project
             </Nav.Link>
             <NavDropdown title="Category" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Trucks</NavDropdown.Item>
               <NavDropdown.Item href="#action4">Decks</NavDropdown.Item>
               <NavDropdown.Item href="#action5">Boards</NavDropdown.Item>
               <NavDropdown.Item href="#action6">Wheels</NavDropdown.Item>
-              <NavDropdown.Divider />
             </NavDropdown>
           </Nav>
           <Form className="d-flex">

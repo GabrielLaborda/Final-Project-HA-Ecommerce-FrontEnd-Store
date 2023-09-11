@@ -1,0 +1,15 @@
+.videoBlock {
+  height: auto;
+  width: 100vw;
+  object-fit: cover;
+  object-position: 50% 50%;
+  display: flex;
+  padding: 0;
+}
+
+.container-banner {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+}
