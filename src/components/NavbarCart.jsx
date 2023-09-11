@@ -1,36 +1,27 @@
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import Cart from "./Cart";
-import "./Navbar.css";
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Cart from './Cart';
+import './Navbar.css';
 
 function NavbarCart() {
   return (
-    <Navbar expand="lg" className="bg-dark">
+    <Navbar expand="lg" className="bg-black">
       <Container fluid>
         <Navbar.Brand href="#">
-          <img
-            src="./SEC-9-SKATE-CO-LOGO-WHITE_x100.webp"
-            alt=""
-            width="200"
-            height="60"
-          />
+          <img src="./SEC-9-SKATE-CO-LOGO-WHITE_x100.webp" alt="" width="200" height="60" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: "100px" }}
-            navbarScroll
-          >
+          <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
             <Nav.Link className="text-light" href="#action1">
               Home
             </Nav.Link>
             <Nav.Link className="text-light" href="#action2">
-              Abou ouer proyect
+              About Our Project
             </Nav.Link>
             <NavDropdown title="Category" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Trucks</NavDropdown.Item>
@@ -41,12 +32,7 @@ function NavbarCart() {
             </NavDropdown>
           </Nav>
           <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
+            <Form.Control type="search" placeholder="Search" className="me-2" aria-label="Search" />
             <Button variant="bg-dark">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
