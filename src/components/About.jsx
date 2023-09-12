@@ -1,5 +1,3 @@
-import NavbarCart from './NavbarCart';
-import Footer from './Footer';
 import {
   BiLogoHtml5,
   BiLogoJavascript,
@@ -13,12 +11,22 @@ import { DiCss3, DiScrum } from 'react-icons/di';
 import { FaBootstrap, FaNodeJs } from 'react-icons/fa';
 import { SiExpress, SiRedux, SiMongoose, SiAxios } from 'react-icons/si';
 import userAvatar from '/public/User-avatar.png';
+import aboutProjectImg from '/public/about-project.png';
 import './About.css';
 
 function About() {
   return (
     <>
-      <NavbarCart />
+      <div className="vw-100 hero-container mt-5 pt-5">
+        <div className="row">
+          <div className="col-5">
+            <p>ABOUT THIS PROJECT</p>
+          </div>
+          <div className="col-7">
+            <img src={aboutProjectImg} alt="hero image" className="img-fluid w-100" />
+          </div>
+        </div>
+      </div>
       <div className="vw-100 about-container white-text">
         <div className="container">
           <div className="row pt-5">
@@ -213,7 +221,6 @@ function About() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }
