@@ -65,11 +65,10 @@ function About() {
             </div>
             <div className="col-12 col-md-6">
               <p>
-                Our database is a comprehensive repository of user profiles, administrator
-                credentials, product listings, product categories, and order details. It supports
-                essential CRUD (Create, Read, Update, Delete) operations on products, user data,
-                administrator privileges, product categories, and orders, ensuring data accuracy and
-                integrity.
+                Our database stores user profiles, administrator credentials, product listings,
+                product categories, and order details. It supports essential CRUD (Create, Read,
+                Update, Delete) operations on products, users, admins, product categories, and
+                orders, ensuring data accuracy and integrity.
               </p>
               <p>
                 To ensure the project's accessibility and scalability, we adopted a variety of
@@ -85,7 +84,7 @@ function About() {
                 invaluable as we continue to refine and improve this exciting project
               </p>
 
-              <h3>Tech Stack</h3>
+              <h3>Tech Stack & Methdology</h3>
               <div className="d-flex justify-content-between">
                 <div className="text-center">
                   <BiLogoHtml5 size={70} />
