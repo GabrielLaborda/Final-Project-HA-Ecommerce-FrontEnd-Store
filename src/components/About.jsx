@@ -1,11 +1,18 @@
 import NavbarCart from './NavbarCart';
 import Footer from './Footer';
-
-import { BiLogoHtml5, BiLogoJavascript, BiLogoReact, BiLogoMongodb } from 'react-icons/bi';
-import { DiCss3 } from 'react-icons/di';
-import { FaBootstrap, FaNodeJs, FaGithub } from 'react-icons/fa';
-
+import {
+  BiLogoHtml5,
+  BiLogoJavascript,
+  BiLogoReact,
+  BiLogoMongodb,
+  BiLogoGit,
+  BiLogoGithub,
+  BiLogoLinkedinSquare,
+} from 'react-icons/bi';
+import { DiCss3, DiScrum } from 'react-icons/di';
+import { FaBootstrap, FaNodeJs } from 'react-icons/fa';
 import { SiExpress, SiRedux, SiMongoose, SiAxios } from 'react-icons/si';
+import userAvatar from './../../public/User-avatar.png';
 
 import './About.css';
 
@@ -16,7 +23,7 @@ function About() {
       <div className="vw-100 about-container white-text">
         <div className="container">
           <div className="row pt-5">
-            <div className="col">
+            <div className="col-12 col-md-6">
               <h3>Project Summary: UrbanRush E-Commerce</h3>
               <p>
                 UrbanRush is a dynamic e-commerce platform born out of an intensive, integrative
@@ -56,6 +63,8 @@ function About() {
                   efficient storage and retrieval of crucial information.
                 </li>
               </ol>
+            </div>
+            <div className="col-12 col-md-6">
               <p>
                 Our database is a comprehensive repository of user profiles, administrator
                 credentials, product listings, product categories, and order details. It supports
@@ -76,13 +85,9 @@ function About() {
                 immerse yourself in the world of UrbanRush. Your feedback and insights are
                 invaluable as we continue to refine and improve this exciting project
               </p>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <h3>Tech Stack</h3>
 
-              <div className="d-flex justify-content-between flex-wrap">
+              <h3>Tech Stack</h3>
+              <div className="d-flex justify-content-between">
                 <div className="text-center">
                   <BiLogoHtml5 size={70} />
                   <p>HTML</p>
@@ -107,7 +112,8 @@ function About() {
                   <SiExpress size={70} />
                   <p>Express</p>
                 </div>
-
+              </div>
+              <div className="d-flex justify-content-between">
                 <div className="text-center">
                   <BiLogoReact size={70} />
                   <p>React</p>
@@ -125,12 +131,84 @@ function About() {
                   <p>Mongoose</p>
                 </div>
                 <div className="text-center">
-                  <SiAxios size={70} />
-                  <p>Axios</p>
+                  <BiLogoGit size={70} />
+                  <p>Git</p>
                 </div>
                 <div className="text-center">
-                  <FaGithub size={70} textAnchor="Github" />
-                  <p>Github</p>
+                  <DiScrum size={70} />
+                  <p>Scrum</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col">
+              <h3>Our Team</h3>
+              <div className="d-flex justify-content-between flex-wrap py-4">
+                <div className="user-card text-center m-auto">
+                  <img src={userAvatar} alt="user-avatar" className="img-fluid" />
+                  <p className="mt-2 mb-0 fw-bold">Andres Amorin</p>
+                  <p className="mb-1 mt-0">Full Stack Developer</p>
+                  <div>
+                    <a className="white-text" href="http://">
+                      <BiLogoGithub size={35} />
+                    </a>
+                    <a className="white-text" href="http://">
+                      <BiLogoLinkedinSquare size={35} />
+                    </a>
+                  </div>
+                </div>
+                <div className="user-card text-center m-auto">
+                  <img src={userAvatar} alt="user-avatar" className="img-fluid" />
+                  <p className="mt-2 mb-0 fw-bold">Gabriel Laborda</p>
+                  <p className="mb-1 mt-0">Full Stack Developer</p>
+                  <div>
+                    <a className="white-text" href="http://">
+                      <BiLogoGithub size={35} />
+                    </a>
+                    <a className="white-text" href="http://">
+                      <BiLogoLinkedinSquare size={35} />
+                    </a>
+                  </div>
+                </div>
+                <div className="user-card text-center m-auto">
+                  <img src={userAvatar} alt="user-avatar" className="img-fluid" />
+                  <p className="mt-2 mb-0 fw-bold">Gonzalo Cuello</p>
+                  <p className="mb-1 mt-0">Full Stack Developer</p>
+                  <div>
+                    <a className="white-text" href="http://">
+                      <BiLogoGithub size={35} />
+                    </a>
+                    <a className="white-text" href="http://">
+                      <BiLogoLinkedinSquare size={35} />
+                    </a>
+                  </div>
+                </div>
+                <div className="user-card text-center m-auto">
+                  <img src={userAvatar} alt="user-avatar" className="img-fluid" />
+                  <p className="mt-2 mb-0 fw-bold">José Pedro Lavaggi</p>
+                  <p className="mb-1 mt-0">Full Stack Developer</p>
+                  <div>
+                    <a className="white-text" href="http://">
+                      <BiLogoGithub size={35} />
+                    </a>
+                    <a className="white-text" href="http://">
+                      <BiLogoLinkedinSquare size={35} />
+                    </a>
+                  </div>
+                </div>
+                <div className="user-card text-center m-auto">
+                  <img src={userAvatar} alt="user-avatar" className="img-fluid" />
+                  <p className="mt-2 mb-0 fw-bold">Pedro de Souza</p>
+                  <p className="mb-1 mt-0">Full Stack Developer</p>
+                  <div>
+                    <a className="white-text" href="http://">
+                      <BiLogoGithub size={35} />
+                    </a>
+                    <a className="white-text" href="http://">
+                      <BiLogoLinkedinSquare size={35} />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
