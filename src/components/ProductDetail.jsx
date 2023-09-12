@@ -1,8 +1,8 @@
 import "./ProductDetail.css";
-import OtherProducts from "./OtherProducts";
 import ProductDetailMain from "./ProductDetailMain";
 import ProductDetailNav from "./ProductDetailNav";
-import UserReview from "./UserReview";
+import FeaturedHome from "./FeaturedHome";
+import UserReviewSwiper from "./UserReviewSwiper";
 
 function ProductDetail() {
 
@@ -16,11 +16,10 @@ function ProductDetail() {
     <div>
         <ProductDetailNav/>
         <ProductDetailMain/>
-        <OtherProducts/>
-        <UserReview/>
-        <UserReview/>
-        <UserReview/>
-        <UserReview/>
+        <FeaturedHome/>
+        <div className="mb-5 col-sm-12 col-lg-3">
+          <UserReviewSwiper/>
+        </div>
     </div>
   );
 }
