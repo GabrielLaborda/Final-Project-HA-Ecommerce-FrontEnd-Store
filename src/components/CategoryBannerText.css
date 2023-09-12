@@ -1,0 +1,21 @@
+.section-headerBanner {
+    font-family: Roboto;
+    font-size: 80px;
+}
+
+#boldBanner {
+    font-weight: 800;
+    color: white;
+}
+
+#normalBanner {
+    font-weight: 400;
+    color: rgb(210, 210, 7);
+}
+
+#smallText {
+    font-weight: 400;
+    color: rgb(210, 210, 7);
+    font-size: 26px;
+    font-family: Roboto;
+}
