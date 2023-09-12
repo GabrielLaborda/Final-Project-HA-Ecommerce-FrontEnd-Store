@@ -11,12 +11,26 @@ function ProductDetailMain() {
     <>
       <div>
         <div className="row d-flex p-5">
-          <div className="col-6 d-flex justify-content-center">
+          <div className="col-6">
             <img
-              src="/CASCADE-NINETY-FIVE-DET-02_2048x.webp"
+              src="/CASCADE-NINETY-FIVE_43c0200a-1b12-40fd-bc61-f240ae6ed229_2048x.webp"
               alt=""
-              className="productDetailMainImg"
+              className="img-fluid"
             />
+            <div className="row">
+              <div className="col-3">
+                <img src="CASCADE-NINETY-FIVE-DET-01_2048x.webp" alt="" className="img-fluid"/>
+              </div>
+              <div className="col-3">
+                <img src="./CASCADE-NINETY-FIVE-DET-02_2048x.webp" alt="" className="img-fluid"/>
+              </div>
+              <div className="col-3">
+                <img src="CASCADE-NINETY-FIVE-DET-03_2048x.webp" alt="" className="img-fluid"/>
+              </div>
+              <div className="col-3">
+                <img src="CASCADE-NINETY-FIVE-DET-04_1200x.webp" alt="" className="img-fluid"/>
+              </div>
+            </div>
           </div>
           <div className="col-5 p-5">
             <h3>SNAPPER HIDEOUT</h3>

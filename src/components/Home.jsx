@@ -1,15 +1,12 @@
 import React from "react";
 import CarouselHome from "./CarouselHome";
-import FeaturesHome from "./FeaturesHome";
-import Footer from "./Footer";
+import FeaturedHome from "./FeaturedHome";
 import CategoryHome from "./CategoryHome";
-import VideoHome from "./VideoHome";
 function Home() {
   return (
     <>
-      <NavbarCart />
       <CarouselHome />
-      <FeaturesHome />
+      <FeaturedHome />
       <CategoryHome />
     </>
   );
