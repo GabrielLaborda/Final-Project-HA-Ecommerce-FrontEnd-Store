@@ -2,10 +2,12 @@ import React from "react";
 import CarouselHome from "./CarouselHome";
 import FeaturedHome from "./FeaturedHome";
 import CategoryHome from "./CategoryHome";
+import VideoHome from "./VideoHome";
 function Home() {
   return (
     <>
-      <CarouselHome />
+      <VideoHome />
+      {/* <CarouselHome /> */}
       <FeaturedHome />
       <CategoryHome />
     </>
