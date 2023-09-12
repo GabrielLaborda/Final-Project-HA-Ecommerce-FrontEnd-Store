@@ -12,7 +12,7 @@ function NavbarCart() {
     <Navbar expand="lg" className="bg-black">
       <Container fluid>
         <Navbar.Brand href="#">
-          <img src="./SEC-9-SKATE-CO-LOGO-WHITE_x100.webp" alt="" width="200" height="60" />
+          <img src="./UrbanRush-logo1-white5.svg" alt="" width="200" height="60" className='my-2' />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">

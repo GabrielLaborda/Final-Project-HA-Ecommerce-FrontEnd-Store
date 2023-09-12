@@ -12,8 +12,7 @@ import {
 import { DiCss3, DiScrum } from 'react-icons/di';
 import { FaBootstrap, FaNodeJs } from 'react-icons/fa';
 import { SiExpress, SiRedux, SiMongoose, SiAxios } from 'react-icons/si';
-import userAvatar from './../../public/User-avatar.png';
-
+import userAvatar from '/public/User-avatar.png';
 import './About.css';
 
 function About() {
