@@ -10,20 +10,18 @@ import {
 import { DiCss3, DiScrum } from 'react-icons/di';
 import { FaBootstrap, FaNodeJs } from 'react-icons/fa';
 import { SiExpress, SiRedux, SiMongoose, SiAxios } from 'react-icons/si';
-import userAvatar from '/public/User-avatar.png';
-import aboutProjectImg from '/public/about-project.png';
+
 import './About.css';
+import SectionHeader from './sectionHeader';
 
 function About() {
   return (
     <>
-      <div className="vw-100 hero-container mt-5 pt-5">
+      <div className="vw-100 hero-container">
         <div className="row">
-          <div className="col-5">
-            <p>ABOUT THIS PROJECT</p>
-          </div>
-          <div className="col-7">
-            <img src={aboutProjectImg} alt="hero image" className="img-fluid w-100" />
+          <SectionHeader bold="ABOUT" normal="THIS PROJECT" />
+          <div className="col-12 col-md-8">
+            <img src="./about-project.png" alt="hero image" className="img-fluid w-100" />
           </div>
         </div>
       </div>
@@ -152,7 +150,7 @@ function About() {
               <h3>Our Team</h3>
               <div className="d-flex justify-content-between flex-wrap py-4">
                 <div className="user-card text-center m-auto">
-                  <img src={userAvatar} alt="user-avatar" className="img-fluid" />
+                  <img src="./User-avatar.png" alt="user-avatar" className="img-fluid" />
                   <p className="mt-2 mb-0 fw-bold">Andres Amorin</p>
                   <p className="mb-1 mt-0">Full Stack Developer</p>
                   <div>
@@ -165,7 +163,7 @@ function About() {
                   </div>
                 </div>
                 <div className="user-card text-center m-auto">
-                  <img src={userAvatar} alt="user-avatar" className="img-fluid" />
+                  <img src="./User-avatar.png" alt="user-avatar" className="img-fluid" />
                   <p className="mt-2 mb-0 fw-bold">Gabriel Laborda</p>
                   <p className="mb-1 mt-0">Full Stack Developer</p>
                   <div>
@@ -178,7 +176,7 @@ function About() {
                   </div>
                 </div>
                 <div className="user-card text-center m-auto">
-                  <img src={userAvatar} alt="user-avatar" className="img-fluid" />
+                  <img src="./User-avatar.png" alt="user-avatar" className="img-fluid" />
                   <p className="mt-2 mb-0 fw-bold">Gonzalo Cuello</p>
                   <p className="mb-1 mt-0">Full Stack Developer</p>
                   <div>
@@ -191,7 +189,7 @@ function About() {
                   </div>
                 </div>
                 <div className="user-card text-center m-auto">
-                  <img src={userAvatar} alt="user-avatar" className="img-fluid" />
+                  <img src="./User-avatar.png" alt="user-avatar" className="img-fluid" />
                   <p className="mt-2 mb-0 fw-bold">José Pedro Lavaggi</p>
                   <p className="mb-1 mt-0">Full Stack Developer</p>
                   <div>
@@ -204,7 +202,7 @@ function About() {
                   </div>
                 </div>
                 <div className="user-card text-center m-auto">
-                  <img src={userAvatar} alt="user-avatar" className="img-fluid" />
+                  <img src="./User-avatar.png" alt="user-avatar" className="img-fluid" />
                   <p className="mt-2 mb-0 fw-bold">Pedro de Souza</p>
                   <p className="mb-1 mt-0">Full Stack Developer</p>
                   <div>
