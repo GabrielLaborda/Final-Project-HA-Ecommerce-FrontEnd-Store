@@ -40,8 +40,8 @@ function Footer() {
                 </ul>
             </div>
             <div className="col-3">
-                <h6>SECTOR 9</h6>
-                <p>Sector 9 stocks the highest quality Skateboard Decks, Completes, Wheels, Trucks, Tools & Accessories for the surf and skate lifestyle!</p>
+                <h6>Urban Rush</h6>
+                <p>Urban Rush stocks the highest quality Skateboard Decks, Completes, Wheels, Trucks, Tools & Accessories for the surf and skate lifestyle!</p>
             </div>
             <div className="col-3 text-center">
                 <h6>SUSCRIBE</h6>

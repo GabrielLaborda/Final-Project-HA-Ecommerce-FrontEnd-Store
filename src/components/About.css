@@ -6,3 +6,7 @@
   color: white;
   line-height: 1.8em;
 }
+
+.user-card {
+  width: 250px;
+}
