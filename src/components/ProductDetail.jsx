@@ -9,7 +9,7 @@ import axios from "axios";
 
 function ProductDetail() {
   const params = useParams();
-  const slug = params.productSlug
+  const slug = params.productSlug;
   const baseUrl = import.meta.env.VITE_API_BASE_URL;
   const [product, setProduct] = useState(null);
   const getProduct = async () => {

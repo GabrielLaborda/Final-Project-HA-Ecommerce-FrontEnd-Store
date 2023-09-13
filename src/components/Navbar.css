@@ -21,3 +21,23 @@ header {
 .scrolling #navbarScrollingDropdown {
   color: white !important;
 }
+
+.navbardTitle {
+  font-size: 20px;
+  font-weight: 800;
+  display: none;
+}
+.navbardTitleBold {
+  font-size: 20px;
+  font-weight: 400;
+  display: none;
+}
+
+.scrolling .navbardTitle {
+  color: white;
+  display: inline;
+}
+.scrolling .navbardTitleBold {
+  color: white;
+  display: inline-block;
+}

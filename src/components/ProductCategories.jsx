@@ -1,12 +1,12 @@
-import React from 'react';
-import CategoryBannerText from './CategoryBannerText';
-import './ProductCategories.css';
-import SectionHeader from './sectionHeader';
-import axios from 'axios';
-import ShopItemCard from './ShopItemCard';
-import ListedProductsMenu from './ListedProductsMenu';
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React from "react";
+import CategoryBannerText from "./CategoryBannerText";
+import "./ProductCategories.css";
+import SectionHeader from "./sectionHeader";
+import axios from "axios";
+import ShopItemCard from "./ShopItemCard";
+import ListedProductsMenu from "./ListedProductsMenu";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 function CompletesList() {
   const params = useParams();
@@ -16,7 +16,7 @@ function CompletesList() {
 
   const getCategory = async () => {
     const response = await axios({
-      method: 'GET',
+      method: "GET",
       url: `${baseURL}/categories/${slug}`,
     });
     setCategory(response.data);
@@ -34,17 +34,22 @@ function CompletesList() {
           <section>
             <div
               className="w-100 m-0 p-0 d-flex justify-content-center align-items-center"
-              style={{ backgroundImage: `url(${baseURL}/img/${category.pictures[0]})` }}
+              style={{
+                backgroundImage: `url(${baseURL}/img/${category.pictures[0]})`,
+              }}
               id="completesBanner"
             >
               <div className="row w-100 justify-content-center">
-                <CategoryBannerText bold={'URBAN'} normal={'RUSH'} />
+                <CategoryBannerText bold={"URBAN"} normal={"RUSH"} />
               </div>
             </div>
           </section>
           <main>
             <div className="m-5">
-              <SectionHeader bold={category.name.toUpperCase()} normal={'SECTION'} />
+              <SectionHeader
+                bold={category.name.toUpperCase()}
+                normal={"SECTION"}
+              />
             </div>
             <div className="row g-0">
               <ListedProductsMenu />

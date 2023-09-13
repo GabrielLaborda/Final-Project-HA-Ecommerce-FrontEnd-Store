@@ -6,13 +6,13 @@ import {
   BiLogoGit,
   BiLogoGithub,
   BiLogoLinkedinSquare,
-} from 'react-icons/bi';
-import { DiCss3, DiScrum } from 'react-icons/di';
-import { FaBootstrap, FaNodeJs } from 'react-icons/fa';
-import { SiExpress, SiRedux, SiMongoose, SiAxios } from 'react-icons/si';
+} from "react-icons/bi";
+import { DiCss3, DiScrum } from "react-icons/di";
+import { FaBootstrap, FaNodeJs } from "react-icons/fa";
+import { SiExpress, SiRedux, SiMongoose, SiAxios } from "react-icons/si";
 
-import './About.css';
-import SectionHeader from './sectionHeader';
+import "./About.css";
+import SectionHeader from "./sectionHeader";
 
 function About() {
   return (
@@ -21,7 +21,11 @@ function About() {
         <div className="row g-0">
           <SectionHeader bold="ABOUT" normal="THIS PROJECT" />
           <div className="col-12 col-md-8">
-            <img src="./about-project.png" alt="hero image" className="hero-image w-100" />
+            <img
+              src="./about-project.png"
+              alt="hero image"
+              className="hero-image w-100"
+            />
           </div>
         </div>
       </div>
@@ -34,25 +38,30 @@ function About() {
             <div className="col-12 col-md-8">
               <div className="mx-5">
                 <p>
-                  UrbanRush is a dynamic e-commerce platform born out of an integrative project
-                  undertaken as part of Hack Academy's Coding Bootcamp. This Web Development
-                  Education Program lasted over a span of three months, required more 600 hours of
-                  dedication, and culminated on this final project where our challenge was to create
-                  a e-commerce website within a tight three-week timeframe.
+                  UrbanRush is a dynamic e-commerce platform born out of an
+                  integrative project undertaken as part of Hack Academy's
+                  Coding Bootcamp. This Web Development Education Program lasted
+                  over a span of three months, required more 600 hours of
+                  dedication, and culminated on this final project where our
+                  challenge was to create a e-commerce website within a tight
+                  three-week timeframe.
                 </p>
                 <p>
-                  Our development process followed the Scrum methodology where we had 3 one-week
-                  development sprints and used a trello Kanban board as our product backlog.
+                  Our development process followed the Scrum methodology where
+                  we had 3 one-week development sprints and used a trello Kanban
+                  board as our product backlog.
                 </p>
                 <p>
-                  For our product selection, we opted to cater to the demand for longboard skates
-                  and accessories and we drew inspiration from the well-established websites of
-                  industry leaders such as Orangatang, Sector9, and Loaded for our ux/ui design.
+                  For our product selection, we opted to cater to the demand for
+                  longboard skates and accessories and we drew inspiration from
+                  the well-established websites of industry leaders such as
+                  Orangatang, Sector9, and Loaded for our ux/ui design.
                 </p>
                 <p>
-                  Our database stores user profiles, administrator credentials, product listings,
-                  product categories, and order details. Furthermore, it supports essential CRUD
-                  (Create, Read, Update, Delete) operations on those entities.
+                  Our database stores user profiles, administrator credentials,
+                  product listings, product categories, and order details.
+                  Furthermore, it supports essential CRUD (Create, Read, Update,
+                  Delete) operations on those entities.
                 </p>
               </div>
               <div className="mx-5 d-flex flex-row justify-content-between flex-wrap mt-4">
@@ -114,18 +123,23 @@ function About() {
               <div className="col-12">
                 <div className="mx-5 py-5">
                   <h3 className="green-text">
-                    UrbanRush represents the culmination of extensive training, dedication, and
-                    innovation.
+                    UrbanRush represents the culmination of extensive training,
+                    dedication, and innovation.
                   </h3>
                   <h5>
-                    We invite you to explore our platform and rigorously test its functionalities.
+                    We invite you to explore our platform and rigorously test
+                    its functionalities.
                   </h5>
                 </div>
               </div>
               <div className="col-12 col-md-6">
                 <div className="mx-5">
                   <div className="ptsc-container">
-                    <img className="img-fluid mb-4" src="./HOME-SCRN.png" alt="Home Print Screen" />
+                    <img
+                      className="img-fluid mb-4"
+                      src="./HOME-SCRN.png"
+                      alt="Home Print Screen"
+                    />
 
                     <p className="m-0">Test User Credentials</p>
                     <p className="m-0">user: user@example.com</p>
@@ -153,8 +167,8 @@ function About() {
       </div>
       <div className="team-container py-5 vw-100">
         <div className="container-fluid ">
-          <div className="row g-0">
-            <SectionHeader bold={'MEET'} normal={'THE TEAM'} />
+          <div className="row">
+            <SectionHeader bold={"MEET"} normal={"THE TEAM"} />
             <div className="col-12 col-md-8">
               <div className="d-flex w-100 justify-content-between flex-wrap me-5">
                 <div className="user-card text-center m-auto py-3">

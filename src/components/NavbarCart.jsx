@@ -10,6 +10,11 @@ function NavbarCart() {
       <header className="w-100">
         <Navbar expand="lg">
           <Container fluid>
+            <Navbar.Brand href="/" className="ms-3">
+              <h2 className="navbardTitleBold">
+                <span className="navbardTitle">URBAN</span>RUSH
+              </h2>
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
               <Nav

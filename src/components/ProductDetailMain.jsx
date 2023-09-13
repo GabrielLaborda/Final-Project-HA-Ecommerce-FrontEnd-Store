@@ -3,7 +3,7 @@ import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import Quantity from "./Quantity";
 
-function ProductDetailMain({product}) {
+function ProductDetailMain({ product }) {
   const firstExample = {
     size: 30,
     value: 4.5,
@@ -14,13 +14,11 @@ function ProductDetailMain({product}) {
   const productImgs = product.picture.map((img, index) => {
     return {
       original: `${baseUrl}/img/${img}`,
-      thumbnail: `${baseUrl}/img/${img}`
+      thumbnail: `${baseUrl}/img/${img}`,
     };
   });
   console.log(productImgs);
-  const images = [
-    ...productImgs
-  ];
+  const images = [...productImgs];
 
   return (
     <div>
@@ -30,7 +28,7 @@ function ProductDetailMain({product}) {
             <ImageGallery
               items={images}
               showPlayButton={false}
-              thumbnailPosition='left'
+              thumbnailPosition="left"
             />
           </div>
         </div>
@@ -64,7 +62,7 @@ function ProductDetailMain({product}) {
             <p>Length: 34.0”\n Width: 8.75”\n Wheelbase: 21.0”</p> */}
             {product.description.split("\n").map((line, index) => (
               <p key={index}>{line}</p>
-          ))}
+            ))}
           </div>
         </div>
       </div>
