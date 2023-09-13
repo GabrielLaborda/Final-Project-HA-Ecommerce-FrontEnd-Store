@@ -1,10 +1,7 @@
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import Cart from "./Cart";
 import "./Navbar.css";
 
 function NavbarCart() {
@@ -20,10 +17,7 @@ function NavbarCart() {
                 style={{ maxHeight: "100px" }}
                 navbarScroll
               >
-                <Nav.Link
-                  className="text-black scrolling-white"
-                  href="#action1"
-                >
+                <Nav.Link className="text-black scrolling-white" href="/">
                   Home
                 </Nav.Link>
 
@@ -36,15 +30,14 @@ function NavbarCart() {
                     All Products
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action3">Completes</NavDropdown.Item>
+                  <NavDropdown.Item href="/products/completes">
+                    Completes
+                  </NavDropdown.Item>
                   <NavDropdown.Item href="#action4">Decks</NavDropdown.Item>
                   <NavDropdown.Item href="#action5">Trucks</NavDropdown.Item>
                   <NavDropdown.Item href="#action6">Wheels</NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link
-                  className="text-black scrolling-white"
-                  href="#action2"
-                >
+                <Nav.Link className="text-black scrolling-white" href="/about">
                   About Our Project
                 </Nav.Link>
                 <Nav.Link
