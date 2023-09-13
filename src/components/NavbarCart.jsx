@@ -40,11 +40,14 @@ function NavbarCart() {
                 <Nav.Link className="text-black scrolling-white" href="/about">
                   About Our Project
                 </Nav.Link>
+                <Nav.Link className="text-black scrolling-white" href="/login">
+                  Login
+                </Nav.Link>
                 <Nav.Link
                   className="text-black scrolling-white"
                   href="#action2"
                 >
-                  {/* <Cart /> */}
+                  Account
                 </Nav.Link>
               </Nav>
             </Navbar.Collapse>
