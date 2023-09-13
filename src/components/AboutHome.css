@@ -1,0 +1,13 @@
+.aboutTitleBold {
+  font-size: 80px;
+  font-weight: 800;
+}
+.aboutTitle {
+  font-size: 80px;
+  font-weight: 400;
+}
+.aboutTagline {
+  font-size: 36px;
+  font-weight: 400;
+  /* padding: 0 200px 0 30px; */
+}

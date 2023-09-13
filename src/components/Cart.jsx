@@ -6,7 +6,7 @@ function Cart(props) {
     <>
       <div className="d-flex justify-content-end me-3 cart">
         {["end"].map((placement, i) => (
-          <ModalCart key={i} placement={placement} />
+          <ModalCart className="text-black" key={i} placement={placement} />
         ))}
       </div>
     </>

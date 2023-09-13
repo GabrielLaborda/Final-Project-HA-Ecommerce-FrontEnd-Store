@@ -10,13 +10,13 @@ function ModalCart({ placement }) {
 
   return (
     <>
-      <Button variant="" onClick={handleShow} className="me-2">
+      <Button variant="" onClick={handleShow} className="me-2 modal-cart">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="26"
           height="26"
           fill="currentColor"
-          className="bi bi-cart-plus text-white"
+          className="bi bi-cart-plus"
           viewBox="0 0 16 16"
         >
           <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"></path>
