@@ -7,7 +7,8 @@ function ProductDetailMain() {
   const firstExample = {
     size: 30,
     value: 4.5,
-    edit: false,
+    isHalf: true,
+    edit: true,
   };
 
   const images = [
