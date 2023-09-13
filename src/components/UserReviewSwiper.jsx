@@ -10,7 +10,17 @@ function UserReviewSwiper() {
   return (
     <div>
       <Swiper
-        slidesPerView={4}
+        breakpoints={{
+          0: {
+            slidesPerView: 1
+          },
+          576: {
+            slidesPerView: 2
+          },
+          992: {
+            slidesPerView: 3
+          },
+        }}
         spaceBetween={10}
         loop={true}
         pagination={{

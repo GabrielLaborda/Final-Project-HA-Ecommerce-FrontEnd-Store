@@ -17,7 +17,7 @@ function ProductDetail() {
         <ProductDetailNav/>
         <ProductDetailMain/>
         <FeaturedHome/>
-        <div className="mb-5 col-sm-12 col-lg-3">
+        <div className="mb-5">
           <UserReviewSwiper/>
         </div>
     </div>

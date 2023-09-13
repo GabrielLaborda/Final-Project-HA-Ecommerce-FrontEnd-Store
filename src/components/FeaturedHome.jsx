@@ -14,7 +14,18 @@ function FeaturedHome() {
     <div className="feacturedContainer">
         <h3 className='feacturedH3 text-center'>FEATURED</h3>
         <Swiper
-            slidesPerView={4}
+             breakpoints={{
+                0: {
+                  slidesPerView: 1
+                },
+                576: {
+                  slidesPerView: 2
+                },
+                992: {
+                  slidesPerView: 4
+                },
+              }}
+            // slidesPerView={4}
             spaceBetween={30}
             loop={true}
             pagination={{
