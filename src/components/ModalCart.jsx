@@ -15,8 +15,8 @@ function ModalCart({ placement }) {
           xmlns="http://www.w3.org/2000/svg"
           width="26"
           height="26"
-          fill="white"
-          className="bi bi-cart-plus"
+          fill="currentColor"
+          className="bi bi-cart-plus text-white"
           viewBox="0 0 16 16"
         >
           <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"></path>
@@ -31,8 +31,8 @@ function ModalCart({ placement }) {
           <div className="d-flex flex-column justify-content-center align-items-center h-50 p-3 mt-2 border border-2 rounded-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="36"
-              height="36"
+              width="80"
+              height="80"
               fill="currentColor"
               className="bi bi-bag-plus"
               viewBox="0 0 16 16"
