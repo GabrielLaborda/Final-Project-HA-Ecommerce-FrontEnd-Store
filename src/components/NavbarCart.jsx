@@ -33,9 +33,15 @@ function NavbarCart() {
                   <NavDropdown.Item href="/products/completes">
                     Completes
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Decks</NavDropdown.Item>
-                  <NavDropdown.Item href="#action5">Trucks</NavDropdown.Item>
-                  <NavDropdown.Item href="#action6">Wheels</NavDropdown.Item>
+                  <NavDropdown.Item href="/products/decks">
+                    Decks
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/products/trucks">
+                    Trucks
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/products/wheels">
+                    Wheels
+                  </NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link className="text-black scrolling-white" href="/about">
                   About Our Project
