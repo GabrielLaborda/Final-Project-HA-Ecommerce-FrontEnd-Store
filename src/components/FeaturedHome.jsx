@@ -34,67 +34,67 @@ function FeaturedHome() {
             </div>
         </SwiperSlide>
         <SwiperSlide>
-        <div className="swiper-slide p-1">
-            <div className= "item-swiper">
-                <img className='img-fluid' src="./ImgHome/Features_2.webp" alt="" />
-                <h6 className='my-3 '>BAMBINO SHOREBREAK</h6>
-                <p className=' mb-0'>USD 118.95</p>
+            <div className="swiper-slide p-1">
+                <div className= "item-swiper">
+                    <img className='img-fluid' src="./ImgHome/Features_2.webp" alt="" />
+                    <h6 className='my-3 '>BAMBINO SHOREBREAK</h6>
+                    <p className=' mb-0'>USD 118.95</p>
+                </div>
             </div>
-        </div>
         </SwiperSlide>
         <SwiperSlide>
-        <div className="swiper-slide p-1">
-            <div className= "item-swiper">
-                <img className='img-fluid' src="./ImgHome/Features_3.webp" alt="" />
-                <h6 className='my-3 '>BAMBINO BIVY</h6>
-                <p className=' mb-0'>USD 118.95</p>
+            <div className="swiper-slide p-1">
+                <div className= "item-swiper">
+                    <img className='img-fluid' src="./ImgHome/Features_3.webp" alt="" />
+                    <h6 className='my-3 '>BAMBINO BIVY</h6>
+                    <p className=' mb-0'>USD 118.95</p>
+                </div>
             </div>
-        </div>
         </SwiperSlide>
         <SwiperSlide>
-        <div className="swiper-slide p-1">
-            <div className= "item-swiper">
-                <img className='img-fluid' src="./ImgHome/Features_4.webp" alt="" />
-                <h6 className='my-3 '>STRANDSQUAL</h6>
-                <p className=' mb-0'>USD 118.95</p>
+            <div className="swiper-slide p-1">
+                <div className= "item-swiper">
+                    <img className='img-fluid' src="./ImgHome/Features_4.webp" alt="" />
+                    <h6 className='my-3 '>STRANDSQUAL</h6>
+                    <p className=' mb-0'>USD 118.95</p>
+                </div>
             </div>
-        </div>
         </SwiperSlide>
         <SwiperSlide>
-        <div className="swiper-slide p-1">
-            <div className= "item-swiper">
-                <img className='img-fluid' src="./ImgHome/Features_1.webp" alt="" />
-                <h6 className='my-3 '>BAMBINO SKIPPER</h6>
-                <p className=' mb-0'>USD 118.95</p>
+            <div className="swiper-slide p-1">
+                <div className= "item-swiper">
+                    <img className='img-fluid' src="./ImgHome/Features_1.webp" alt="" />
+                    <h6 className='my-3 '>BAMBINO SKIPPER</h6>
+                    <p className=' mb-0'>USD 118.95</p>
+                </div>
             </div>
-        </div>
         </SwiperSlide>
         <SwiperSlide>
-        <div className="swiper-slide p-1">
-            <div className= "item-swiper">
-                <img className='img-fluid' src="./ImgHome/Features_2.webp" alt="" />
-                <h6 className='my-3 '>BAMBINO SHOREBREAK</h6>
-                <p className=' mb-0'>USD 118.95</p>
+            <div className="swiper-slide p-1">
+                <div className= "item-swiper">
+                    <img className='img-fluid' src="./ImgHome/Features_2.webp" alt="" />
+                    <h6 className='my-3 '>BAMBINO SHOREBREAK</h6>
+                    <p className=' mb-0'>USD 118.95</p>
+                </div>
             </div>
-        </div>
         </SwiperSlide>
         <SwiperSlide>
-        <div className="swiper-slide p-1">
-            <div className= "item-swiper">
-                <img className='img-fluid' src="./ImgHome/Features_3.webp" alt="" />
-                <h6 className='my-3 '>BAMBINO BIVY</h6>
-                <p className=' mb-0'>USD 118.95</p>
+            <div className="swiper-slide p-1">
+                <div className= "item-swiper">
+                    <img className='img-fluid' src="./ImgHome/Features_3.webp" alt="" />
+                    <h6 className='my-3 '>BAMBINO BIVY</h6>
+                    <p className=' mb-0'>USD 118.95</p>
+                </div>
             </div>
-        </div>
         </SwiperSlide>
         <SwiperSlide>
-        <div className="swiper-slide p-1">
-            <div className= "item-swiper">
-                <img className='img-fluid' src="./ImgHome/Features_4.webp" alt="" />
-                <h6 className='my-3 '>STRANDSQUAL</h6>
-                <p className=' mb-0'>USD 118.95</p>
+            <div className="swiper-slide p-1">
+                <div className= "item-swiper">
+                    <img className='img-fluid' src="./ImgHome/Features_4.webp" alt="" />
+                    <h6 className='my-3 '>STRANDSQUAL</h6>
+                    <p className=' mb-0'>USD 118.95</p>
+                </div>
             </div>
-        </div>
         </SwiperSlide>
       </Swiper>
       </div>
