@@ -27,7 +27,7 @@ function About() {
       </div>
       <div className="vw-100 about-container white-text py-5">
         <div className="container-fluid">
-          <div className="row">
+          <div className="row g-0">
             <div className="col-12 col-md-4">
               <h3 className="mx-5 green-text">OVERVIEW</h3>
             </div>
@@ -110,7 +110,7 @@ function About() {
         </div>
         <div className="vw-100 ptscreen-container">
           <div className="container-fluid">
-            <div className="row">
+            <div className="row g-0">
               <div className="col-12">
                 <div className="mx-5 py-5">
                   <h3 className="green-text">
@@ -153,7 +153,7 @@ function About() {
       </div>
       <div className="team-container py-5 vw-100">
         <div className="container-fluid ">
-          <div className="row">
+          <div className="row g-0">
             <SectionHeader bold={'MEET'} normal={'THE TEAM'} />
             <div className="col-12 col-md-8">
               <div className="d-flex w-100 justify-content-between flex-wrap me-5">

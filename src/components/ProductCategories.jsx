@@ -46,11 +46,11 @@ function CompletesList() {
             <div className="m-5">
               <SectionHeader bold={category.name.toUpperCase()} normal={'SECTION'} />
             </div>
-            <div className="row">
+            <div className="row g-0">
               <ListedProductsMenu />
               <div className="col-9">
                 <div className="mx-5 mb-5">
-                  <div className="row row-cols-sm-1 row-cols-md-3 row-cols-lg-4 g-4">
+                  <div className="row row-cols-sm-1 row-cols-md-3 row-cols-lg-4 g-0">
                     {category.products.map((product) => (
                       <ShopItemCard
                         key={product.slug}

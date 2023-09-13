@@ -18,7 +18,7 @@ function Footer() {
   return (
     <>
       <div className="container-fluid bg-black">
-        <div className="row text-white py-5 mx-5">
+        <div className="row text-white py-5 g-0">
           <div className="d-flex w-100 justify-content-between">
             <div className="col-2">
               <h6>CUSTOMER SERVICE</h6>

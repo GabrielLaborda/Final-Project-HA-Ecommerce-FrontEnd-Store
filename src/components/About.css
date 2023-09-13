@@ -1,18 +1,26 @@
+* {
+  overflow-x: hidden !important;
+}
+
 .hero-container {
   font-family: Roboto;
+  overflow-x: hidden;
 }
 
 .about-container {
   background-color: #121212;
   font-family: Roboto;
+  overflow-x: hidden;
 }
 
 .ptscreen-container {
   font-family: Roboto;
+  overflow-x: hidden;
 }
 
 .team-container {
   font-family: Roboto;
+  overflow-x: hidden;
 }
 
 .white-text {

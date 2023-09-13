@@ -5,28 +5,29 @@ import Decks from '/ImgHome/ImgCategoryDecks.png';
 import Trucks from '/ImgHome/ImgCategoryTrucks.png';
 import Wheels from '/ImgHome/ImgCategoryWheels.png';
 import './CategoryHome.css';
+import CategoryBtn from './CategoryBtn';
 
 function CategoryHome() {
   return (
     <>
       <div className="container-fluid">
         <div className="row">
-          <div className="col-6 bg-black d-flex flex-column justify-content-around align-items-center m-0 p-0">
-            <div>
+          <div className="col-6 bg-black d-flex flex-column justify-content-around align-items-start">
+            <div className='categoryText'>
               <h2 className="categoryH2">COMPLETES</h2>
-              <button className="btn btn-warning text-black fs-4 mt-5 rounded-0"> SHOP</button>
+              <CategoryBtn href={"/products/completes"} />
             </div>
-            <div>
+            <div className='categoryText'>
               <h2 className="categoryH2">DECKS</h2>
-              <button className="btn btn-warning text-black fs-4 mt-5 rounded-0"> SHOP</button>
+              <CategoryBtn href={"/products/decks"} />
             </div>
-            <div>
+            <div className='categoryText'>
               <h2 className="categoryH2">TRUCKS</h2>
-              <button className="btn btn-warning text-black fs-4 mt-5 rounded-0"> SHOP</button>
+              <CategoryBtn href={"/products/trucks"} />
             </div>
-            <div>
+            <div className='categoryText'>
               <h2 className="categoryH2">WHEELS</h2>
-              <button className="btn btn-warning text-black fs-4 mt-5 rounded-0"> SHOP</button>
+              <CategoryBtn href={"/products/wheels"} />
             </div>
           </div>
 
