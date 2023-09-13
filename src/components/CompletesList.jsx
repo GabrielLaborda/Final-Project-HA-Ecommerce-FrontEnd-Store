@@ -8,23 +8,6 @@ import ListedProductsMenu from "./ListedProductsMenu";
 import { useState, useEffect } from "react";
 
 function CompletesList() {
-
-  const baseURL = import.meta.env.VITE_API_BASE_URL;
-  const [products, setProducts] = useState(null);
-
-  const getProducts = async () => {
-    const response = await axios({
-      method: 'GET',
-      url: `${baseURL}/products`,
-      params: { category: "Completes" },
-    });
-    setProducts(response.data);
-  };
-
-  useEffect(() => {
-    getProducts();
-  }, []);
-
   return (
     <>
       <div className="bg-white">
