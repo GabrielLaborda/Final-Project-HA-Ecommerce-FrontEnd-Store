@@ -31,16 +31,16 @@ function CategoryHome() {
           </div>
 
           <div className="col-6 d-flex flex-column justify-content-center align-items-center p-0 m-0">
-            <Parallax strength={150} bgImage={Completes} className="w-100 p-0 m-0">
+            <Parallax strength={200} bgImage={Completes} className="w-100 p-0 m-0">
               <div className="content"></div>
             </Parallax>
-            <Parallax strength={150} bgImage={Decks} className="w-100 p-0 m-0">
+            <Parallax strength={200} bgImage={Decks} className="w-100 p-0 m-0">
               <div className="content"></div>
             </Parallax>
-            <Parallax strength={150} bgImage={Trucks} className="w-100 p-0 m-0">
+            <Parallax strength={200} bgImage={Trucks} className="w-100 p-0 m-0">
               <div className="content"></div>
             </Parallax>
-            <Parallax strength={150} bgImage={Wheels} className="w-100 p-0 m-0">
+            <Parallax strength={200} bgImage={Wheels} className="w-100 p-0 m-0">
               <div className="content"></div>
             </Parallax>
           </div>

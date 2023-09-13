@@ -9,9 +9,12 @@ import "./Navbar.css";
 
 function NavbarCart() {
   return (
-    <Navbar expand="lg" className="bg-black">
+    <>
+    <header className='w-100'>
+    <Navbar expand="lg">
       <Container fluid>
         <Navbar.Brand href="#">
+<<<<<<< Updated upstream
           <img
             src="./UrbanRush-logo1-white5.svg"
             alt=""
@@ -27,18 +30,29 @@ function NavbarCart() {
             navbarScroll
           >
             <Nav.Link className="text-light" href="#action1">
+=======
+          <img src="./UrbanRush-logo1-white5.svg" alt="" width="200" height="60" />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
+            <Nav.Link className="text-black scrolling-white" href="#action1">
+>>>>>>> Stashed changes
               Home
             </Nav.Link>
-            <Nav.Link className="text-light" href="#action2">
-              About our project
+            <Nav.Link className="text-black scrolling-white" href="#action2">
+              About Our Project
             </Nav.Link>
-            <NavDropdown title="Category" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Trucks</NavDropdown.Item>
+              <NavDropdown title="Shop" id="navbarScrollingDropdown" className='scrolling-white'>
+                  <NavDropdown.Item href="#action3">All Products</NavDropdown.Item>
+                  <NavDropdown.Divider />
+              <NavDropdown.Item href="#action3">Completes</NavDropdown.Item>
               <NavDropdown.Item href="#action4">Decks</NavDropdown.Item>
-              <NavDropdown.Item href="#action5">Boards</NavDropdown.Item>
+              <NavDropdown.Item href="#action5">Trucks</NavDropdown.Item>
               <NavDropdown.Item href="#action6">Wheels</NavDropdown.Item>
             </NavDropdown>
           </Nav>
+<<<<<<< Updated upstream
           <Form className="d-flex">
             <Form.Control
               type="search"
@@ -59,10 +73,20 @@ function NavbarCart() {
               </svg>
             </Button>
           </Form>
+=======
+>>>>>>> Stashed changes
         </Navbar.Collapse>
       </Container>
       <Cart />
-    </Navbar>
+      </Navbar>
+    </header>
+        <script type="text/javascript">
+        {window.addEventListener("scroll", function () {
+          let header = document.querySelector("header");
+          header.classList.toggle("scrolling", window.scrollY > 0);
+        })}
+    </script>
+    </>
   );
 }
 
