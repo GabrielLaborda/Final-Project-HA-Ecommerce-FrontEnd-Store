@@ -1,7 +1,7 @@
 function ProductDetailNav() {
     return (
         <div className="ms-5 me-5">
-        <div className="d-flex mt-3 p-3 boldTexts">
+        <div className="d-flex p-3 boldTexts">
             <p className="yellowTexts">Home</p>
             <p className="ms-3">/</p>
             <p className="ms-3 yellowTexts">Categories</p>

@@ -3,37 +3,23 @@ import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import Quantity from "./Quantity";
 
-function ProductDetailMain() {
+function ProductDetailMain({product}) {
   const firstExample = {
     size: 30,
     value: 4.5,
     isHalf: true,
     edit: true,
   };
-
+  const baseUrl = import.meta.env.VITE_API_BASE_URL;
+  const productImgs = product.picture.map((img, index) => {
+    return {
+      original: `${baseUrl}/img/${img}`,
+      thumbnail: `${baseUrl}/img/${img}`
+    };
+  });
+  console.log(productImgs);
   const images = [
-    {
-      original:
-        "CASCADE-NINETY-FIVE_43c0200a-1b12-40fd-bc61-f240ae6ed229_2048x.webp",
-      thumbnail:
-        "CASCADE-NINETY-FIVE_43c0200a-1b12-40fd-bc61-f240ae6ed229_2048x.webp",
-    },
-    {
-      original: "CASCADE-NINETY-FIVE-DET-01_2048x.webp",
-      thumbnail: "CASCADE-NINETY-FIVE-DET-01_2048x.webp",
-    },
-    {
-      original: "CASCADE-NINETY-FIVE-DET-02_2048x.webp",
-      thumbnail: "CASCADE-NINETY-FIVE-DET-02_2048x.webp",
-    },
-    {
-      original: "CASCADE-NINETY-FIVE-DET-03_2048x.webp",
-      thumbnail: "CASCADE-NINETY-FIVE-DET-03_2048x.webp",
-    },
-    {
-      original: "CASCADE-NINETY-FIVE-DET-04_1200x.webp",
-      thumbnail: "CASCADE-NINETY-FIVE-DET-04_1200x.webp",
-    },
+    ...productImgs
   ];
 
   return (
@@ -49,15 +35,15 @@ function ProductDetailMain() {
           </div>
         </div>
         <div className="col-sm-12 col-lg-5 p-5">
-          <h3>SNAPPER HIDEOUT</h3>
+          <h3>{product.name}</h3>
           <div className="d-flex align-items-end starsDiv">
             <ReactStars {...firstExample} />
             <p className="mb-2">8 Reviews</p>
           </div>
-          <h4>$158.95</h4>
+          <h4>USD {product.price}</h4>
           <Quantity />
           <div className="mt-3">
-            <p>PARADISE BAMBOO COLLECTION</p>
+            {/* <p>PARADISE BAMBOO COLLECTION</p>
             <p>
               Nothing says Sector 9 Bamboo quite like colorful, island vibes. We
               wanted to revive some of our Bamboo roots (get it?... ‘cause it’s
@@ -75,7 +61,10 @@ function ProductDetailMain() {
             <p>RIDING STYLE</p>
             <p>Carving Cruiser\nCruiser</p>
             <p>DIMENSIONS</p>
-            <p>Length: 34.0”\n Width: 8.75”\n Wheelbase: 21.0”</p>
+            <p>Length: 34.0”\n Width: 8.75”\n Wheelbase: 21.0”</p> */}
+            {product.description.split("\n").map((line, index) => (
+              <p key={index}>{line}</p>
+          ))}
           </div>
         </div>
       </div>
