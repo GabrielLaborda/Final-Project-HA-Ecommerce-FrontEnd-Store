@@ -4,7 +4,7 @@ import "./Cart.css";
 function Cart(props) {
   return (
     <>
-      <div className="d-flex justify-content-end me-3 cart">
+      <div className="cart bg-warning rounded-5 text-center ps-2">
         {["end"].map((placement, i) => (
           <ModalCart className="text-black" key={i} placement={placement} />
         ))}

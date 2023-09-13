@@ -12,6 +12,7 @@ function App() {
   return (
     <>
       <NavbarCart />
+      <Cart />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/ProductDetail" element={<ProductDetail />} />
