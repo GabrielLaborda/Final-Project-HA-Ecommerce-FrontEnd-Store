@@ -10,12 +10,12 @@
 
 #normalBanner {
     font-weight: 400;
-    color: rgb(210, 210, 7);
+    color: #CFE265;
 }
 
 #smallText {
     font-weight: 400;
-    color: rgb(210, 210, 7);
-    font-size: 26px;
+    color: #f3d849;
+    font-size: 36px;
     font-family: Roboto;
 }
