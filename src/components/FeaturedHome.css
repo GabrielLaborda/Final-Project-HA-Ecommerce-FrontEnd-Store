@@ -1,5 +1,5 @@
 .feacturedH3 {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 50px;
   font-weight: 800;
   text-align: center;
@@ -13,6 +13,7 @@
   color: rgb(0, 0, 0);
   font-weight: 500;
   margin-bottom: 40px;
+  font-family: Roboto;
 }
 
 .swiper-button-next {

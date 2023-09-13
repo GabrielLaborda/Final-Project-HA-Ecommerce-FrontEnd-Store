@@ -6,6 +6,7 @@ import 'swiper/css';
 import { Navigation, Pagination } from 'swiper/modules';
 import './FeaturedHome.css';
 import axios from 'axios';
+import { NavLink } from 'react-router-dom';
 
 function FeaturedHome() {
   const baseURL = import.meta.env.VITE_API_BASE_URL;
@@ -52,17 +53,22 @@ function FeaturedHome() {
           {products &&
             products.map((product) => (
               <SwiperSlide key={product._id}>
-                <div className="swiper-slide p-1">
-                  <div className="item-swiper">
-                    <img
-                      className="img-fluid"
-                      src={`${baseURL}/img/${product.picture[0]}`}
-                      alt="Product Image"
-                    />
-                    <h6 className="my-3">{product.name}</h6>
-                    <p className=" mb-0">USD {product.price}</p>
+                <NavLink
+                  className={'text-decoration-none text-black'}
+                  to={`/products/${product.category.slug}/${product.slug}`}
+                >
+                  <div className="swiper-slide p-1">
+                    <div className="item-swiper">
+                      <img
+                        className="img-fluid"
+                        src={`${baseURL}/img/${product.picture[0]}`}
+                        alt="Product Image"
+                      />
+                      <h6 className="my-3 ">{product.name}</h6>
+                      <p className=" mb-0 ">USD {product.price}</p>
+                    </div>
                   </div>
-                </div>
+                </NavLink>
               </SwiperSlide>
             ))}
         </Swiper>
