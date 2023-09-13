@@ -1,3 +1,23 @@
 #navbarScrollingDropdown {
+color: black;
+}
+
+header {
+  z-index: 10;
+  position: fixed !important;
+  transition: 2s !important;
+}
+
+.scrolling {
+  background-color: black !important;
+  position: fixed;
+  color: white !important;
+}
+
+.scrolling .scrolling-white {
+  color: white !important;
+}
+
+.scrolling #navbarScrollingDropdown {
   color: white !important;
 }

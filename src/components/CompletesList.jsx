@@ -9,7 +9,7 @@ function CompletesList() {
 
     return (
         <>
-        <div className='bg-white'>
+        <div className='bg-white w-100'>
             <header>
                 <div className='vh-20 w-100 m-0 p-0 d-flex justify-content-center align-items-center' id='completesBanner'>
                 <div className='row w-100 justify-content-center'>
