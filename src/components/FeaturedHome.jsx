@@ -7,11 +7,21 @@ import { Navigation, Pagination } from 'swiper/modules';
 import './FeaturedHome.css';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
 function FeaturedHome() {
+  const params = useParams();
+  const slug = params.categorySlug;
   const baseURL = import.meta.env.VITE_API_BASE_URL;
   const [products, setProducts] = useState(null);
 
+  const getCategory = async () => {
+    const response = await axios({
+      method: 'GET',
+      url: `${baseURL}/categories/${slug}`,
+    });
+    setProducts(response.data.products.filter((product)=>product.featured===true));
+  }
   const getProducts = async () => {
     const response = await axios({
       method: 'GET',
@@ -22,8 +32,8 @@ function FeaturedHome() {
   };
 
   useEffect(() => {
-    getProducts();
-  }, []);
+    slug ? getCategory() : getProducts();
+  }, [slug]);
 
   return (
     <>
