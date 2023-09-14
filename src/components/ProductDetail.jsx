@@ -37,7 +37,7 @@ function ProductDetail() {
     <>
       {product && (
         <>
-          <ProductDetailNav />
+         
           <ProductDetailMain product={product} />
           <FeaturedHome />
           <div className="mb-5">

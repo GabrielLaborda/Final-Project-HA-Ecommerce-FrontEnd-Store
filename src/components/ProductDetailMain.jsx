@@ -2,6 +2,7 @@ import ReactStars from "react-rating-stars-component";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import Quantity from "./Quantity";
+import { useState } from "react";
 
 function ProductDetailMain({ product }) {
   const firstExample = {
@@ -21,8 +22,8 @@ function ProductDetailMain({ product }) {
   const images = [...productImgs];
 
   return (
-    <div>
-      <div className="row d-flex p-5">
+    <div className="container">
+      <div className="row d-flex">
         <div className="col-sm-12 col-lg-7">
           <div>
             <ImageGallery
@@ -32,7 +33,7 @@ function ProductDetailMain({ product }) {
             />
           </div>
         </div>
-        <div className="col-sm-12 col-lg-5 p-5">
+        <div className="col-sm-12 col-lg-5">
           <h3>{product.name}</h3>
           <div className="d-flex align-items-end starsDiv">
             <ReactStars {...firstExample} />
