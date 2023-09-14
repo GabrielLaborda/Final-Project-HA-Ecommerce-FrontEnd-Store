@@ -1,22 +1,46 @@
 .hero-container {
   font-family: Roboto;
   overflow-x: hidden;
+  background-image: url('about-project-white.png');
+  background-size: cover;
+  background-position: right;
+  height: 50vh;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    background-image: url('about-project.png');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+  }
 }
 
 .about-container {
   background-color: #121212;
   font-family: Roboto;
   overflow-x: hidden;
+  font-size: x-large;
+}
+
+.about-container h2 {
+  font-size: 45px;
 }
 
 .ptscreen-container {
   font-family: Roboto;
   overflow-x: hidden;
+  font-size: x-large;
 }
 
 .team-container {
   font-family: Roboto;
   overflow-x: hidden;
+  font-size: larger;
+}
+
+.tech-stack {
+  font-size: medium !important;
 }
 
 .white-text {
@@ -24,10 +48,23 @@
 }
 .green-text {
   color: #cfe265;
+  font-weight: bold;
+}
+.purple-text {
+  color: #d5b7f9;
+  font-weight: bold;
+}
+.acqua-text {
+  color: #00c4cc;
+  font-weight: bold;
+}
+.salmon-text {
+  color: #ed6d75;
+  font-weight: bold;
 }
 
 .user-card {
-  width: 150px;
+  width: 200px;
 }
 
 .hero-image {
@@ -35,11 +72,11 @@
   object-position: center;
 }
 
-.user-avatar {
+/* .user-avatar {
   border-radius: 50%;
-}
+} */
 
-.ptsc-img {
+.prints-img {
   object-fit: fill;
   object-position: center;
 }

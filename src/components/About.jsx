@@ -18,147 +18,189 @@ function About() {
   return (
     <>
       <div className="vw-100 hero-container">
-        <div className="row g-0">
-          <SectionHeader bold="ABOUT" normal="THIS PROJECT" />
-          <div className="col-12 col-md-8">
-            <img
-              src="./about-project.png"
-              alt="hero image"
-              className="hero-image w-100"
-            />
+        <div className="container">
+          <div className="pt-5">
+            <SectionHeader bold="ABOUT" normal="THIS PROJECT" />
           </div>
         </div>
       </div>
+
       <div className="vw-100 about-container white-text py-5">
-        <div className="container-fluid">
-          <div className="row g-0">
-            <div className="col-12 col-md-4">
-              <h3 className="mx-5 green-text">OVERVIEW</h3>
+        <div className="container">
+          <div className="row">
+            <div className="col-12 col-lg-4">
+              <h2 className="green-text">OVERVIEW</h2>
             </div>
-            <div className="col-12 col-md-8">
-              <div className="mx-5">
+            <div className="col-12 col-lg-8">
+              <p>
+                <span className="green-text">UrbanRush</span> is a dynamic
+                e-commerce platform born out of an integrative project
+                undertaken as part of{" "}
+                <span className="green-text">
+                  Hack Academy's Coding Bootcamp
+                </span>
+                . This Web Development Education Program lasted over a span of
+                three months, required more 600 hours of dedication, and
+                culminated on this{" "}
+                <span className="green-text">final project</span> where our
+                challenge was to create a{" "}
+                <span className="green-text">e-commerce website</span> within a
+                tight <span className="green-text">three-week timeframe</span>.
+              </p>
+              <p>
+                This project <span className="green-text">represents</span> the
+                culmination of extensive{" "}
+                <span className="green-text">
+                  training, dedication, and innovation
+                </span>
+                . We <span className="green-text">invite</span> you to explore
+                our platform and rigorously{" "}
+                <span className="green-text">test its functionalities</span>.
+              </p>
+            </div>
+          </div>
+          <div className="pt-5">
+            <div className="row">
+              <div className="col-12 col-lg-4">
+                <h2 className="purple-text">PRODUCT SELECTION</h2>
                 <p>
-                  UrbanRush is a dynamic e-commerce platform born out of an
-                  integrative project undertaken as part of Hack Academy's
-                  Coding Bootcamp. This Web Development Education Program lasted
-                  over a span of three months, required more 600 hours of
-                  dedication, and culminated on this final project where our
-                  challenge was to create a e-commerce website within a tight
-                  three-week timeframe.
-                </p>
-                <p>
-                  Our development process followed the Scrum methodology where
-                  we had 3 one-week development sprints and used a trello Kanban
-                  board as our product backlog.
-                </p>
-                <p>
-                  For our product selection, we opted to cater to the demand for
-                  longboard skates and accessories and we drew inspiration from
-                  the well-established websites of industry leaders such as
-                  Orangatang, Sector9, and Loaded for our ux/ui design.
-                </p>
-                <p>
-                  Our database stores user profiles, administrator credentials,
-                  product listings, product categories, and order details.
-                  Furthermore, it supports essential CRUD (Create, Read, Update,
-                  Delete) operations on those entities.
+                  We chose to meet the demand for
+                  <span className="purple-text">
+                    {" "}
+                    longboard skates and accessories
+                  </span>
+                  , taking inspiration from industry leaders like Orangatang,
+                  Sector9, and Loaded for our
+                  <span className="purple-text"> UX/UI design</span>.
                 </p>
               </div>
-              <div className="mx-5 d-flex flex-row justify-content-between flex-wrap mt-4">
-                <div className="text-center">
-                  <BiLogoHtml5 size={30} />
-                  <p className="mb-0">HTML</p>
+              <div className="col-12 col-lg-4">
+                <h2 className="acqua-text">AGILE DEVELOPMENT</h2>
+                <p>
+                  We adopted{" "}
+                  <span className="acqua-text">Scrum methodology</span>,
+                  completed
+                  <span className="acqua-text">
+                    {" "}
+                    three one-week development sprints
+                  </span>
+                  , and utilized Trello's Kanban board for our
+                  <span className="acqua-text"> product backlog</span>.
+                </p>
+              </div>
+              <div className="col-12 col-lg-4">
+                <h2 className="salmon-text">REST ARCHITECTURE</h2>
+                <p>
+                  Our database stores{" "}
+                  <span className="salmon-text">
+                    {" "}
+                    user profiles, administrator credentials, product listings,
+                    product categories, and order details
+                  </span>
+                  . Additionally, we implemented{" "}
+                  <span className="salmon-text">
+                    {" "}
+                    robust CRUD (Create, Read, Update, Delete)
+                  </span>
+                  functionalities for seamless management of these entities.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="pt-5">
+            <div className="row">
+              <div className="col-12">
+                <h2 className="mb-4">
+                  {" "}
+                  <span className="green-text">TECHNOLOGIES</span> & TOOLS
+                </h2>
+              </div>
+              <div className="col-12">
+                <div className="d-flex flex-wrap justify-content-between tech-stack py-1">
+                  <div className="text-center">
+                    <BiLogoHtml5 size={45} />
+                    <p className="mb-0">HTML</p>
+                  </div>
+                  <div className="text-center">
+                    <DiCss3 size={45} />
+                    <p className="mb-0">CSS</p>
+                  </div>
+                  <div className="text-center">
+                    <BiLogoJavascript size={45} />
+                    <p className="mb-0">JavaScript</p>
+                  </div>
+                  <div className="text-center">
+                    <FaBootstrap size={45} />
+                    <p className="mb-0">Bootstrap</p>
+                  </div>
+                  <div className="text-center">
+                    <FaNodeJs size={45} />
+                    <p className="mb-0">Node</p>
+                  </div>
+                  <div className="text-center">
+                    <SiExpress size={45} />
+                    <p className="mb-0">Express</p>
+                  </div>
                 </div>
-                <div className="text-center">
-                  <DiCss3 size={30} />
-                  <p className="mb-0">CSS</p>
-                </div>
-                <div className="text-center">
-                  <BiLogoJavascript size={30} />
-                  <p className="mb-0">JavaScript</p>
-                </div>
-                <div className="text-center">
-                  <FaBootstrap size={30} />
-                  <p className="mb-0">Bootstrap</p>
-                </div>
-                <div className="text-center">
-                  <FaNodeJs size={30} />
-                  <p className="mb-0">Node</p>
-                </div>
-                <div className="text-center">
-                  <SiExpress size={30} />
-                  <p className="mb-0">Express</p>
-                </div>
-                <div className="text-center">
-                  <BiLogoReact size={30} />
-                  <p className="mb-0">React</p>
-                </div>
-                <div className="text-center">
-                  <SiRedux size={30} />
-                  <p className="mb-0">Redux</p>
-                </div>
-                <div className="text-center">
-                  <BiLogoMongodb size={30} />
-                  <p className="mb-0">MongoDB</p>
-                </div>
-                <div className="text-center">
-                  <SiMongoose size={30} />
-                  <p className="mb-0">Mongoose</p>
-                </div>
-                <div className="text-center">
-                  <BiLogoGit size={30} />
-                  <p className="mb-0">Git</p>
-                </div>
-                <div className="text-center">
-                  <DiScrum size={30} />
-                  <p className="mb-0">Scrum</p>
+              </div>
+
+              <div className="col-12">
+                <div className="d-flex flex-wrap justify-content-between tech-stack py-1">
+                  <div className="text-center">
+                    <BiLogoReact size={45} />
+                    <p className="mb-0">React</p>
+                  </div>
+                  <div className="text-center">
+                    <SiRedux size={45} />
+                    <p className="mb-0">Redux</p>
+                  </div>
+                  <div className="text-center">
+                    <BiLogoMongodb size={45} />
+                    <p className="mb-0">MongoDB</p>
+                  </div>
+                  <div className="text-center">
+                    <SiMongoose size={45} />
+                    <p className="mb-0">Mongoose</p>
+                  </div>
+                  <div className="text-center">
+                    <BiLogoGit size={45} />
+                    <p className="mb-0">Git</p>
+                  </div>
+                  <div className="text-center">
+                    <DiScrum size={45} />
+                    <p className="mb-0">Scrum</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div className="vw-100 ptscreen-container">
-          <div className="container-fluid">
-            <div className="row g-0">
-              <div className="col-12">
-                <div className="mx-5 py-5">
-                  <h3 className="green-text">
-                    UrbanRush represents the culmination of extensive training,
-                    dedication, and innovation.
-                  </h3>
-                  <h5>
-                    We invite you to explore our platform and rigorously test
-                    its functionalities.
-                  </h5>
-                </div>
-              </div>
+          <div className="container pt-5 mt-5">
+            <div className="row">
               <div className="col-12 col-md-6">
-                <div className="mx-5">
-                  <div className="ptsc-container">
-                    <img
-                      className="img-fluid mb-4"
-                      src="./HOME-SCRN.png"
-                      alt="Home Print Screen"
-                    />
+                <div className="prints-container text-center">
+                  <img
+                    className="img-fluid mb-4"
+                    src="./HOME-SCRN.png"
+                    alt="Home Print Screen"
+                  />
 
-                    <p className="m-0">Test User Credentials</p>
-                    <p className="m-0">user: user@example.com</p>
-                    <p className="m-0">password: 123456</p>
-                  </div>
+                  <p className="m-0">Test User Credentials</p>
+                  <p className="m-0">user: user@example.com</p>
+                  <p className="m-0">password: 123456</p>
                 </div>
               </div>
               <div className="col-12 col-md-6">
-                <div className="mx-5">
-                  <div className="ptsc-container">
-                    <img
-                      className="img-fluid mb-4"
-                      src="./ADMIN-SCRN.png"
-                      alt="Home Print Screen"
-                    />
-                    <p className="m-0">Test Admin Credentials</p>
-                    <p className="m-0">user: admin@example.com</p>
-                    <p className="m-0">password: 123456</p>
-                  </div>
+                <div className="prints-container text-center">
+                  <img
+                    className="img-fluid mb-4"
+                    src="./ADMIN-SCRN.png"
+                    alt="Home Print Screen"
+                  />
+                  <p className="m-0">Test Admin Credentials</p>
+                  <p className="m-0">user: admin@example.com</p>
+                  <p className="m-0">password: 123456</p>
                 </div>
               </div>
             </div>
@@ -166,12 +208,15 @@ function About() {
         </div>
       </div>
       <div className="team-container py-5 vw-100">
-        <div className="container-fluid ">
+        <div className="container ">
           <div className="row">
             <SectionHeader bold={"MEET"} normal={"THE TEAM"} />
-            <div className="col-12 col-md-8">
-              <div className="d-flex w-100 justify-content-between flex-wrap me-5">
-                <div className="user-card text-center m-auto py-3">
+          </div>
+
+          <div className="row">
+            <div className="col-12">
+              <div className="d-flex justify-content-between flex-wrap">
+                <div className="user-card text-center m-xl-0 m-auto py-3">
                   <img
                     src="./User-avatar.png"
                     alt="user-avatar"
@@ -188,7 +233,7 @@ function About() {
                     </a>
                   </div>
                 </div>
-                <div className="user-card text-center m-auto py-3">
+                <div className="user-card text-center m-xl-0 m-auto py-3">
                   <img
                     src="./User-avatar.png"
                     alt="user-avatar"
@@ -205,7 +250,7 @@ function About() {
                     </a>
                   </div>
                 </div>
-                <div className="user-card text-center m-auto py-3">
+                <div className="user-card text-center m-xl-0 m-auto py-3">
                   <img
                     src="./User-avatar.png"
                     alt="user-avatar"
@@ -222,7 +267,7 @@ function About() {
                     </a>
                   </div>
                 </div>
-                <div className="user-card text-center m-auto py-3">
+                <div className="user-card text-center m-xl-0 m-auto py-3">
                   <img
                     src="./User-avatar.png"
                     alt="user-avatar"
@@ -239,7 +284,7 @@ function About() {
                     </a>
                   </div>
                 </div>
-                <div className="user-card text-center m-auto py-3">
+                <div className="user-card text-center m-xl-0 m-auto py-3">
                   <img
                     src="./User-avatar.png"
                     alt="user-avatar"

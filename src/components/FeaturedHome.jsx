@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import 'swiper/css';
-import { Navigation, Pagination } from 'swiper/modules';
-import './FeaturedHome.css';
-import axios from 'axios';
-import { NavLink } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css";
+import { Navigation, Pagination } from "swiper/modules";
+import "./FeaturedHome.css";
+import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 function FeaturedHome() {
   const baseURL = import.meta.env.VITE_API_BASE_URL;
@@ -14,7 +14,7 @@ function FeaturedHome() {
 
   const getProducts = async () => {
     const response = await axios({
-      method: 'GET',
+      method: "GET",
       url: `${baseURL}/products`,
       params: { featured: true },
     });
@@ -57,7 +57,7 @@ function FeaturedHome() {
             products.map((product) => (
               <SwiperSlide key={product._id}>
                 <NavLink
-                  className={'text-decoration-none text-black'}
+                  className={"text-decoration-none text-black"}
                   to={`/products/${product.category.slug}/${product.slug}`}
                 >
                   <div className="swiper-slide p-1">

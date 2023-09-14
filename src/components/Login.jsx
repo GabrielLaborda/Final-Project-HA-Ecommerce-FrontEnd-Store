@@ -2,6 +2,7 @@
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom"; */
+import { Link } from "react-router-dom";
 
 function Login() {
   return (
@@ -42,10 +43,10 @@ function Login() {
                   </div>
                 </form>
                 <p className="text-center mt-4 little-text">
-                  Don't have an account?<a href="#"> Sign up</a>
+                  Don't have an account?<Link href="#"> Sign up</Link>
                 </p>
                 <p className="text-center mt-4 little-text">
-                  <a href="#">Forgot your password?</a>
+                  <Link href="#">Forgot your password?</Link>
                 </p>
               </div>
             </div>
