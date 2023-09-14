@@ -12,12 +12,12 @@ function ProductDetailNav() {
       </div>
       <div className="d-flex justify-content-between p-3">
         <div className="d-flex">
-          <i class="bi bi-arrow-left"></i>
+          <i className="bi bi-arrow-left"></i>
           <p className="ms-1">Previous Item</p>
         </div>
         <div className="d-flex">
           <p>Next Item</p>
-          <i class="bi bi-arrow-right"></i>
+          <i className="bi bi-arrow-right"></i>
         </div>
       </div>
     </div>

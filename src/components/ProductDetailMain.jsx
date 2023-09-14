@@ -18,7 +18,6 @@ function ProductDetailMain({ product }) {
       thumbnail: `${baseUrl}/img/${img}`,
     };
   });
-  console.log(productImgs);
   const images = [...productImgs];
 
   return (

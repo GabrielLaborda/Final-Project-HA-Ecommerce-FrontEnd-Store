@@ -18,9 +18,6 @@ function ProductDetail() {
       url: `${baseUrl}/products/${slug}`,
     });
     setProduct(response.data);
-    // console.log(product);
-    console.log(response.data);
-    // console.log(response);
   };
 
   useEffect(() => {
