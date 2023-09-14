@@ -9,6 +9,7 @@ function VideoHome() {
           <source src="./VideoHome/wheels2.mp4" />
         </video>
       </div>
+      <div></div>
     </>
   );
 }
