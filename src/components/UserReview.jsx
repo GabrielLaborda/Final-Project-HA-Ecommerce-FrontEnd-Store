@@ -25,7 +25,7 @@ function UserReview() {
         <div className="d-flex">
             <img src={iconShare} alt="" className="userReviewIcon"/>
             <div className="d-flex userReviewTextShare ms-auto">
-                <i class="bi bi-hand-thumbs-up-fill me-2"></i>
+                <i className="bi bi-hand-thumbs-up-fill me-2"></i>
                 <p className="me-2">likes count</p>
                 <i className="bi bi-hand-thumbs-down-fill me-2"></i>
                 <p>unlike count</p>
