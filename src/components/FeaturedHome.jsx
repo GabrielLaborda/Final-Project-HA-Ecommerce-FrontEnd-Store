@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import 'swiper/css';
-import { Navigation, Pagination } from 'swiper/modules';
-import './FeaturedHome.css';
-import axios from 'axios';
-import { NavLink } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css";
+import { Navigation, Pagination } from "swiper/modules";
+import "./FeaturedHome.css";
+import axios from "axios";
+import { NavLink } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 function FeaturedHome() {
@@ -17,11 +17,13 @@ function FeaturedHome() {
 
   const getCategory = async () => {
     const response = await axios({
-      method: 'GET',
+      method: "GET",
       url: `${baseURL}/categories/${slug}`,
     });
-    setProducts(response.data.products.filter((product)=>product.featured===true));
-  }
+    setProducts(
+      response.data.products.filter((product) => product.featured === true)
+    );
+  };
   const getProducts = async () => {
     const response = await axios({
       method: "GET",
@@ -38,7 +40,11 @@ function FeaturedHome() {
   return (
     <>
       <div className="container featured-container">
-        {slug ? <h5 className="featured-h5 text-center">YOU MAY ALSO LIKE</h5> : <h3 className="featured-h3 text-center">FEATURED</h3>}
+        {slug ? (
+          <h5 className="featured-h5 text-center">YOU MAY ALSO LIKE</h5>
+        ) : (
+          <h3 className="featured-h3 text-center">FEATURED</h3>
+        )}
         <Swiper
           breakpoints={{
             0: {
@@ -72,12 +78,23 @@ function FeaturedHome() {
                 >
                   <div className="swiper-slide p-1">
                     <div className="card h-100 mb-5 py-3 px-3 rounded-0">
-                      <img src={`${baseURL}/img/${product.picture[0]}`} class="card-img-top mb-5" alt="..."/>
+                      <img
+                        src={`${baseURL}/img/${product.picture[0]}`}
+                        className="card-img-top mb-5"
+                        alt="..."
+                      />
                       <div className="card-body d-flex flex-column justify-content-end">
                         <h5 className="card-title">USD {product.price}</h5>
-                        <p className="card-text text-center w-75">{product.name}</p>
-                        <button type="button" className="btn btn-outline-dark rounded-0 w-75 border-secondary-subtle">Add to cart</button>
-                    </div>
+                        <p className="card-text text-center w-75">
+                          {product.name}
+                        </p>
+                        <button
+                          type="button"
+                          className="btn btn-outline-dark rounded-0 w-75 border-secondary-subtle"
+                        >
+                          Add to cart
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </NavLink>
