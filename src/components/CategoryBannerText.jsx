@@ -9,7 +9,7 @@ function CategoryBannerText({ bold, normal }) {
             <span id="boldBanner">{bold}</span>
             <span id="normalBanner">{normal}</span>
             </p>
-            </div>
+          </div>
         </div>
         <div className="row">
           <div className="col-12">
