@@ -1,13 +1,13 @@
-import { useState, useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "swiper/css";
-import { Navigation, Pagination } from "swiper/modules";
-import "./FeaturedHome.css";
-import axios from "axios";
-import { NavLink } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import 'swiper/css';
+import { Navigation, Pagination } from 'swiper/modules';
+import './FeaturedHome.css';
+import axios from 'axios';
+import { NavLink } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 function FeaturedHome() {
   const params = useParams();
@@ -17,16 +17,14 @@ function FeaturedHome() {
 
   const getCategory = async () => {
     const response = await axios({
-      method: "GET",
+      method: 'GET',
       url: `${baseURL}/categories/${slug}`,
     });
-    setProducts(
-      response.data.products.filter((product) => product.featured === true)
-    );
+    setProducts(response.data.products.filter((product) => product.featured === true));
   };
   const getProducts = async () => {
     const response = await axios({
-      method: "GET",
+      method: 'GET',
       url: `${baseURL}/products`,
       params: { featured: true },
     });
@@ -73,7 +71,7 @@ function FeaturedHome() {
             products.map((product) => (
               <SwiperSlide key={product._id}>
                 <NavLink
-                  className={"text-decoration-none text-black"}
+                  className={'text-decoration-none text-black'}
                   to={`/products/${product.category.slug}/${product.slug}`}
                 >
                   <div className="swiper-slide p-1">
@@ -85,9 +83,7 @@ function FeaturedHome() {
                       />
                       <div className="card-body d-flex flex-column justify-content-end">
                         <h5 className="card-title">USD {product.price}</h5>
-                        <p className="card-text text-center w-75">
-                          {product.name}
-                        </p>
+                        <p className="card-text text-center w-75">{product.name}</p>
                         <button
                           type="button"
                           className="btn btn-outline-dark rounded-0 w-75 border-secondary-subtle"
