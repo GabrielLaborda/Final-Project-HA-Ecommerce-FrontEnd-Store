@@ -1,6 +1,6 @@
 import ReactStars from "react-rating-stars-component";
-import UserAvatar from "../../public/User-avatar.png";
-import iconShare from "../../public/icons8-share.svg";
+import UserAvatar from "/User-avatar.png?url";
+import iconShare from "/icons8-share.svg?url";
 
 function UserReview() {
 
@@ -28,9 +28,9 @@ function UserReview() {
             <p className="userReviewTextShare">Share    |</p>
             <div className="d-flex userReviewTextShare ms-auto">
                 <p className="me-2">Was This Review Helpful?</p>
-                <i class="bi bi-hand-thumbs-up-fill me-2"></i>
+                <i className="bi bi-hand-thumbs-up-fill me-2"></i>
                 <p className="me-2">likes count</p>
-                <i class="bi bi-hand-thumbs-down-fill me-2"></i>
+                <i className="bi bi-hand-thumbs-down-fill me-2"></i>
                 <p>unlike count</p>
             </div>
         </div>
