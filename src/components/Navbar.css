@@ -41,3 +41,31 @@ header {
   color: white;
   display: inline-block;
 }
+.text {
+  color: black;
+}
+nav {
+  object-fit: cover;
+}
+
+@media (max-width: 988px) {
+  .text {
+    color: white;
+  }
+  .transparent-navbar {
+    background-color: black;
+    .navbardTitle {
+      font-size: 20px;
+      font-weight: 800;
+      color: white;
+      display: inline;
+      margin-left: 10px;
+    }
+    .navbardTitleBold {
+      font-size: 20px;
+      font-weight: 400;
+      color: white;
+      display: inline-block;
+    }
+  }
+}

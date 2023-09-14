@@ -3,17 +3,19 @@ import ProductDetail from "./components/ProductDetail";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Cart from "./components/Cart";
-import NavbarCart from "./components/NavbarCart";
+/* import NavbarCart from "./components/NavbarCart"; */
 import Footer from "./components/Footer";
 import About from "./components/About";
 import ProductCategories from "./components/ProductCategories";
 import Login from "./components/Login";
 import AllProducts from "./components/AllProducts";
+import NavbarNuevo from "./components/NavbarNuevo";
 
 function App() {
   return (
     <>
-      <NavbarCart />
+      {/* <NavbarCart /> */}
+      <NavbarNuevo />
       <Cart />
       <Routes>
         <Route path="/" element={<Home />} />

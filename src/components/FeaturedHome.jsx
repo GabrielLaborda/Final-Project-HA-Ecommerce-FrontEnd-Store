@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import 'swiper/css';
-import { Navigation, Pagination } from 'swiper/modules';
-import './FeaturedHome.css';
-import axios from 'axios';
-import { NavLink } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css";
+import { Navigation, Pagination } from "swiper/modules";
+import "./FeaturedHome.css";
+import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 function FeaturedHome() {
   const baseURL = import.meta.env.VITE_API_BASE_URL;
@@ -14,7 +14,7 @@ function FeaturedHome() {
 
   const getProducts = async () => {
     const response = await axios({
-      method: 'GET',
+      method: "GET",
       url: `${baseURL}/products`,
       params: { featured: true },
     });
@@ -54,7 +54,7 @@ function FeaturedHome() {
             products.map((product) => (
               <SwiperSlide key={product._id}>
                 <NavLink
-                  className={'text-decoration-none text-black'}
+                  className={"text-decoration-none text-black"}
                   to={`/products/${product.category.slug}/${product.slug}`}
                 >
                   <div className="swiper-slide p-1">
@@ -64,10 +64,17 @@ function FeaturedHome() {
                         src={`${baseURL}/img/${product.picture[0]}`}
                         alt="Product Image"
                       />
-                      <div className='featured-card d-flex flex-column justify-content-between'>
-                        <h6 className='featured-card-name mb-2'>{product.name}</h6>
+                      <div className="featured-card d-flex flex-column justify-content-between">
+                        <h6 className="featured-card-name mb-2">
+                          {product.name}
+                        </h6>
                         <p>USD {product.price}</p>
-                        <button type="button" class="btn btn-outline-dark rounded-0 w-100 border-secondary-subtle">Add to cart</button>
+                        <button
+                          type="button"
+                          className="btn btn-outline-dark rounded-0 w-100 border-secondary-subtle"
+                        >
+                          Add to cart
+                        </button>
                       </div>
                     </div>
                   </div>
