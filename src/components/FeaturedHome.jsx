@@ -15,13 +15,19 @@ function FeaturedHome() {
   const baseURL = import.meta.env.VITE_API_BASE_URL;
   const [products, setProducts] = useState(null);
 
-  const getCategory = async () => {
-    const response = await axios({
+  const getFilteredProducts = async () => {
+    const category = await axios({
       method: 'GET',
       url: `${baseURL}/categories/${slug}`,
     });
-    setProducts(response.data.products.filter((product) => product.featured === true));
+    const response = await axios({
+      method: 'GET',
+      url: `${baseURL}/products`,
+      params: { featured: true, category: category.data._id },
+    });
+    setProducts(response.data);
   };
+
   const getProducts = async () => {
     const response = await axios({
       method: 'GET',
@@ -32,7 +38,7 @@ function FeaturedHome() {
   };
 
   useEffect(() => {
-    slug ? getCategory() : getProducts();
+    slug ? getFilteredProducts() : getProducts();
   }, [slug]);
 
   return (
