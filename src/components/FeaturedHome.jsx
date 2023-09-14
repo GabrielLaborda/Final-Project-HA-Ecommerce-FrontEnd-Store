@@ -37,8 +37,8 @@ function FeaturedHome() {
 
   return (
     <>
-      <div className="container feactured-container">
-        <h3 className="feactured-h3 text-center">FEATURED</h3>
+      <div className="container featured-container">
+        {slug ? <h5 className="featured-h5 text-center">YOU MAY ALSO LIKE</h5> : <h3 className="featured-h3 text-center">FEATURED</h3>}
         <Swiper
           breakpoints={{
             0: {
@@ -72,7 +72,7 @@ function FeaturedHome() {
                 >
                   <div className="swiper-slide p-1">
                     <div className="card h-100 mb-5 py-5 rounded-0">
-                      <img src={`${baseURL}/img/${product.picture[0]}`} class="card-img-top mb-3" alt="..."/>
+                      <img src={`${baseURL}/img/${product.picture[0]}`} class="card-img-top mb-5" alt="..."/>
                       <div className="card-body d-flex flex-column justify-content-end">
                         <h5 className="card-title">USD {product.price}</h5>
                         <p className="card-text text-center w-75">{product.name}</p>

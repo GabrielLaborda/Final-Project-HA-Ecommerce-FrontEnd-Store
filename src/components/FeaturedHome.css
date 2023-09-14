@@ -1,4 +1,4 @@
-.feactured-h3 {
+.featured-h3 {
   font-family: "Roboto", sans-serif;
   font-size: 50px;
   font-weight: 800;
@@ -7,7 +7,16 @@
   padding-top: 40px;
 }
 
-.feactured-container {
+.featured-h5 {
+  font-family: "Roboto", sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 40px;
+  padding-top: 40px;
+}
+
+.featured-container {
   /* background-color: #121212; */
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
