@@ -8,7 +8,7 @@ import UserReview from "./UserReview";
 
 function UserReviewSwiper() {
   return (
-    <div>
+    <div className="container">
       <Swiper
         breakpoints={{
           0: {

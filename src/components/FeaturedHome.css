@@ -1,5 +1,5 @@
-.feacturedH3 {
-  font-family: 'Roboto', sans-serif;
+.feactured-h3 {
+  font-family: "Roboto", sans-serif;
   font-size: 50px;
   font-weight: 800;
   text-align: center;
@@ -7,7 +7,7 @@
   padding-top: 40px;
 }
 
-.feacturedContainer {
+.feactured-container {
   /* background-color: #121212; */
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
@@ -68,4 +68,11 @@
   background-color: #fbfbfb;
   padding: 50px;
   margin-bottom: 80px;
+}
+.featured-card-name {
+  height: auto;
+  line-height: 15px;
+}
+.featured-card {
+  height: 150px;
 }

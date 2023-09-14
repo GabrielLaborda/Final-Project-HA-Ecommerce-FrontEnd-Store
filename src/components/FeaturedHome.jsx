@@ -27,8 +27,8 @@ function FeaturedHome() {
 
   return (
     <>
-      <div className="feacturedContainer">
-        <h3 className="feacturedH3 text-center">FEATURED</h3>
+      <div className="container feactured-container">
+        <h3 className="feactured-h3 text-center">FEATURED</h3>
         <Swiper
           breakpoints={{
             0: {
@@ -58,14 +58,17 @@ function FeaturedHome() {
                   to={`/products/${product.category.slug}/${product.slug}`}
                 >
                   <div className="swiper-slide p-1">
-                    <div className="item-swiper">
+                    <div className="item-swiper h-100">
                       <img
-                        className="img-fluid"
+                        className="img-fluid mb-3"
                         src={`${baseURL}/img/${product.picture[0]}`}
                         alt="Product Image"
                       />
-                      <h6 className="my-3 ">{product.name}</h6>
-                      <p className=" mb-0 ">USD {product.price}</p>
+                      <div className='featured-card d-flex flex-column justify-content-between'>
+                        <h6 className='featured-card-name mb-2'>{product.name}</h6>
+                        <p>USD {product.price}</p>
+                        <button type="button" class="btn btn-outline-dark rounded-0 w-100 border-secondary-subtle">Add to cart</button>
+                      </div>
                     </div>
                   </div>
                 </NavLink>
