@@ -1,6 +1,6 @@
 import ReactStars from "react-rating-stars-component";
-import UserAvatar from "../../public/User-avatar.png";
-import iconShare from "../../public/icons8-share.svg";
+import UserAvatar from "/User-avatar.png?url";
+import iconShare from "/icons8-share.svg?url";
 
 function UserReview() {
 
@@ -15,7 +15,6 @@ function UserReview() {
         <img src={UserAvatar} alt="" className="rounded-circle me-2 userReviewImg"/>
         <div className="d-flex justift-content-start w-100">
           <p className="userReviewTextName">User Name</p>
-          <p className="userReviewTextVerified">Verified Buyer</p>
           <p className="ms-auto userReviewTextVerified">Date</p>
         </div>
       </div>
@@ -25,12 +24,10 @@ function UserReview() {
         <p className="userReviewTextContent">Review Content...Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum sapiente quibusdam tenetur? Facilis in tempora obcaecati sint similique, rerum quasi placeat a blanditiis voluptatibus nostrum iusto rem cupiditate sequi quod explicabo animi quis omnis repellat quo? Provident perferendis eveniet voluptatem inventore consequatur aliquid delectus corporis.</p>
         <div className="d-flex">
             <img src={iconShare} alt="" className="userReviewIcon"/>
-            <p className="userReviewTextShare">Share    |</p>
             <div className="d-flex userReviewTextShare ms-auto">
-                <p className="me-2">Was This Review Helpful?</p>
-                <i class="bi bi-hand-thumbs-up-fill me-2"></i>
+                <i className="bi bi-hand-thumbs-up-fill me-2"></i>
                 <p className="me-2">likes count</p>
-                <i class="bi bi-hand-thumbs-down-fill me-2"></i>
+                <i className="bi bi-hand-thumbs-down-fill me-2"></i>
                 <p>unlike count</p>
             </div>
         </div>

@@ -5,7 +5,7 @@
 header {
   z-index: 10;
   position: fixed !important;
-  transition: 2s !important;
+  transition: 1.3s !important;
 }
 
 .scrolling {
