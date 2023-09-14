@@ -45,7 +45,7 @@ function NavbardNuevo(props) {
               </svg>
             </button>
             <div className="collapse navbar-collapse " id="navbarNav">
-              <ul className="navbar-nav ms-auto me-4 my-2 my-lg-0">
+              <ul className="navbar-nav ms-auto my-2 my-lg-0">
                 <li className="nav-item">
                   <Link
                     to={"/"}
@@ -59,7 +59,7 @@ function NavbardNuevo(props) {
                 <li className="nav-item">
                   <Link
                     to={"/products"}
-                    className="nav-link  scrolling-white text"
+                    className="nav-link scrolling-white text"
                     href="#"
                   >
                     Shop
@@ -68,7 +68,7 @@ function NavbardNuevo(props) {
                 <li className="nav-item">
                   <Link
                     to={"/about"}
-                    className="nav-link  scrolling-white text"
+                    className="nav-link scrolling-white text"
                     href="#"
                   >
                     About Our Project
