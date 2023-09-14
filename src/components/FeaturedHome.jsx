@@ -37,7 +37,10 @@ function FeaturedHome() {
             576: {
               slidesPerView: 2,
             },
-            992: {
+            1200: {
+              slidesPerView: 3,
+            },
+            1400: {
               slidesPerView: 4,
             },
           }}
@@ -58,17 +61,13 @@ function FeaturedHome() {
                   to={`/products/${product.category.slug}/${product.slug}`}
                 >
                   <div className="swiper-slide p-1">
-                    <div className="item-swiper h-100">
-                      <img
-                        className="img-fluid mb-3"
-                        src={`${baseURL}/img/${product.picture[0]}`}
-                        alt="Product Image"
-                      />
-                      <div className='featured-card d-flex flex-column justify-content-between'>
-                        <h6 className='featured-card-name mb-2'>{product.name}</h6>
-                        <p>USD {product.price}</p>
-                        <button type="button" class="btn btn-outline-dark rounded-0 w-100 border-secondary-subtle">Add to cart</button>
-                      </div>
+                    <div className="card h-100 mb-5 py-5 rounded-0">
+                      <img src={`${baseURL}/img/${product.picture[0]}`} class="card-img-top mb-3" alt="..."/>
+                      <div className="card-body d-flex flex-column justify-content-end">
+                        <h5 className="card-title">USD {product.price}</h5>
+                        <p className="card-text text-center w-75">{product.name}</p>
+                        <button type="button" className="btn btn-outline-dark rounded-0 w-75 border-secondary-subtle">Add to cart</button>
+                    </div>
                     </div>
                   </div>
                 </NavLink>

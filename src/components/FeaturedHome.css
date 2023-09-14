@@ -58,6 +58,9 @@
 .swiper-pagination-bullet {
   opacity: 0;
 }
+.swiper-pagination {
+  margin-top: 20px;
+}
 
 .item-swiper {
   border: 1px solid rgb(227, 227, 227);
@@ -75,4 +78,8 @@
 }
 .featured-card {
   height: 150px;
+}
+
+.prueba {
+  width: 130px;
 }
