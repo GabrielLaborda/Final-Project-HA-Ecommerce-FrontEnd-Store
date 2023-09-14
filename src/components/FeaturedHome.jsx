@@ -24,7 +24,7 @@ function FeaturedHome() {
   }
   const getProducts = async () => {
     const response = await axios({
-      method: 'GET',
+      method: "GET",
       url: `${baseURL}/products`,
       params: { featured: true },
     });
@@ -37,8 +37,8 @@ function FeaturedHome() {
 
   return (
     <>
-      <div className="feacturedContainer">
-        <h3 className="feacturedH3 text-center">FEATURED</h3>
+      <div className="container feactured-container">
+        <h3 className="feactured-h3 text-center">FEATURED</h3>
         <Swiper
           breakpoints={{
             0: {
@@ -47,7 +47,10 @@ function FeaturedHome() {
             576: {
               slidesPerView: 2,
             },
-            992: {
+            1200: {
+              slidesPerView: 3,
+            },
+            1400: {
               slidesPerView: 4,
             },
           }}
@@ -64,18 +67,17 @@ function FeaturedHome() {
             products.map((product) => (
               <SwiperSlide key={product._id}>
                 <NavLink
-                  className={'text-decoration-none text-black'}
+                  className={"text-decoration-none text-black"}
                   to={`/products/${product.category.slug}/${product.slug}`}
                 >
                   <div className="swiper-slide p-1">
-                    <div className="item-swiper">
-                      <img
-                        className="img-fluid"
-                        src={`${baseURL}/img/${product.picture[0]}`}
-                        alt="Product Image"
-                      />
-                      <h6 className="my-3 ">{product.name}</h6>
-                      <p className=" mb-0 ">USD {product.price}</p>
+                    <div className="card h-100 mb-5 py-5 rounded-0">
+                      <img src={`${baseURL}/img/${product.picture[0]}`} class="card-img-top mb-3" alt="..."/>
+                      <div className="card-body d-flex flex-column justify-content-end">
+                        <h5 className="card-title">USD {product.price}</h5>
+                        <p className="card-text text-center w-75">{product.name}</p>
+                        <button type="button" className="btn btn-outline-dark rounded-0 w-75 border-secondary-subtle">Add to cart</button>
+                    </div>
                     </div>
                   </div>
                 </NavLink>
