@@ -13,46 +13,73 @@ import {
 } from 'react-icons/fa6';
 import { SiAmericanexpress } from 'react-icons/si';
 import { TfiYoutube } from 'react-icons/tfi';
+import './Footer.css'
 
 function Footer() {
   return (
     <>
-      <div className="container-fluid bg-black">
-        <div className="row text-white py-5 g-0">
-          <div className="d-flex w-100 justify-content-between">
-            <div className="col-2">
-              <h6>CUSTOMER SERVICE</h6>
+      <div className="bg-black">
+        <div className="container footer">
+          <div className="row text-white py-5 g-0">
+            <div className="col-12 col-md-6 py-3">
+              <h6 className='fw-bold fs-5'>URBAN RUSH</h6>
+                <p className='w-75'>
+                  Urban Rush stocks the highest quality Skateboard Decks, Completes, Wheels, Trucks,
+                  Tools & Accessories for the surf and skate lifestyle!
+                </p>
+                <div className="d-flex justify-content-around w-50">
+                  <FaFacebookF color="white" size={20} />
+                  <FaXTwitter color="white" size={20} />
+                  <FaInstagram color="white" size={20} />
+                  <TfiYoutube color="white" size={20} />
+                </div>
+            </div>
+            <div className="col-12 col-md-3  d-flex flex-column justify-content-star py-3">
+              <h6 className='fw-bold fs-5'>CUSTOMER SERVICE</h6>
               <ul className="list-unstyled">
-                <li>FAQs</li>
-                <li>Dealers</li>
-                <li>Dealer Inquiries</li>
-                <li>Privacy Policy</li>
-                <li>Shipping Policy</li>
-                <li>Contact Us</li>
-                <li>Returns/Refunds</li>
-                <li>Sitemap</li>
-                <li>Thank You Supply</li>
+                <li className='p-0 fw-normal'>FAQs</li>
+                <li className='p-0 fw-normal'>Contact Us</li>
+                <li className='p-0 fw-normal'>Privacy Policy</li>
+                <li className='p-0 fw-normal'>Shipping Policy</li>
+                <li className='p-0 fw-normal'>Contact Us</li>
+                <li className='p-0 fw-normal'>Returns/Refunds</li>
+                
               </ul>
             </div>
-            <div className="col-2">
-              <h6>ABOUT</h6>
-              <ul className="list-unstyled">
-                <li>Smash It!</li>
-                <li>The 9 Ball</li>
-                <li>Certified Completes</li>
-                <li>Affiliate Program</li>
-                <li>Warranty</li>
+            <div className="col-12 col-md-3 py-3">
+              <h6 className='fw-bold fs-5'>ABOUT</h6>
+              <ul className="list-unstyled footer-ul">
+                <li className='p-0 fw-normal'>Smash It!</li>
+                <li className='p-0 fw-normal'>Certified Completes</li>
+                <li className='p-0 fw-normal'>Affiliate Program</li>
+                <li className='p-0 fw-normal'>Warranty</li>
               </ul>
             </div>
-            <div className="col-2">
-              <h6>Urban Rush</h6>
-              <p>
-                Urban Rush stocks the highest quality Skateboard Decks, Completes, Wheels, Trucks,
-                Tools & Accessories for the surf and skate lifestyle!
-              </p>
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <div className="d-flex align-items-center justify-content-between pb-5 mx-5">
+                <BiLogoVisa color="white" size={60} className="d-inline" />
+                <BiLogoPaypal color="white" size={40} />
+                <LiaApplePay color="white" size={60} />
+                <FaCcDinersClub color="white" size={40} />
+                <FaCcMastercard color="white" size={40} />
+                <FaShopify color="white" size={40} />
+                <SiAmericanexpress color="white" size={40} />
+              </div>
             </div>
-            <div className="col-6 text-center">
-              <h6>SUSCRIBE</h6>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default Footer;
+
+
+/*
+<h6>SUSCRIBE</h6>
               <p>Sign up to our mailing list!</p>
               <div className="d-flex flex-column align-items-center justify-content-center">
                 <Form>
@@ -76,29 +103,5 @@ function Footer() {
                     </Form.Text>
                   </Form.Group>
                 </Form>
-                <div className="d-flex justify-content-around w-50">
-                  <FaFacebookF color="white" size={20} />
-                  <FaXTwitter color="white" size={20} />
-                  <FaInstagram color="white" size={20} />
-                  <TfiYoutube color="white" size={20} />
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="d-flex align-items-center justify-content-between pb-5 mx-5">
-          <BiLogoVisa color="white" size={60} className="d-inline" />
-          <BiLogoPaypal color="white" size={40} />
-          <LiaApplePay color="white" size={60} />
-          <FaCcDinersClub color="white" size={40} />
-          <FaCcMastercard color="white" size={40} />
-          <FaShopify color="white" size={40} />
-          <SiAmericanexpress color="white" size={40} />
-        </div>
-      </div>
-    </>
-  );
-}
-
-export default Footer;
+                */
