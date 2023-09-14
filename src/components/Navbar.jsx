@@ -68,10 +68,10 @@ function NavbardNuevo(props) {
                 <li className="nav-item">
                   <Link
                     to={"/about"}
-                    className="nav-link scrolling-white text"
+                    className="nav-link scrolling-white text about"
                     href="#"
                   >
-                    About Our Project
+                    About This Project
                   </Link>
                 </li>
                 <li className="nav-item">
