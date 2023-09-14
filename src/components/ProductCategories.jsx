@@ -28,7 +28,7 @@ function CompletesList() {
 
   return (
     <>
-      {category && (
+        {category && (
         <div className="bg-white">
           <section>
             <div
@@ -44,18 +44,20 @@ function CompletesList() {
           </section>
           <main>
             <div className="container">
-            <div className="">
-              <SectionHeader
+              <div className="row my-5">
+             <SectionHeader
                 bold={category.name.toUpperCase()}
                 normal={"SECTION"}
               />
-            </div>
-            <div className="row g-0">
-              <ListedProductsMenu />
-              <div className="col-9">
-                <div className="">
-                  <div className="row row-cols-sm-1 row-cols-md-3 row-cols-lg-4 g-0">
-                    {category.products.map((product) => (
+              </div>
+              <div className="row g-0">
+                <div className="col-sm-12 col-md-3 col-lg-3 col-xl-3 d-flex justify-content-start">
+                  <ListedProductsMenu />
+                </div>
+                <div className="col-sm-12 col-md-9">
+                  <div className="container">
+                    <div className="row">
+                      {category.products.map((product) => (
                       <ShopItemCard
                         key={product.slug}
                         name={product.name}
@@ -65,9 +67,9 @@ function CompletesList() {
                         categorySlug={slug}
                       />
                     ))}
+                    </div>
                   </div>
                 </div>
-              </div>
               </div>
             </div>
           </main>

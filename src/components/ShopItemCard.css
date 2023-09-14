@@ -12,19 +12,17 @@
 .itemCard {
     height: 100%;
     width: 100%;
-    overflow: hidden;
     position: relative;
 }
 
 .card-img {
-    width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
 }
 
 .card-body {
     width: 100%;
-    height: 100px;
+    height: 100%;
     border-radius: 5px;
     color: #121212 !important;
     padding: 0;
@@ -34,16 +32,6 @@
     align-items: center;
     right: -100%;
     transition: 2s ease-in-out;
-}
-
-.card-title {
-    color: black;
-    transition: 1.5s ease-in-out !important;
-}
-
-.card-sub-title{
-    color: black;
-    transition: 1.5s ease-in-out !important;
 }
 
 .card-btn1 {

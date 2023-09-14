@@ -40,6 +40,10 @@ nav {
   object-fit: cover;
 }
 
+.about {
+  color: rgb(207, 226, 101) !important;
+}
+
 @media (max-width: 988px) {
   .text {
     color: white;

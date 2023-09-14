@@ -6,9 +6,9 @@ function CategoryBtn({ href }) {
   return (
     <NavLink to={href}>
       <div className="categoryBtn rounded-0 fs-4 mt-5 justify-content-center">
-        <a className="example_f" rel="nofollow">
+        <div className="example_f">
           <span>SHOP</span>
-        </a>
+        </div>
       </div>
     </NavLink>
   );

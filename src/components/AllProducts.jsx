@@ -42,35 +42,35 @@ function AllProducts() {
           </section>
           <main>
             <div className="container">
-            <div className="row my-5">
+              <div className="row my-5">
               <SectionHeader
                 bold={"ALL"}
-                normal={"PRODUCTS"}
-              />
+                normal={"PRODUCTS"}/>
+              </div>
+              <div className="row g-0">
+                <div className="col-sm-12 col-md-3 col-lg-3 col-xl-3 d-flex justify-content-start">
+                  <ListedProductsMenu />
                 </div>
-            <div className="row g-0">
-              <ListedProductsMenu />
-              <div className="col-9">
-                <div className="">
-                  <div className="row row-cols-sm-1 row-cols-md-3 row-cols-lg-4 g-0">
-                    {allProducts.map((product) => (
-                      <ShopItemCard
+                <div className="col-sm-12 col-md-9">
+                  <div className="container">
+                    <div className="row">
+                      {allProducts.map((product) => (
+                        <ShopItemCard
                         key={product.slug}
                         name={product.name}
                         picture={product.picture[0]}
                         productSlug={product.slug}
                         price={product.price}
                         categorySlug={product.category.slug}
-                      />
-                    ))}
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
               </div>
             </div>
           </main>
         </div>
-        
       )}
     </>
   );

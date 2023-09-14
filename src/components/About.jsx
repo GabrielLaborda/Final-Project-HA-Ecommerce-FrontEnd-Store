@@ -17,7 +17,7 @@ import SectionHeader from "./sectionHeader";
 function About() {
   return (
     <>
-      <div className="vw-100 hero-container">
+      <div className="w-100 hero-container">
         <div className="container">
           <div className="pt-5">
             <SectionHeader bold="ABOUT" normal="THIS PROJECT" />
@@ -25,7 +25,7 @@ function About() {
         </div>
       </div>
 
-      <div className="vw-100 about-container white-text py-5">
+      <div className="w-100 about-container white-text py-5">
         <div className="container">
           <div className="row">
             <div className="col-12 col-lg-4">
@@ -100,7 +100,7 @@ function About() {
                   . Additionally, we implemented{" "}
                   <span className="salmon-text">
                     {" "}
-                    robust CRUD (Create, Read, Update, Delete)
+                    robust CRUD (Create, Read, Update, Delete){" "}
                   </span>
                   functionalities for seamless management of these entities.
                 </p>
@@ -175,7 +175,7 @@ function About() {
             </div>
           </div>
         </div>
-        <div className="vw-100 ptscreen-container">
+        <div className="w-100 ptscreen-container">
           <div className="container pt-5 mt-5">
             <div className="row">
               <div className="col-12 col-md-6">
@@ -207,7 +207,7 @@ function About() {
           </div>
         </div>
       </div>
-      <div className="team-container py-5 vw-100">
+      <div className="team-container py-5 w-100">
         <div className="container ">
           <div className="row">
             <SectionHeader bold={"MEET"} normal={"THE TEAM"} />
