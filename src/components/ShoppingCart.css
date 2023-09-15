@@ -1,0 +1,19 @@
+.left-section {
+  background-image: url('Pages_ShoppingCart.webp');
+}
+
+.title {
+  font-size: 90px;
+  color: white;
+  font-family: 'Kalam', cursive;
+  font-weight: 700;
+}
+
+.right-section {
+  font-family: Roboto;
+  font-size: larger;
+}
+
+.small-text {
+  font-size: small;
+}

@@ -3,6 +3,10 @@ import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './Navbar.css';
+
+import { AiOutlineShopping } from 'react-icons/ai';
+import { BiSolidUser } from 'react-icons/bi';
+
 function NavbardNuevo(props) {
   const [isNavbarTransparent, setIsNavbarTransparent] = useState(true);
 
@@ -15,7 +19,7 @@ function NavbardNuevo(props) {
       <header className={`w-100 ${navbarClassName}`}>
         <div className="container">
           <nav className="navbar navbar-expand-lg">
-            <Link to={'/'} className="navbar-brand" href="#">
+            <Link to={'/'} className="navbar-brand">
               <h2 className="navbardTitleBold">
                 <span className="navbardTitle">URBAN</span>RUSH
               </h2>
@@ -46,38 +50,62 @@ function NavbardNuevo(props) {
             </button>
             <div className="collapse navbar-collapse " id="navbarNav">
               <ul className="navbar-nav ms-auto my-2 my-lg-0">
+                {/* <li className="nav-item">
+                    <Link
+                      to={'/'}
+                      className="nav-link scrolling-white text"
+                      aria-current="page"
+                      href="#"
+                    >
+                      Home
+                    </Link>
+                  </li> */}
                 <li className="nav-item">
                   <Link
-                    to={'/'}
+                    to={'/products/'}
                     className="nav-link scrolling-white text"
-                    aria-current="page"
                     href="#"
+                    aria-disabled="true"
                   >
-                    Home
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to={'/products/'} className="nav-link scrolling-white text" href="#">
                     Shop
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to={'/about'} className="nav-link scrolling-white text about" href="#">
+                  <Link
+                    to={'/about'}
+                    className="nav-link scrolling-white text about"
+                    href="#"
+                    aria-disabled="true"
+                  >
                     About This Project
+                  </Link>
+                </li>
+                {/* <li className="nav-item">
+                    <Link
+                      to={'/login'}
+                      className="nav-link  scrolling-white text"
+                      aria-disabled="true"
+                    >
+                      Login
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link  scrolling-white text" aria-disabled="true">
+                      Account
+                    </Link>
+                  </li> */}
+                <li className="nav-item">
+                  <Link className="nav-link  scrolling-white text" aria-disabled="true">
+                    <BiSolidUser size={30} />
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link
-                    to={'/login'}
+                    to={'/cart'}
                     className="nav-link  scrolling-white text"
                     aria-disabled="true"
                   >
-                    Login
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link  scrolling-white text" aria-disabled="true">
-                    Account
+                    <AiOutlineShopping size={30} />2
                   </Link>
                 </li>
               </ul>
