@@ -50,16 +50,6 @@ function NavbardNuevo(props) {
             </button>
             <div className="collapse navbar-collapse " id="navbarNav">
               <ul className="navbar-nav ms-auto my-2 my-lg-0">
-                {/* <li className="nav-item">
-                    <Link
-                      to={'/'}
-                      className="nav-link scrolling-white text"
-                      aria-current="page"
-                      href="#"
-                    >
-                      Home
-                    </Link>
-                  </li> */}
                 <li className="nav-item">
                   <Link
                     to={'/products/'}
@@ -80,20 +70,6 @@ function NavbardNuevo(props) {
                     About This Project
                   </Link>
                 </li>
-                {/* <li className="nav-item">
-                    <Link
-                      to={'/login'}
-                      className="nav-link  scrolling-white text"
-                      aria-disabled="true"
-                    >
-                      Login
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link  scrolling-white text" aria-disabled="true">
-                      Account
-                    </Link>
-                  </li> */}
                 <li className="nav-item">
                   <Link className="nav-link  scrolling-white text" aria-disabled="true">
                     <BiSolidUser size={30} />
