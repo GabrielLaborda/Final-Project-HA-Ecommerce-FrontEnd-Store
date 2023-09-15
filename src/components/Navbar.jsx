@@ -1,21 +1,21 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
-import "./Navbar.css";
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import './Navbar.css';
 function NavbardNuevo(props) {
   const [isNavbarTransparent, setIsNavbarTransparent] = useState(true);
 
   const handleNavbarToggle = () => {
     setIsNavbarTransparent(!isNavbarTransparent);
   };
-  const navbarClassName = isNavbarTransparent ? "" : "transparent-navbar";
+  const navbarClassName = isNavbarTransparent ? '' : 'transparent-navbar';
   return (
     <>
       <header className={`w-100 ${navbarClassName}`}>
         <div className="container">
           <nav className="navbar navbar-expand-lg">
-            <Link to={"/"} className="navbar-brand" href="#">
+            <Link to={'/'} className="navbar-brand" href="#">
               <h2 className="navbardTitleBold">
                 <span className="navbardTitle">URBAN</span>RUSH
               </h2>
@@ -48,7 +48,7 @@ function NavbardNuevo(props) {
               <ul className="navbar-nav ms-auto my-2 my-lg-0">
                 <li className="nav-item">
                   <Link
-                    to={"/"}
+                    to={'/'}
                     className="nav-link scrolling-white text"
                     aria-current="page"
                     href="#"
@@ -57,26 +57,18 @@ function NavbardNuevo(props) {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link
-                    to={"/products"}
-                    className="nav-link scrolling-white text"
-                    href="#"
-                  >
+                  <Link to={'/products/'} className="nav-link scrolling-white text" href="#">
                     Shop
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link
-                    to={"/about"}
-                    className="nav-link scrolling-white text about"
-                    href="#"
-                  >
+                  <Link to={'/about'} className="nav-link scrolling-white text about" href="#">
                     About This Project
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link
-                    to={"/login"}
+                    to={'/login'}
                     className="nav-link  scrolling-white text"
                     aria-disabled="true"
                   >
@@ -84,10 +76,7 @@ function NavbardNuevo(props) {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link
-                    className="nav-link  scrolling-white text"
-                    aria-disabled="true"
-                  >
+                  <Link className="nav-link  scrolling-white text" aria-disabled="true">
                     Account
                   </Link>
                 </li>
@@ -97,9 +86,9 @@ function NavbardNuevo(props) {
         </div>
       </header>
       <script type="text/javascript">
-        {window.addEventListener("scroll", function () {
-          let header = document.querySelector("header");
-          header.classList.toggle("scrolling", window.scrollY > 0);
+        {window.addEventListener('scroll', function () {
+          let header = document.querySelector('header');
+          header.classList.toggle('scrolling', window.scrollY > 0);
         })}
       </script>
     </>
