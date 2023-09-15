@@ -10,24 +10,26 @@ import Login from "./components/Login";
 import AllProducts from "./components/AllProducts";
 import Navbar from "./components/Navbar";
 import Account from "./components/Account";
+import Register from "./components/Register";
+import ShoppingCart from "./components/ShoppingCart";
 
 function App() {
   return (
     <>
       <Navbar />
-      <Cart />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
           path="/products/:categorySlug/:productSlug"
           element={<ProductDetail />}
         />
-        <Route path="/Cart" element={<Cart />} />
+        <Route path="/cart" element={<ShoppingCart />} />
         <Route path="/about" element={<About />} />
         <Route path="/products/:categorySlug" element={<ProductCategories />} />
         <Route path="/products" element={<AllProducts />} />
         <Route path="/login" element={<Login />} />
         <Route path="/account" element={<Account />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
       <Footer />
     </>

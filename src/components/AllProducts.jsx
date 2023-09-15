@@ -1,7 +1,7 @@
 import React from "react";
 import CategoryBannerText from "./CategoryBannerText";
 import "./ProductCategories.css";
-import SectionHeader from "./sectionHeader";
+import SectionHeader from "./SectionHeader";
 import axios from "axios";
 import ShopItemCard from "./ShopItemCard";
 import ListedProductsMenu from "./ListedProductsMenu";

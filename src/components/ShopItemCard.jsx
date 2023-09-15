@@ -8,25 +8,29 @@ function ShopItemCard({ name, picture, price, productSlug, categorySlug }) {
     <div className="d-flex col-sm-12 col-md-6 col-lg-4 col-xl-3 h-100">
       <div className='card border-0 mb-3 h-100'>
         <NavLink
-          className={"text-black text-decoration-none"}
-          to={`/products/${categorySlug}/${productSlug}`}
-        >
-          <div className="itemCard">
-            <img
-              src={`${baseURL}/img/${picture}`}
-              className="card-img"
-              alt="product-image"/>
-            <div className="card-body text-black">
-              <h1 className="card-title fs-5">{name}</h1>
-              <p className="card-sub-title">USD {price}</p>
-              <button
-                type="button"
-                className="btn btn-outline-dark rounded-0 w-100 border-secondary-subtle">
-                Add to cart
-              </button>
-            </div>
-          </div>
-        </NavLink>
+                  className={'text-decoration-none text-black'}
+                  to={`/products/${categorySlug}/${productSlug}`}
+                >
+                  <div className="swiper-slide p-1">
+                    <div className="card m-0 py-3 px-3 rounded-0 border-0">
+                      <img
+                        src={`${baseURL}/img/${picture}`}
+                        className="card-img-top"
+                        alt="..."
+                      />
+                        <button
+                          type="button"
+                          className="btn btn-outline-dark rounded-0 w-100 border-secondary-subtle mt-4"
+                        >
+                          Add to cart
+                        </button>
+                      <div className="card-body">
+                        <h5 className="card-title">USD {price}</h5>
+                        <p className="card-text text-center w-100 card-data">{name}</p>
+                      </div>
+                    </div>
+                  </div>
+                </NavLink>
       </div>
     </div>
   );
