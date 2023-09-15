@@ -1,6 +1,5 @@
 .section-headerBanner {
     font-family: Roboto;
-    font-size: 80px;
 }
 
 #boldBanner {
@@ -16,6 +15,21 @@
 #smallText {
     font-weight: 400;
     color: #f3d849;
-    font-size: 36px;
+    font-size: 1.5em;
     font-family: Roboto;
+}
+
+@media (max-width:720px) {
+    .section-headerBanner {
+        font-size: 3em;
+    }
+    #smallText {
+        display: none;
+    }
+}
+
+@media (min-width:720px) {
+    .section-headerBanner {
+        font-size: 5em;
+    }
 }
