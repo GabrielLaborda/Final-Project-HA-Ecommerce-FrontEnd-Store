@@ -7,7 +7,10 @@ import './Navbar.css';
 import { AiOutlineShopping } from 'react-icons/ai';
 import { BiSolidUser } from 'react-icons/bi';
 
+import { useSelector } from 'react-redux';
+
 function NavbardNuevo(props) {
+  const cart = useSelector((state) => state.cart);
   const [isNavbarTransparent, setIsNavbarTransparent] = useState(true);
 
   const handleNavbarToggle = () => {
@@ -81,7 +84,7 @@ function NavbardNuevo(props) {
                     className="nav-link  scrolling-white text"
                     aria-disabled="true"
                   >
-                    <AiOutlineShopping size={30} />2
+                    <AiOutlineShopping size={30} /> <span>{cart.length}</span>
                   </Link>
                 </li>
               </ul>

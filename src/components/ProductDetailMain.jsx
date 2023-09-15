@@ -1,8 +1,8 @@
-import ReactStars from "react-rating-stars-component";
-import ImageGallery from "react-image-gallery";
-import "react-image-gallery/styles/css/image-gallery.css";
-import Quantity from "./Quantity";
-import { useState } from "react";
+import ReactStars from 'react-rating-stars-component';
+import ImageGallery from 'react-image-gallery';
+import 'react-image-gallery/styles/css/image-gallery.css';
+import Quantity from './Quantity';
+import { useState } from 'react';
 
 function ProductDetailMain({ product }) {
   const firstExample = {
@@ -25,11 +25,7 @@ function ProductDetailMain({ product }) {
       <div className="row d-flex">
         <div className="col-sm-12 col-lg-7">
           <div>
-            <ImageGallery
-              items={images}
-              showPlayButton={false}
-              thumbnailPosition="left"
-            />
+            <ImageGallery items={images} showPlayButton={false} thumbnailPosition="left" />
           </div>
         </div>
         <div className="col-sm-12 col-lg-5">
@@ -39,9 +35,9 @@ function ProductDetailMain({ product }) {
             <p className="mb-2">8 Reviews</p>
           </div>
           <h4>USD {product.price}</h4>
-          <Quantity />
+          <Quantity product={product} />
           <div className="mt-3">
-            {product.description.split("\n").map((line, index) => (
+            {product.description.split('\n').map((line, index) => (
               <p key={index}>{line}</p>
             ))}
           </div>
