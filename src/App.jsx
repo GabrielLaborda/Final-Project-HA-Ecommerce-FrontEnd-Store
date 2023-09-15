@@ -1,15 +1,16 @@
-import './App.css';
-import ProductDetail from './components/ProductDetail';
-import { Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
-import Footer from './components/Footer';
-import About from './components/About';
-import ProductCategories from './components/ProductCategories';
-import Login from './components/Login';
-import AllProducts from './components/AllProducts';
-import Navbar from './components/Navbar';
-
-import ShoppingCart from './components/ShoppingCart';
+import "./App.css";
+import ProductDetail from "./components/ProductDetail";
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Cart from "./components/Cart";
+import Footer from "./components/Footer";
+import About from "./components/About";
+import ProductCategories from "./components/ProductCategories";
+import Login from "./components/Login";
+import AllProducts from "./components/AllProducts";
+import Navbar from "./components/Navbar";
+import Register from "./components/Register";
+import ShoppingCart from "./components/ShoppingCart";
 
 function App() {
   return (
@@ -17,12 +18,16 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/products/:categorySlug/:productSlug" element={<ProductDetail />} />
+        <Route
+          path="/products/:categorySlug/:productSlug"
+          element={<ProductDetail />}
+        />
         <Route path="/cart" element={<ShoppingCart />} />
         <Route path="/about" element={<About />} />
         <Route path="/products/:categorySlug" element={<ProductCategories />} />
         <Route path="/products" element={<AllProducts />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
       <Footer />
     </>

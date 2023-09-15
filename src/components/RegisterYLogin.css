@@ -1,0 +1,26 @@
+.imgLogin {
+  background-image: url("./CustomerLogin.webp");
+  background-size: cover;
+}
+
+.textTitle {
+  font-size: 4rem;
+  color: white;
+  font-family: "Kalam", sans-serif;
+  font-weight: bold;
+}
+
+.textTitleResponsive {
+  font-size: 2rem;
+  color: white;
+  font-family: "Kalam", sans-serif;
+  font-weight: bold;
+}
+
+.responsiveHeight {
+  height: 100.8px;
+}
+
+.inputWidth {
+  width: 50%;
+}
