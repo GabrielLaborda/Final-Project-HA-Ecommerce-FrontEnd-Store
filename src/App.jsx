@@ -9,6 +9,7 @@ import ProductCategories from "./components/ProductCategories";
 import Login from "./components/Login";
 import AllProducts from "./components/AllProducts";
 import Navbar from "./components/Navbar";
+import Account from "./components/Account";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/products/:categorySlug" element={<ProductCategories />} />
         <Route path="/products" element={<AllProducts />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/account" element={<Account />} />
       </Routes>
       <Footer />
     </>
