@@ -14,14 +14,6 @@ function Quantity({ product }) {
     if (quantity >= 2) setQuantity(quantity - 1);
   };
 
-  // const hanldeAddToCart = () => {
-  //   const existingItem = cart.find((item) => item.slug === product.slug);
-  //   if (existingItem) {
-  //     dispatch(addItem({ product, quantity: quantity + existingItem.quantity }));
-  //   } else {
-  //     dispatch(addItem({ product, quantity }));
-  //   }
-  // };
   const hanldeAddToCart = () => {
     dispatch(addItem({ product, categorySlug: params.categorySlug, quantity: quantity }));
   };
