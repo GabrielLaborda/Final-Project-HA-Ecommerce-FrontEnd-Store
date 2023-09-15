@@ -81,15 +81,15 @@ function FeaturedHome() {
                   to={`/products/${product.category.slug}/${product.slug}`}
                 >
                   <div className="swiper-slide p-1">
-                    <div className="card h-100 mb-5 py-3 px-3 rounded-0">
+                    <div className="card mb-5 py-3 px-3 rounded-0">
                       <img
                         src={`${baseURL}/img/${product.picture[0]}`}
-                        className="card-img-top mb-5"
+                        className="card-img-top"
                         alt="..."
                       />
-                      <div className="card-body d-flex flex-column justify-content-end">
+                      <div className="card-body">
                         <h5 className="card-title">USD {product.price}</h5>
-                        <p className="card-text text-center w-75">{product.name}</p>
+                        <p className="card-text text-center w-100 card-data">{product.name}</p>
                         <button
                           type="button"
                           className="btn btn-outline-dark rounded-0 w-75 border-secondary-subtle"

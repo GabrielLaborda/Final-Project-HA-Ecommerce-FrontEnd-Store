@@ -11,7 +11,7 @@ function Home() {
       {/* <CarouselHome /> */}
       <FeaturedHome />
       <CategoryHome />
-      {/* <AboutHome /> */}
+      <AboutHome />
     </>
   );
 }

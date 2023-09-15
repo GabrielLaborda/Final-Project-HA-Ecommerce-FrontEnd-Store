@@ -89,6 +89,7 @@
   height: 150px;
 }
 
-.prueba {
-  width: 130px;
+.card-data {
+  height: 60px;
+  line-height: 18px;
 }
