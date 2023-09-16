@@ -1,11 +1,33 @@
-/* import { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom"; */
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./RegisterYLogin.css";
+import { login } from "../redux/userSlice";
 
 function Login() {
+  const [email, setEmail] = useState("user@example.com");
+  const [password, setPassword] = useState("123456");
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await axios({
+      url: `${baseURL}/login`,
+      method: "POST",
+      data: { password, email },
+    });
+    console.log(response.data);
+    if (response.data.token) {
+      dispatch(login(response.data));
+      navigate("/");
+    } else if (response.data.error) {
+      navigate(`/login`);
+    }
+  };
   return (
     <div className="container-fluid">
       <div className="row vh-100">
@@ -31,15 +53,17 @@ function Login() {
 
         <div className="col-sm-12 col-lg-6 text-start d-flex justify-content-center container-fluid align-items-center">
           <div className="inputWidth">
-            <form action="" method="">
-              <div className="nada">
+            <form action="/login" method="post" onSubmit={handleSubmit}>
+              <div>
                 <label htmlFor="email" className="form-label"></label>
                 <input
                   type="text"
-                  name="username"
-                  id="username"
+                  name="email"
+                  id="emails"
                   className="form-control rounded-0"
-                  placeholder="user@example.com"
+                  /* placeholder="user@example.com" */
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
                 <label htmlFor="firstName" className="form-label"></label>
                 <label htmlFor="password" className="form-label"></label>
@@ -48,7 +72,9 @@ function Login() {
                   name="password"
                   id="password"
                   className="form-control rounded-0"
-                  placeholder="123456"
+                  /* placeholder="123456" */
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
               <br />
