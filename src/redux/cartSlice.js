@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-// [{product: PRODUCTO COMPLETEO}, categorySlug: categorySlug, quantity: Q]
+// [{product: PRODUCTO COMPLETEO}, categorySlug: categorySlug, quantity: Q}]
 
 const cartSlice = createSlice({
   name: 'cart',
@@ -15,9 +15,12 @@ const cartSlice = createSlice({
     deleteItem(state, action) {
       return state.filter((item) => item.product.slug != action.payload);
     },
+    emptyCart(state, action) {
+      return [];
+    },
   },
 });
 
 const { actions, reducer } = cartSlice;
-export const { addItem, deleteItem } = actions;
+export const { addItem, deleteItem, emptyCart } = actions;
 export default reducer;

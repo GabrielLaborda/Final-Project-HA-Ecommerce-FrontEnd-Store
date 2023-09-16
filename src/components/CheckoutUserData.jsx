@@ -33,7 +33,6 @@ function CheckoutUserData() {
       <div className="d-flex flex-column justify-content-center align-items-end">
         <div className="d-flex flex-column w-100">
           <div className="d-flex flex-column w-100">
-            {/* <label htmlFor="email">Contact</label> */}
             <input
               id="email"
               name="email"
@@ -55,7 +54,6 @@ function CheckoutUserData() {
           <div className="w-100">
             <div className="row">
               <div className="col-6">
-                {/* <label htmlFor="firstname">Contact</label> */}
                 <input
                   type="text"
                   name="firstname"
@@ -72,7 +70,6 @@ function CheckoutUserData() {
                 />
               </div>
               <div className="col-6 ps-0">
-                {/* <label htmlFor="lastname">Contact</label> */}
                 <input
                   type="text"
                   name="lastname"
@@ -89,7 +86,7 @@ function CheckoutUserData() {
                 />
               </div>
             </div>
-            {/* <label htmlFor="country">Contact</label> */}
+
             <input
               type="text"
               name="country"
@@ -103,7 +100,7 @@ function CheckoutUserData() {
               }}
               autoComplete="off"
             />
-            {/* <label htmlFor="address">Contact</label> */}
+
             <input
               type="text"
               name="address"
@@ -120,7 +117,7 @@ function CheckoutUserData() {
             />
             <p>+ Add apartment, suite, etc.</p>
           </div>
-          {/* <label htmlFor="phone">Contact</label> */}
+
           <input
             type="phone"
             name="phone"

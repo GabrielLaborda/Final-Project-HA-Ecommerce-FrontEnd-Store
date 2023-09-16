@@ -3,15 +3,18 @@ import CheckoutUserData from './CheckoutUserData';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { TiDelete } from 'react-icons/ti';
 import { useState } from 'react';
-import { deleteItem } from '../redux/cartSlice';
+import { deleteItem, emptyCart } from '../redux/cartSlice';
 import { useSelector, useDispatch } from 'react-redux';
+import { addInstruction } from '../redux/orderInstructionSlice';
 import './Checkout.css';
+import axios from 'axios';
 
 function Checkout() {
   const baseURL = import.meta.env.VITE_API_BASE_URL;
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const cart = useSelector((state) => state.cart);
+  const user = useSelector((state) => state.user);
   const orderInstruction = useSelector((state) => state.orderInstruction);
 
   const [comment, setComment] = useState(orderInstruction);
@@ -20,9 +23,37 @@ function Checkout() {
     dispatch(deleteItem(slug));
   };
 
-  // const handlePayNow = () => {
-  //   return;
-  // };
+  const handlePayNow = async () => {
+    const orderStatuses = await axios({
+      method: 'GET',
+      url: `${baseURL}/orderstatus`,
+      headers: {
+        Authorization: `Bearer ${user.token}`,
+      },
+    });
+    await axios({
+      method: 'POST',
+      url: `${baseURL}/orders`,
+      headers: {
+        Authorization: `Bearer ${user.token}`,
+      },
+      data: {
+        products: cart.map((item) => ({
+          name: item.product.name,
+          price: item.product.price,
+          quantity: item.quantity,
+        })),
+        status: orderStatuses.data[0],
+        subtotal:
+          Math.round(
+            cart.reduce((total, item) => total + item.quantity * item.product.price, 0) * 100
+          ) / 100,
+      },
+    });
+    dispatch(emptyCart());
+    dispatch(addInstruction(''));
+    navigate('/account');
+  };
 
   return (
     <div className="container-fluid">
@@ -47,7 +78,7 @@ function Checkout() {
             <CheckoutUserData />
             <CheckoutPayments />
             <button
-              // onClick={handlePayNow}
+              onClick={handlePayNow}
               className="btn btn-outline-secondary w-100 my-3 p-3 custom-button-colour"
             >
               Pay Now
