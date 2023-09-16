@@ -16,7 +16,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await axios({
-      url: `${baseURL}/login`,
+      url: `${baseURL}/login/user`,
       method: "POST",
       data: { password, email },
     });

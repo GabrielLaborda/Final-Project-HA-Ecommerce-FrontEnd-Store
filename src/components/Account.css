@@ -12,6 +12,7 @@
   text-decoration: none;
   color: #ffffff;
   border-bottom: 2px dotted #ffffff;
+  cursor: pointer;
 }
 .prueba {
   background-image: url(./AccountImg1.webp);
