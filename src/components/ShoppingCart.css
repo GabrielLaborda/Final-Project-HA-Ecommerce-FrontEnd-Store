@@ -17,3 +17,17 @@
 .small-text {
   font-size: small;
 }
+
+.cart-prods-container {
+  overflow-y: auto;
+  height: 50%;
+}
+
+.cart-prods-container::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
+.cart-prods-container {
+  -ms-overflow-style: none; /* for IE and Edge */
+  scrollbar-width: none; /* for Firefox */
+}

@@ -38,36 +38,40 @@ function ShoppintCart() {
         <div className="col-lg-6 col-12">
           <div className="right-section">
             {cart.length > 0 ? (
-              <div className="right-section vh-100 flex-column d-flex  justify-content-center">
-                {cart.map((item) => (
-                  <div className="">
-                    <div className=" d-flex flex-row w-75 mx-auto mb-5">
-                      {item.product.picture && (
-                        <img
-                          src={`${baseURL}/img/${item.product.picture[0]}`}
-                          alt="Product Picture"
-                          height={150}
-                          className="d-none d-md-inline"
-                        />
-                      )}
-                      <div className="w-100 ms-3">
-                        <NavLink
-                          to={`/products/${item.categorySlug}/${item.product.slug}`}
-                          className={'text-decoration-none'}
-                        >
-                          <p className="mb-0">{item.product.name}</p>
-                        </NavLink>
-                        <p>USD {item.product.price}</p>
-                      </div>
-                      <div className="m-auto d-flex align-items-center justify-content-end w-100  ">
-                        <span className="bg-secondary-subtle py-1 px-3 mx-3">{item.quantity}</span>
-                        <TiDelete size={30} onClick={() => handleRemove(item.product.slug)} />
+              <div className="right-section vh-100 d-flex flex-column justify-content-center">
+                <div className="cart-prods-container flex-column d-flex">
+                  {cart.map((item) => (
+                    <div className="">
+                      <div className=" d-flex flex-row w-75 mx-auto mt-5">
+                        {item.product.picture && (
+                          <img
+                            src={`${baseURL}/img/${item.product.picture[0]}`}
+                            alt="Product Picture"
+                            height={150}
+                            className="d-none d-md-inline"
+                          />
+                        )}
+                        <div className="w-100 ms-3">
+                          <NavLink
+                            to={`/products/${item.categorySlug}/${item.product.slug}`}
+                            className={'text-decoration-none'}
+                          >
+                            <p className="mb-0">{item.product.name}</p>
+                          </NavLink>
+                          <p>USD {item.product.price}</p>
+                        </div>
+                        <div className="m-auto d-flex align-items-center justify-content-end w-100  ">
+                          <span className="bg-secondary-subtle py-1 px-3 mx-3">
+                            {item.quantity}
+                          </span>
+                          <TiDelete size={30} onClick={() => handleRemove(item.product.slug)} />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
                 <textarea
-                  className="w-75 mx-auto border-0 bg-secondary-subtle fs-5 fw-light p-3 mb-5"
+                  className="w-75 mx-auto border-0 bg-secondary-subtle fs-5 fw-light mt-5 p-3 mb-5"
                   name="orderComment"
                   id="orderComment"
                   rows="2"
