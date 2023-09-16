@@ -12,6 +12,7 @@ import Navbar from "./components/Navbar";
 import Account from "./components/Account";
 import Register from "./components/Register";
 import ShoppingCart from "./components/ShoppingCart";
+import Checkout from "./components/Checkout";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/account" element={<Account />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
       <Footer />
     </>

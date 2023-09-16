@@ -1,6 +1,6 @@
-import "./Checkout.css";
 import CheckoutPayments from "./CheckoutPayments";
 import CheckoutUserData from "./CheckoutUserData";
+import "./Checkout.css";
 
 function Checkout() {
   return (
@@ -26,7 +26,8 @@ function Checkout() {
           </div>
         </div>
 
-        <div className="col-5"></div>
+        <div className="col-5">
+        </div>
       </div>
     </>
   );
