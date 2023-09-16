@@ -1,4 +1,10 @@
+import { useState } from "react";
+
 function CheckoutPayments() {
+  const [cardNumber, setCardNumber] = useState("");
+  const [securityCode, setSecurityCode] = useState("");
+  const [name, setName] = useState("");
+
   return (
     <div className="d-flex flex-column justify-content-center align-items-end">
       <div className="d-flex flex-column w-100 align-items-start">
@@ -23,7 +29,9 @@ function CheckoutPayments() {
           type="number"
           name="cardNumber"
           id="cardNumber"
+          required
           value={378282246310005}
+          onChange={(e) => setCardNumber(e.target.value)}
           className="form-control p-3 mt-2"
         />
         <div className="row checkout-form-triple-col">
@@ -72,6 +80,9 @@ function CheckoutPayments() {
               name="securityCode"
               id="securityCode"
               placeholder={123}
+              required
+              value={123}
+              onChange={(e) => setSecurityCode(e.target.value)}
               className="form-control p-3 mt-2"
             />
           </div>
@@ -81,6 +92,9 @@ function CheckoutPayments() {
           name="nameOnCard"
           id="nameOnCard"
           placeholder={"John Doe"}
+          required
+          value={"John Doe"}
+          onChange={(e) => setName(e.target.value)}
           className="form-control p-3 mt-2"
         />
         <div className="form-control mt-5">

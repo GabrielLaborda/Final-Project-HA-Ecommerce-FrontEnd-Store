@@ -1,11 +1,29 @@
+import { useState } from "react";
+
 function CheckoutUserData() {
+  const [email, setEmail] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [company, setCompany] = useState("");
+  const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [zipCode, setZipCode] = useState("");
+  const [phone, setPhone] = useState("");
+
   return (
     <div className="row">
       <div className="d-flex flex-column justify-content-center align-items-end">
         <div className="d-flex flex-column w-100">
           <div className="d-flex flex-column w-100">
             <label htmlFor="">Contact</label>
-            <input type="email" placeholder="Email" className="form-control p-3 my-2" />
+            <input
+              type="email"
+              placeholder="Email"
+              required
+              value={"john.doe@cocacola.com"}
+              onChange={(e) => setEmail(e.target.value)}
+              className="form-control p-3 my-2"
+            />
           </div>
         </div>
 
@@ -19,6 +37,9 @@ function CheckoutUserData() {
                   name="FirstName"
                   id="FirstName"
                   placeholder="First Name"
+                  required
+                  value={"John"}
+                  onChange={(e) => setFirstname(e.target.value)}
                   className="form-control p-3 mt-2"
                 />
               </div>
@@ -28,6 +49,9 @@ function CheckoutUserData() {
                   name="LastName"
                   id="LastName"
                   placeholder="Last Name"
+                  required
+                  value={"Doe"}
+                  onChange={(e) => setLastname(e.target.value)}
                   className="form-control p-3 mt-2"
                 />
               </div>
@@ -37,6 +61,9 @@ function CheckoutUserData() {
               name="Company"
               id="Company"
               placeholder="Company"
+              required
+              value={"Coca-Cola"}
+              onChange={(e) => setCompany(e.target.value)}
               className="form-control p-3 my-2"
             />
             <input
@@ -53,6 +80,9 @@ function CheckoutUserData() {
               name="Address"
               id="Address"
               placeholder="Address"
+              required
+              value={"5th Ave 175"}
+              onChange={(e) => setAddress(e.target.value)}
               className="form-control p-3 my-2"
             />
             <p>+ Add apartment, suite, etc.</p>
@@ -64,11 +94,18 @@ function CheckoutUserData() {
                 name="City"
                 id="City"
                 placeholder="City"
+                required
+                value={"NY"}
+                onChange={(e) => setCity(e.target.value)}
                 className="form-control p-3 mt-2"
               />
             </div>
             <div className="col-4 ps-0">
-              <select name="states" id="states" className="form-select p-3 mt-2">
+              <select
+                name="states"
+                id="states"
+                className="form-select p-3 mt-2"
+              >
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
                 <option value="AZ">Arizona</option>
@@ -127,16 +164,22 @@ function CheckoutUserData() {
                 name="ZIPcode"
                 id="ZIPcode"
                 placeholder="ZIP code"
+                required
+                value={"11016"}
+                onChange={(e) => setZipCode(e.target.value)}
                 className="form-control p-3 mt-2"
               />
             </div>
           </div>
 
           <input
-            type="text"
+            type="phone"
             name="phone"
             id="phone"
             placeholder="(+1) 310-688-5717"
+            required
+            value={"(+1) 310-688-5717"}
+            onChange={(e) => setPhone(e.target.value)}
             className="form-control p-3 my-2"
           />
         </div>
