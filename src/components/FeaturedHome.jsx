@@ -8,17 +8,22 @@ import './FeaturedHome.css';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
+import { addItem } from '../redux/cartSlice';
 
 function FeaturedHome() {
+  const dispatch = useDispatch();
+
   const params = useParams();
-  const slug = params.categorySlug;
+  const categorySlug = params.categorySlug;
   const baseURL = import.meta.env.VITE_API_BASE_URL;
   const [products, setProducts] = useState(null);
 
   const getFilteredProducts = async () => {
     const category = await axios({
       method: 'GET',
-      url: `${baseURL}/categories/${slug}`,
+      url: `${baseURL}/categories/${categorySlug}`,
     });
     const response = await axios({
       method: 'GET',
@@ -38,13 +43,21 @@ function FeaturedHome() {
   };
 
   useEffect(() => {
-    slug ? getFilteredProducts() : getProducts();
-  }, [slug]);
+    categorySlug ? getFilteredProducts() : getProducts();
+  }, [categorySlug]);
+
+  const hanldeAddToCart = (product) => {
+    if (categorySlug) {
+      dispatch(addItem({ product, categorySlug: categorySlug, quantity: 1 }));
+    } else {
+      dispatch(addItem({ product, categorySlug: product.category.slug, quantity: 1 }));
+    }
+  };
 
   return (
     <>
       <div className="container featured-container">
-        {slug ? (
+        {categorySlug ? (
           <h5 className="featured-h5 text-center">YOU MAY ALSO LIKE</h5>
         ) : (
           <h3 className="featured-h3 text-center">FEATURED</h3>
@@ -76,30 +89,31 @@ function FeaturedHome() {
           {products &&
             products.map((product) => (
               <SwiperSlide key={product._id}>
-                <NavLink
-                  className={'text-decoration-none text-black'}
-                  to={`/products/${product.category.slug}/${product.slug}`}
-                >
-                  <div className="swiper-slide p-1">
-                    <div className="card mb-5 py-3 px-3 rounded-0">
+                <div className="swiper-slide p-1">
+                  <div className="card mb-5 py-3 px-3 rounded-0">
+                    <NavLink
+                      className={'text-decoration-none text-black'}
+                      to={`/products/${product.category.slug}/${product.slug}`}
+                    >
                       <img
                         src={`${baseURL}/img/${product.picture[0]}`}
                         className="card-img-top"
                         alt="..."
                       />
-                      <div className="card-body">
-                        <h5 className="card-title">USD {product.price}</h5>
-                        <p className="card-text text-center w-100 card-data">{product.name}</p>
-                        <button
-                          type="button"
-                          className="btn btn-outline-dark rounded-0 w-75 border-secondary-subtle"
-                        >
-                          Add to cart
-                        </button>
-                      </div>
+                    </NavLink>
+                    <div className="card-body">
+                      <h5 className="card-title">USD {product.price}</h5>
+                      <p className="card-text text-center w-100 card-data">{product.name}</p>
+                      <button
+                        type="button"
+                        className="btn btn-outline-dark rounded-0 w-75 border-secondary-subtle"
+                        onClick={() => hanldeAddToCart(product)}
+                      >
+                        Add to cart
+                      </button>
                     </div>
                   </div>
-                </NavLink>
+                </div>
               </SwiperSlide>
             ))}
         </Swiper>

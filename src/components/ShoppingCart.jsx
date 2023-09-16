@@ -1,6 +1,6 @@
 import './ShoppingCart.css';
 
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { TiDelete } from 'react-icons/ti';
 import { useState } from 'react';
 
@@ -9,9 +9,19 @@ import { deleteItem } from '../redux/cartSlice';
 
 function ShoppintCart() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const cart = useSelector((state) => state.cart);
+  const user = useSelector((state) => state.user);
   const [comment, setComment] = useState('');
   const baseURL = import.meta.env.VITE_API_BASE_URL;
+
+  const handleCheckout = () => {
+    if (user) {
+      return navigate('/checkout');
+    } else {
+      return navigate('/');
+    }
+  };
 
   const handleRemove = (slug) => {
     dispatch(deleteItem(slug));
@@ -95,7 +105,9 @@ function ShoppintCart() {
                     )}
                   </p>
                   <p className="small-text fw-lighter mt-0">Shipping & taxes included</p>
-                  <button className="btn btn-dark rounded-0 w-100 py-3">CHECKOUT</button>
+                  <button onClick={handleCheckout} className="btn btn-dark rounded-0 w-100 py-3">
+                    CHECKOUT
+                  </button>
                 </div>
               </div>
             ) : (

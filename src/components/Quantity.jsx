@@ -7,7 +7,6 @@ import { useParams } from 'react-router-dom';
 function Quantity({ product }) {
   const params = useParams();
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart);
   const [quantity, setQuantity] = useState(1);
   const handleAddone = () => setQuantity(quantity + 1);
   const handleSubstractOne = () => {

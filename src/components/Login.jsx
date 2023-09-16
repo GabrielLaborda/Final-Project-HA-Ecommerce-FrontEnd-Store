@@ -1,15 +1,17 @@
-import { useState } from "react";
-import axios from "axios";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
-import "./RegisterYLogin.css";
-import { login } from "../redux/userSlice";
+import { useState } from 'react';
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import './RegisterYLogin.css';
+import { login } from '../redux/userSlice';
+import { useSelector } from 'react-redux';
 
 function Login() {
-  const [email, setEmail] = useState("user@example.com");
-  const [password, setPassword] = useState("123456");
+  const [email, setEmail] = useState('user@example.com');
+  const [password, setPassword] = useState('123456');
   const baseURL = import.meta.env.VITE_API_BASE_URL;
+  const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -17,13 +19,12 @@ function Login() {
     e.preventDefault();
     const response = await axios({
       url: `${baseURL}/login/user`,
-      method: "POST",
+      method: 'POST',
       data: { password, email },
     });
-    console.log(response.data);
     if (response.data.token) {
       dispatch(login(response.data));
-      navigate("/");
+      cart.length > 0 ? navigate('/cart') : navigate('/');
     } else if (response.data.error) {
       navigate(`/login`);
     }
@@ -85,7 +86,7 @@ function Login() {
               </div>
             </form>
             <p className="text-center mt-4 little-text">
-              Don't have an account?<Link to={"/register"}> Sign up</Link>
+              Don't have an account?<Link to={'/register'}> Sign up</Link>
             </p>
             <p className="text-center mt-4 little-text">
               <Link href="#">Forgot your password?</Link>
