@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 function CheckoutPayments() {
-  const [cardNumber, setCardNumber] = useState("");
-  const [securityCode, setSecurityCode] = useState("");
-  const [name, setName] = useState("");
+  const user = useSelector((state) => state.user);
+  const [cardNumber, setCardNumber] = useState('3782 8224 6310 1005');
+  const [securityCode, setSecurityCode] = useState('123');
+  const [name, setName] = useState(`${user.firstname} ${user.lastname}`);
 
   return (
     <div className="d-flex flex-column justify-content-center align-items-end">
@@ -14,7 +16,7 @@ function CheckoutPayments() {
       <div className="form-control bg-light">
         <div className="d-flex justify-content-between py-3">
           <div className="d-flex justify-content-center align-items-center">
-            <input type="radio" className="me-2" />
+            <input id="creditcard" name="creditcard" type="radio" className="me-2" />
             <p className="m-0">Credit Card</p>
           </div>
           <div className="d-flex checkout-credit-cards">
@@ -26,21 +28,17 @@ function CheckoutPayments() {
           </div>
         </div>
         <input
-          type="number"
+          type="text"
           name="cardNumber"
           id="cardNumber"
           required
-          value={378282246310005}
+          value={cardNumber}
           onChange={(e) => setCardNumber(e.target.value)}
           className="form-control p-3 mt-2"
         />
         <div className="row checkout-form-triple-col">
           <div className="col-4">
-            <select
-              name="expMonth"
-              id="expMonth"
-              className="form-select p-3 mt-2"
-            >
+            <select name="expMonth" id="expMonth" className="form-select p-3 mt-2">
               <option value="01">January</option>
               <option value="02">February</option>
               <option value="03">March</option>
@@ -56,11 +54,7 @@ function CheckoutPayments() {
             </select>
           </div>
           <div className="col-4">
-            <select
-              name="expYear"
-              id="expYear"
-              className="form-select p-3 mt-2"
-            >
+            <select name="expYear" id="expYear" className="form-select p-3 mt-2">
               <option value="2023">2023</option>
               <option value="2024">2024</option>
               <option value="2025">2025</option>
@@ -81,7 +75,7 @@ function CheckoutPayments() {
               id="securityCode"
               placeholder={123}
               required
-              value={123}
+              value={securityCode}
               onChange={(e) => setSecurityCode(e.target.value)}
               className="form-control p-3 mt-2"
             />
@@ -91,16 +85,16 @@ function CheckoutPayments() {
           type="text"
           name="nameOnCard"
           id="nameOnCard"
-          placeholder={"John Doe"}
+          placeholder={'John Doe'}
           required
-          value={"John Doe"}
+          value={name}
           onChange={(e) => setName(e.target.value)}
           className="form-control p-3 mt-2"
         />
         <div className="form-control mt-5">
           <div className="d-flex justify-content-between py-3 border-bottomo">
             <div className="d-flex justify-content-center align-items-center">
-              <input type="radio" className="me-2" disabled />
+              <input id="paypal" name="paypal" type="radio" className="me-2" disabled />
               <p className="m-0">PayPal</p>
             </div>
             <div className="d-flex checkout-credit-cards">
@@ -111,7 +105,7 @@ function CheckoutPayments() {
         <div className="form-control mt-2">
           <div className="d-flex justify-content-between py-3">
             <div className="d-flex justify-content-center align-items-center">
-              <input type="radio" className="me-2" disabled />
+              <input id="amazonpay" name="amazonpay" type="radio" className="me-2" disabled />
               <p className="m-0">Amazon Pay</p>
             </div>
           </div>

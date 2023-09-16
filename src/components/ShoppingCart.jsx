@@ -6,20 +6,24 @@ import { useState } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteItem } from '../redux/cartSlice';
+import { addInstruction } from '../redux/orderInstructionSlice';
 
 function ShoppintCart() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
-  const [comment, setComment] = useState('');
+  const orderInstruction = useSelector((state) => state.orderInstruction);
+
+  const [comment, setComment] = useState(orderInstruction);
   const baseURL = import.meta.env.VITE_API_BASE_URL;
 
   const handleCheckout = () => {
     if (user) {
+      dispatch(addInstruction(comment));
       return navigate('/checkout');
     } else {
-      return navigate('/');
+      return navigate('/login');
     }
   };
 
@@ -51,7 +55,7 @@ function ShoppintCart() {
               <div className="right-section vh-100 d-flex flex-column justify-content-center">
                 <div className="cart-prods-container flex-column d-flex">
                   {cart.map((item) => (
-                    <div className="">
+                    <div key={item.product.slug} className="">
                       <div className=" d-flex flex-row w-75 mx-auto mt-5">
                         {item.product.picture && (
                           <img
