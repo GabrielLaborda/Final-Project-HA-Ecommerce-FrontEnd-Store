@@ -36,3 +36,13 @@
 .custom-button-colour {
     background-color: white;
 }
+
+#left-container-alignment {
+    align-items: end;
+}
+
+@media (max-width: 992px) {
+    #left-container-alignment {
+        align-items: center;
+    }
+}

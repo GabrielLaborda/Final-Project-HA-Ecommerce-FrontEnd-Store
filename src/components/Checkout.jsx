@@ -6,8 +6,8 @@ function Checkout() {
   return (
     <>
       <div className="row">
-        <div className="col-7 d-flex flex-column align-items-end checkout-left-container pt-5">
-          <div className="w-75 pt-5 left-container-content">
+        <div className="col-sm-12 col-lg-7 d-flex flex-column checkout-left-container pt-5" id="left-container-alignment">
+          <div className="pt-5 left-container-content">
             <div className="d-flex justify-content-center pt-5">
                 <p>Express chechout</p>
             </div>
