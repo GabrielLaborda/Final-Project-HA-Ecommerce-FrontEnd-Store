@@ -3,13 +3,30 @@ import { NavLink, useParams } from 'react-router-dom';
 import './ShopItemCard.css';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../redux/cartSlice';
+import { toast } from 'react-toastify';
 
 function ShopItemCard({ product, categorySlug }) {
   const dispatch = useDispatch();
   // const params = useParams();
 
+  const notify = () =>
+    toast.error('Insufficient Stock, plese select a smaller amount!', {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
+
   const hanldeAddToCart = () => {
-    dispatch(addItem({ product, categorySlug: categorySlug, quantity: 1 }));
+    if (product.stock >= 1) {
+      dispatch(addItem({ product, categorySlug: categorySlug, quantity: 1 }));
+    } else {
+      notify();
+    }
   };
 
   const baseURL = import.meta.env.VITE_API_BASE_URL;

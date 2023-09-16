@@ -9,6 +9,7 @@ import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
 
 import { addItem } from '../redux/cartSlice';
 
@@ -46,11 +47,27 @@ function FeaturedHome() {
     categorySlug ? getFilteredProducts() : getProducts();
   }, [categorySlug]);
 
+  const notify = () =>
+    toast.error('Insufficient Stock, plese select a smaller amount!', {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
+
   const hanldeAddToCart = (product) => {
-    if (categorySlug) {
-      dispatch(addItem({ product, categorySlug: categorySlug, quantity: 1 }));
+    if (product.stock >= 1) {
+      if (categorySlug) {
+        dispatch(addItem({ product, categorySlug: categorySlug, quantity: 1 }));
+      } else {
+        dispatch(addItem({ product, categorySlug: product.category.slug, quantity: 1 }));
+      }
     } else {
-      dispatch(addItem({ product, categorySlug: product.category.slug, quantity: 1 }));
+      notify();
     }
   };
 
