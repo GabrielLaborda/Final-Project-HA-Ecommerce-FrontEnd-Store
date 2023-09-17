@@ -50,12 +50,9 @@ function Account() {
             </span>
           </div>
           <div className="col-md-6 col-lg-6 d-flex flex-column justify-content-center align-items-center vh-100">
-            <div>
-              <h3 className="account-data mb-3">ORDER HISTORY</h3>
+            <div className="order-details mt-5 pt-5"> 
+              <h3 className="account-data mb-3 ">ORDER HISTORY</h3>
               <AccountOrders />
-              <p className="account-data-p">
-                You haven't placed any orders yet.
-              </p>
             </div>
             <div>
               <h3 className="mt-5 mb-3 account-data">ACCOUNT DETAILS</h3>
