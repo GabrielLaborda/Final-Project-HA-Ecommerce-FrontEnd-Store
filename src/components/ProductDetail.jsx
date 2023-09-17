@@ -1,11 +1,11 @@
-import "./ProductDetail.css";
-import ProductDetailMain from "./ProductDetailMain";
-import FeaturedHome from "./FeaturedHome";
-import UserReviewSwiper from "./UserReviewSwiper";
-import CategoryBannerText from "./CategoryBannerText";
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import axios from "axios";
+import './ProductDetail.css';
+import ProductDetailMain from './ProductDetailMain';
+import FeaturedHome from './FeaturedHome';
+import UserReviewSwiper from './UserReviewSwiper';
+import CategoryBannerText from './CategoryBannerText';
+import { useState, useEffect } from 'react';
+import { useParams, NavLink } from 'react-router-dom';
+import axios from 'axios';
 
 function ProductDetail() {
   const params = useParams();
@@ -17,7 +17,7 @@ function ProductDetail() {
 
   const getProduct = async () => {
     const response = await axios({
-      method: "GET",
+      method: 'GET',
       url: `${baseURL}/products/${slugProducts}`,
     });
     setProduct(response.data);
@@ -25,7 +25,7 @@ function ProductDetail() {
 
   const getCategory = async () => {
     const response = await axios({
-      method: "GET",
+      method: 'GET',
       url: `${baseURL}/categories/${slugCategories}`,
     });
     setCategory(response.data);
@@ -56,7 +56,9 @@ function ProductDetail() {
                 id="completesBanner"
               >
                 <div className="w-100 justify-content-center g-0">
-                  <CategoryBannerText bold={"URBAN"} normal={"RUSH"} />
+                  <NavLink to={'/'} className={'text-decoration-none'}>
+                    <CategoryBannerText bold={'URBAN'} normal={'RUSH'} />
+                  </NavLink>
                 </div>
               </div>
             </section>

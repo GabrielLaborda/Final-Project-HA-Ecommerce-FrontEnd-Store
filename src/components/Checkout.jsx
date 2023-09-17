@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addInstruction } from '../redux/orderInstructionSlice';
 import './Checkout.css';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 function Checkout() {
   const baseURL = import.meta.env.VITE_API_BASE_URL;
@@ -16,43 +17,74 @@ function Checkout() {
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
   const orderInstruction = useSelector((state) => state.orderInstruction);
-
   const [comment, setComment] = useState(orderInstruction);
+  const notifyError = (message) =>
+    toast.error(message, {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
 
   const handleRemove = (slug) => {
     dispatch(deleteItem(slug));
   };
 
-  const handlePayNow = async () => {
-    const orderStatuses = await axios({
-      method: 'GET',
-      url: `${baseURL}/orderstatus`,
-      headers: {
-        Authorization: `Bearer ${user.token}`,
-      },
-    });
-    await axios({
-      method: 'POST',
-      url: `${baseURL}/orders`,
-      headers: {
-        Authorization: `Bearer ${user.token}`,
-      },
-      data: {
-        products: cart.map((item) => ({
-          name: item.product.name,
-          price: item.product.price,
-          quantity: item.quantity,
-        })),
-        status: orderStatuses.data[0],
-        subtotal:
-          Math.round(
-            cart.reduce((total, item) => total + item.quantity * item.product.price, 0) * 100
-          ) / 100,
-      },
-    });
-    dispatch(emptyCart());
-    dispatch(addInstruction(''));
-    navigate('/account');
+  const handleCheckOut = async () => {
+    try {
+      for (const item of cart) {
+        await axios({
+          method: 'PATCH',
+          url: `${baseURL}/products/${item.product.slug}`,
+          params: { transaction: 'buy' },
+          data: { quantity: item.quantity },
+        });
+      }
+      const orderStatuses = await axios({
+        method: 'GET',
+        url: `${baseURL}/orderstatus`,
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
+      const response = await axios({
+        method: 'POST',
+        url: `${baseURL}/orders`,
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+        data: {
+          products: cart.map((item) => ({
+            name: item.product.name,
+            price: item.product.price,
+            quantity: item.quantity,
+          })),
+          status: orderStatuses.data[0],
+          subtotal:
+            Math.round(
+              cart.reduce((total, item) => total + item.quantity * item.product.price, 0) * 100
+            ) / 100,
+        },
+      });
+      await axios({
+        method: 'PATCH',
+        url: `${baseURL}/users/${user.id}`,
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+        params: { transaction: 'newOrder' },
+        data: { orderId: response.data.orderId },
+      });
+      dispatch(emptyCart());
+      dispatch(addInstruction(''));
+      navigate('/account');
+    } catch (error) {
+      notifyError(error.response.data.msg);
+    }
   };
 
   return (
@@ -78,7 +110,7 @@ function Checkout() {
             <CheckoutUserData />
             <CheckoutPayments />
             <button
-              onClick={handlePayNow}
+              onClick={handleCheckOut}
               className="btn btn-outline-secondary w-100 my-3 p-3 custom-button-colour"
             >
               Pay Now
