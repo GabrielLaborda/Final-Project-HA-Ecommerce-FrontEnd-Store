@@ -2,7 +2,6 @@ import Table from 'react-bootstrap/Table';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
-import { format } from 'date-fns';
 
 function AccountOrders() {
   const [orders, setOrders] = useState([]);

@@ -1,5 +1,5 @@
 .left-container {
-  background-image: url("OrderDetails.webp");
+  background-image: url("Order_Details_Image.webp");
   background-size: cover;
   background-position: bottom;
   height: 100vh;
@@ -21,7 +21,7 @@
 
 .order-prods-container {
   overflow-y: auto;
-  height: 50%;
+  height: 80%;
 }
 
 .order-prods-container::-webkit-scrollbar {
@@ -42,4 +42,14 @@ th,
 td {
   border: 1px solid black;
   padding: 8px;
+}
+
+@media (max-width: 992px) {
+    .left-container {
+        height: 30vh;
+    }
+
+    .order-prods-container {
+        height: auto;
+      }
 }

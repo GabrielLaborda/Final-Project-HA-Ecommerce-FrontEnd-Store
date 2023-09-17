@@ -17,6 +17,7 @@ import Checkout from "./components/Checkout";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import EditAccount from "./components/EditAcount";
+import OrderDetail from "./components/OrderDetail";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/edit/:id" element={<EditAccount />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/orders/:id" element={<OrderDetail />}/>
       </Routes>
       <Footer />
       <ToastContainer />

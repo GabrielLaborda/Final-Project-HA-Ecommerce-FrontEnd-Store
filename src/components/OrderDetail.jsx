@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import axios from "axios";
 import "./OrderDetail.css";
 
 function OrderDetail() {
   const baseURL = import.meta.env.VITE_API_BASE_URL;
-  const orderId = "6501dd11a9fdf31aed7eb665";
+  const params = useParams();
+  const orderId = params.id;
   const user = useSelector((state) => state.user);
   const [order, setOrder] = useState(null);
 
@@ -29,7 +30,7 @@ function OrderDetail() {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-sm-12 col-lg-6 left-container d-flex flex-column justify-content-center align-items-center vh-100">
+        <div className="col-sm-12 col-lg-6 left-container d-flex flex-column justify-content-center align-items-center">
         <h1 className="account-h1">Order Detail</h1>
         </div>
 
