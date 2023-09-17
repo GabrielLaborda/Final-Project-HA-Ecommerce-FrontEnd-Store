@@ -41,7 +41,7 @@ function EditAccount(props) {
         url: `${baseURL}/users/${params.id}`,
         data: { email, address, phone },
       });
-      navigate("/account");
+      navigate(`/account/${params.id}`);
     } catch (err) {
       console.log(err.msg);
     }
