@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { format } from 'date-fns';
+import "./AccountOrders.css"
+import { NavLink } from 'react-router-dom';
 
 function AccountOrders() {
   const [orders, setOrders] = useState([]);
@@ -34,7 +36,7 @@ function AccountOrders() {
       }
       {orders.length > 0 &&
         <div className='table-responsive'>
-          <Table className="table table-striped table-bordered table-hover">
+          <Table className="table table-bordered table-hover">
             <thead>
               <tr>
                 <th>Order Id</th>
@@ -51,7 +53,7 @@ function AccountOrders() {
                   <td>{new Date(order.updatedAt).toLocaleDateString()}</td>
                   <td>{order.subtotal.toFixed(2)}</td>
                   <td>{order.status.status}</td>
-                  <td>View Order</td>
+                  <td><NavLink to={`${baseURL}/orders/${order._id}`}>View Order</NavLink></td>
                 </tr>
             ))}
               </tbody>

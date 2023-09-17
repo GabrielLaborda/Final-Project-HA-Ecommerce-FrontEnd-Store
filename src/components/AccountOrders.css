@@ -1,0 +1,12 @@
+th {
+  font-family: Roboto;
+  font-size: 18px;
+}
+td {
+  font-family: Roboto;
+  font-size: 14px;
+  background-color: white;
+}
+.bs-table-bg-type {
+  background-color: white;
+}

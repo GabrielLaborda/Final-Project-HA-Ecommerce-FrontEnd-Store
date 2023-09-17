@@ -49,12 +49,13 @@ function Account() {
               Log out
             </span>
           </div>
-          <div className="col-md-6 col-lg-6 d-flex flex-column justify-content-center align-items-center vh-100">
+          <div className=" col-md-6 col-lg-6 d-flex flex-column align-items-center">
+          <div className=" d-flex flex-column justify-content-center align-items-start vh-100 px-2">
             <div className="order-details mt-5 pt-5"> 
               <h3 className="account-data mb-3 ">ORDER HISTORY</h3>
               <AccountOrders />
             </div>
-            <div>
+            <div className="mb-5">
               <h3 className="mt-5 mb-3 account-data">ACCOUNT DETAILS</h3>
               <p className="account-data-p">Name: {user.firstname}</p>
               <p className="account-data-p">Lastname: {account.lastname}</p>
@@ -68,6 +69,7 @@ function Account() {
                 Edit your Account
               </Link>
             </div>
+          </div>
           </div>
         </div>
       </div>
