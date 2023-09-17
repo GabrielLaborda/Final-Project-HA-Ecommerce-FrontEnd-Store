@@ -19,7 +19,6 @@ function EditAccount(props) {
   const [password, setPassword] = useState("");
 
   useEffect(() => {
-    // Verificar si user está disponible y establecer los estados si es así
     if (user) {
       setFirstname(user.firstname);
       setLastname(user.lastname);
@@ -27,7 +26,7 @@ function EditAccount(props) {
       setAddress(user.address);
       setPhone(user.phone);
     }
-  }, [user]); // Ejecutar este efecto cuando cambie user
+  }, [user]);
 
   const handleSubmit = async (e) => {
     try {
