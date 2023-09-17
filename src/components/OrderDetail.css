@@ -1,0 +1,55 @@
+.left-container {
+  background-image: url("Order_Details_Image.webp");
+  background-size: cover;
+  background-position: bottom;
+  height: 100vh;
+  padding: 42px;
+  color: white;
+  font-family: "Roboto";
+}
+
+.account-h1 {
+  font-size: 70px;
+  color: rgb(255, 255, 255);
+  font-family: "Kalam", cursive;
+  font-weight: 700;
+}
+
+.small-text {
+  font-size: small;
+}
+
+.order-prods-container {
+  overflow-y: auto;
+  height: 80%;
+}
+
+.order-prods-container::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
+.order-prods-container {
+  -ms-overflow-style: none; /* for IE and Edge */
+  scrollbar-width: none; /* for Firefox */
+}
+
+table {
+  border-collapse: collapse;
+  background-color: #f2f2f2;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+@media (max-width: 992px) {
+    .left-container {
+        height: 30vh;
+    }
+
+    .order-prods-container {
+        height: auto;
+      }
+}
