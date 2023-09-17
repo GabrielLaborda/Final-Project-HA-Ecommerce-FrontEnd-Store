@@ -8,8 +8,6 @@ function EditAccount(props) {
   const baseURL = import.meta.env.VITE_API_BASE_URL;
   const params = useParams();
   const navigate = useNavigate();
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
@@ -25,13 +23,12 @@ function EditAccount(props) {
             Authorization: `Bearer ${user.token}`,
           },
         });
-        console.log(response.data);
-        setFirstname(response.data.firstname);
-        setLastname(response.data.lastname);
         setEmail(response.data.email);
         setAddress(response.data.address);
         setPhone(response.data.phone);
-      } catch (error) {}
+      } catch (err) {
+        console.log(err.msg);
+      }
     };
     getUser();
   }, []);
@@ -42,10 +39,12 @@ function EditAccount(props) {
       await axios({
         method: "PATCH",
         url: `${baseURL}/users/${params.id}`,
-        data: { firstname, lastname, email, address, phone },
+        data: { email, address, phone },
       });
       navigate("/account");
-    } catch (error) {}
+    } catch (err) {
+      console.log(err.msg);
+    }
   };
 
   return (
@@ -74,34 +73,6 @@ function EditAccount(props) {
           <div className="px-3 inputWidth mt-2">
             <div>
               <form onSubmit={handleSubmit}>
-                <div>
-                  <label hidden htmlFor="firstname">
-                    Fist Name
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control my-2 rounded-0"
-                    id="firstname"
-                    name="firstname"
-                    required
-                    value={firstname}
-                    onChange={(e) => setFirstname(e.target.value)}
-                  />
-                </div>
-                <div>
-                  <label hidden htmlFor="lastname">
-                    Last Name
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control my-2 rounded-0"
-                    id="lastname"
-                    name="lastname"
-                    required
-                    value={lastname}
-                    onChange={(e) => setLastname(e.target.value)}
-                  />
-                </div>
                 <div>
                   <label hidden htmlFor="email">
                     Email
