@@ -2,31 +2,39 @@ import "./EditAccount.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
-import { logout, login } from "../redux/userSlice";
+import { useSelector } from "react-redux";
 
 function EditAccount(props) {
   const baseURL = import.meta.env.VITE_API_BASE_URL;
   const params = useParams();
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user = useSelector((state) => state.user);
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
-  const [password, setPassword] = useState("");
+  const user = useSelector((state) => state.user);
 
   useEffect(() => {
-    if (user) {
-      setFirstname(user.firstname);
-      setLastname(user.lastname);
-      setEmail(user.email);
-      setAddress(user.address);
-      setPhone(user.phone);
-    }
-  }, [user]);
+    const getUser = async () => {
+      try {
+        const response = await axios({
+          method: "GET",
+          url: `${baseURL}/users/${params.id}`,
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        });
+        console.log(response.data);
+        setFirstname(response.data.firstname);
+        setLastname(response.data.lastname);
+        setEmail(response.data.email);
+        setAddress(response.data.address);
+        setPhone(response.data.phone);
+      } catch (error) {}
+    };
+    getUser();
+  }, []);
 
   const handleSubmit = async (e) => {
     try {
@@ -34,16 +42,9 @@ function EditAccount(props) {
       await axios({
         method: "PATCH",
         url: `${baseURL}/users/${params.id}`,
-        data: { firstname, lastname, email, address, phone, password },
+        data: { firstname, lastname, email, address, phone },
       });
-      dispatch(logout());
-      const response = await axios({
-        url: `${baseURL}/login/user`,
-        method: "POST",
-        data: { password, email },
-      });
-      dispatch(login(response.data));
-      navigate(`/account`);
+      navigate("/account");
     } catch (error) {}
   };
 
@@ -75,11 +76,10 @@ function EditAccount(props) {
               <form onSubmit={handleSubmit}>
                 <div>
                   <label hidden htmlFor="firstname">
-                    Firstname
+                    Fist Name
                   </label>
                   <input
                     type="text"
-                    placeholder="First name"
                     className="form-control my-2 rounded-0"
                     id="firstname"
                     name="firstname"
@@ -90,11 +90,10 @@ function EditAccount(props) {
                 </div>
                 <div>
                   <label hidden htmlFor="lastname">
-                    Lastname
+                    Last Name
                   </label>
                   <input
                     type="text"
-                    placeholder="Last name"
                     className="form-control my-2 rounded-0"
                     id="lastname"
                     name="lastname"
@@ -109,7 +108,6 @@ function EditAccount(props) {
                   </label>
                   <input
                     type="email"
-                    placeholder="Email"
                     className="form-control my-2 rounded-0"
                     id="email"
                     name="email"
@@ -127,7 +125,6 @@ function EditAccount(props) {
                     className="form-control my-2 rounded-0"
                     id="address"
                     name="address"
-                    placeholder="Address"
                     required
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
@@ -143,26 +140,11 @@ function EditAccount(props) {
                     id="phone"
                     name="phone"
                     required
-                    placeholder="Phone"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                   />
                 </div>
-                <div>
-                  <label hidden htmlFor="password">
-                    Password
-                  </label>
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    className="form-control my-2 rounded-0"
-                    id="password"
-                    name="password"
-                    required
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </div>
+
                 <br />
                 <div className="d-grid p-0">
                   <button
