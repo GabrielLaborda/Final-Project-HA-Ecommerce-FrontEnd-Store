@@ -51,7 +51,7 @@ function Checkout() {
           Authorization: `Bearer ${user.token}`,
         },
       });
-      await axios({
+      const response = await axios({
         method: 'POST',
         url: `${baseURL}/orders`,
         headers: {
@@ -69,6 +69,15 @@ function Checkout() {
               cart.reduce((total, item) => total + item.quantity * item.product.price, 0) * 100
             ) / 100,
         },
+      });
+      await axios({
+        method: 'PATCH',
+        url: `${baseURL}/users/${user.id}`,
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+        params: { transaction: 'newOrder' },
+        data: { orderId: response.data.orderId },
       });
       dispatch(emptyCart());
       dispatch(addInstruction(''));
