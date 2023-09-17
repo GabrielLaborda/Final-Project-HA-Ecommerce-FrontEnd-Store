@@ -1,14 +1,14 @@
-import CheckoutPayments from './CheckoutPayments';
-import CheckoutUserData from './CheckoutUserData';
-import { NavLink, useNavigate } from 'react-router-dom';
-import { TiDelete } from 'react-icons/ti';
-import { useState } from 'react';
-import { deleteItem, emptyCart } from '../redux/cartSlice';
-import { useSelector, useDispatch } from 'react-redux';
-import { addInstruction } from '../redux/orderInstructionSlice';
-import './Checkout.css';
-import axios from 'axios';
-import { toast } from 'react-toastify';
+import CheckoutPayments from "./CheckoutPayments";
+import CheckoutUserData from "./CheckoutUserData";
+import { NavLink, useNavigate } from "react-router-dom";
+import { TiDelete } from "react-icons/ti";
+import { useState } from "react";
+import { deleteItem, emptyCart } from "../redux/cartSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { addInstruction } from "../redux/orderInstructionSlice";
+import "./Checkout.css";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 function Checkout() {
   const baseURL = import.meta.env.VITE_API_BASE_URL;
@@ -20,14 +20,14 @@ function Checkout() {
   const [comment, setComment] = useState(orderInstruction);
   const notifyError = (message) =>
     toast.error(message, {
-      position: 'top-right',
+      position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: 'light',
+      theme: "light",
     });
 
   const handleRemove = (slug) => {
@@ -38,21 +38,21 @@ function Checkout() {
     try {
       for (const item of cart) {
         await axios({
-          method: 'PATCH',
+          method: "PATCH",
           url: `${baseURL}/products/${item.product.slug}`,
-          params: { transaction: 'buy' },
+          params: { transaction: "buy" },
           data: { quantity: item.quantity },
         });
       }
       const orderStatuses = await axios({
-        method: 'GET',
+        method: "GET",
         url: `${baseURL}/orderstatus`,
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
       });
       const response = await axios({
-        method: 'POST',
+        method: "POST",
         url: `${baseURL}/orders`,
         headers: {
           Authorization: `Bearer ${user.token}`,
@@ -66,22 +66,25 @@ function Checkout() {
           status: orderStatuses.data[0],
           subtotal:
             Math.round(
-              cart.reduce((total, item) => total + item.quantity * item.product.price, 0) * 100
+              cart.reduce(
+                (total, item) => total + item.quantity * item.product.price,
+                0
+              ) * 100
             ) / 100,
         },
       });
       await axios({
-        method: 'PATCH',
+        method: "PATCH",
         url: `${baseURL}/users/${user.id}`,
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
-        params: { transaction: 'newOrder' },
+        params: { transaction: "newOrder" },
         data: { orderId: response.data.orderId },
       });
       dispatch(emptyCart());
-      dispatch(addInstruction(''));
-      navigate('/account');
+      dispatch(addInstruction(""));
+      navigate(`/account/${user.id}`);
     } catch (error) {
       notifyError(error.response.data.msg);
     }
@@ -135,15 +138,20 @@ function Checkout() {
                     <div className="w-100 ms-3">
                       <NavLink
                         to={`/products/${item.categorySlug}/${item.product.slug}`}
-                        className={'text-decoration-none'}
+                        className={"text-decoration-none"}
                       >
                         <p className="mb-0">{item.product.name}</p>
                       </NavLink>
                       <p>USD {item.product.price}</p>
                     </div>
                     <div className="m-auto d-flex align-items-center justify-content-end w-100  ">
-                      <span className="bg-secondary-subtle py-1 px-3 mx-3">{item.quantity}</span>
-                      <TiDelete size={30} onClick={() => handleRemove(item.product.slug)} />
+                      <span className="bg-secondary-subtle py-1 px-3 mx-3">
+                        {item.quantity}
+                      </span>
+                      <TiDelete
+                        size={30}
+                        onClick={() => handleRemove(item.product.slug)}
+                      />
                     </div>
                   </div>
                 </div>
@@ -162,15 +170,20 @@ function Checkout() {
                 <span className="fs-5 fw-light">Total: </span>
                 {cart && (
                   <span className="fw-bold">
-                    USD{' '}
+                    USD{" "}
                     {Math.round(
-                      cart.reduce((total, item) => total + item.quantity * item.product.price, 0) *
-                        100
+                      cart.reduce(
+                        (total, item) =>
+                          total + item.quantity * item.product.price,
+                        0
+                      ) * 100
                     ) / 100}
                   </span>
                 )}
               </p>
-              <p className="small-text fw-lighter mt-0">Shipping & taxes included</p>
+              <p className="small-text fw-lighter mt-0">
+                Shipping & taxes included
+              </p>
             </div>
           </div>
         </div>

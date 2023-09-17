@@ -59,7 +59,7 @@ function Account() {
             </div>
             <div>
               <h3 className="mt-5 mb-3 account-data">ACCOUNT DETAILS</h3>
-              <p className="account-data-p">Name: {account.firstname}</p>
+              <p className="account-data-p">Name: {user.firstname}</p>
               <p className="account-data-p">Lastname: {account.lastname}</p>
               <p className="account-data-p">Email: {account.email}</p>
               <p className="account-data-p">Phone: {account.phone}</p>
