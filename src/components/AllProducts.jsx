@@ -6,7 +6,7 @@ import axios from 'axios';
 import ShopItemCard from './ShopItemCard';
 import ListedProductsMenu from './ListedProductsMenu';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, NavLink } from 'react-router-dom';
 
 function AllProducts() {
   const baseURL = import.meta.env.VITE_API_BASE_URL;
@@ -38,7 +38,9 @@ function AllProducts() {
               id="completesBanner"
             >
               <div className="w-100 justify-content-center g-0">
-                <CategoryBannerText bold={'URBAN'} normal={'RUSH'} />
+                <NavLink to={'/'} className={'text-decoration-none'}>
+                  <CategoryBannerText bold={'URBAN'} normal={'RUSH'} />
+                </NavLink>
               </div>
             </div>
           </section>

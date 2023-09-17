@@ -6,13 +6,13 @@ import {
   BiLogoGit,
   BiLogoGithub,
   BiLogoLinkedinSquare,
-} from "react-icons/bi";
-import { DiCss3, DiScrum } from "react-icons/di";
-import { FaBootstrap, FaNodeJs } from "react-icons/fa";
-import { SiExpress, SiRedux, SiMongoose, SiAxios } from "react-icons/si";
+} from 'react-icons/bi';
+import { DiCss3, DiScrum } from 'react-icons/di';
+import { FaBootstrap, FaNodeJs } from 'react-icons/fa';
+import { SiExpress, SiRedux, SiMongoose, SiAxios } from 'react-icons/si';
 
-import "./About.css";
-import SectionHeader from "./sectionHeader";
+import './About.css';
+import SectionHeader from './SectionHeader';
 
 function About() {
   return (
@@ -33,29 +33,20 @@ function About() {
             </div>
             <div className="col-12 col-lg-8">
               <p>
-                <span className="green-text">UrbanRush</span> is a dynamic
-                e-commerce platform born out of an integrative project
-                undertaken as part of{" "}
-                <span className="green-text">
-                  Hack Academy's Coding Bootcamp
-                </span>
-                . This Web Development Education Program lasted over a span of
-                three months, required more 600 hours of dedication, and
-                culminated on this{" "}
-                <span className="green-text">final project</span> where our
-                challenge was to create a{" "}
-                <span className="green-text">e-commerce website</span> within a
-                tight <span className="green-text">three-week timeframe</span>.
+                <span className="green-text">UrbanRush</span> is a dynamic e-commerce platform born
+                out of an integrative project undertaken as part of{' '}
+                <span className="green-text">Hack Academy's Coding Bootcamp</span>. This Web
+                Development Education Program lasted over a span of three months, required more 600
+                hours of dedication, and culminated on this{' '}
+                <span className="green-text">final project</span> where our challenge was to create
+                a <span className="green-text">e-commerce website</span> within a tight{' '}
+                <span className="green-text">three-week timeframe</span>.
               </p>
               <p>
-                This project <span className="green-text">represents</span> the
-                culmination of extensive{" "}
-                <span className="green-text">
-                  training, dedication, and innovation
-                </span>
-                . We <span className="green-text">invite</span> you to explore
-                our platform and rigorously{" "}
-                <span className="green-text">test its functionalities</span>.
+                This project <span className="green-text">represents</span> the culmination of
+                extensive <span className="green-text">training, dedication, and innovation</span>.
+                We <span className="green-text">invite</span> you to explore our platform and
+                rigorously <span className="green-text">test its functionalities</span>.
               </p>
             </div>
           </div>
@@ -65,43 +56,31 @@ function About() {
                 <h2 className="purple-text">PRODUCT SELECTION</h2>
                 <p>
                   We chose to meet the demand for
-                  <span className="purple-text">
-                    {" "}
-                    longboard skates and accessories
-                  </span>
-                  , taking inspiration from industry leaders like Orangatang,
-                  Sector9, and Loaded for our
+                  <span className="purple-text"> longboard skates and accessories</span>, taking
+                  inspiration from industry leaders like Orangatang, Sector9, and Loaded for our
                   <span className="purple-text"> UX/UI design</span>.
                 </p>
               </div>
               <div className="col-12 col-lg-4">
                 <h2 className="acqua-text">AGILE DEVELOPMENT</h2>
                 <p>
-                  We adopted{" "}
-                  <span className="acqua-text">Scrum methodology</span>,
-                  completed
-                  <span className="acqua-text">
-                    {" "}
-                    three one-week development sprints
-                  </span>
-                  , and utilized Trello's Kanban board for our
+                  We adopted <span className="acqua-text">Scrum methodology</span>, completed
+                  <span className="acqua-text"> three one-week development sprints</span>, and
+                  utilized Trello's Kanban board for our
                   <span className="acqua-text"> product backlog</span>.
                 </p>
               </div>
               <div className="col-12 col-lg-4">
                 <h2 className="salmon-text">REST ARCHITECTURE</h2>
                 <p>
-                  Our database stores{" "}
+                  Our database stores{' '}
                   <span className="salmon-text">
-                    {" "}
-                    user profiles, administrator credentials, product listings,
-                    product categories, and order details
+                    {' '}
+                    user profiles, administrator credentials, product listings, product categories,
+                    and order details
                   </span>
-                  . Additionally, we implemented{" "}
-                  <span className="salmon-text">
-                    {" "}
-                    robust CRUD (Create, Read, Update, Delete){" "}
-                  </span>
+                  . Additionally, we implemented{' '}
+                  <span className="salmon-text"> robust CRUD (Create, Read, Update, Delete) </span>
                   functionalities for seamless management of these entities.
                 </p>
               </div>
@@ -111,7 +90,7 @@ function About() {
             <div className="row">
               <div className="col-12">
                 <h2 className="mb-4">
-                  {" "}
+                  {' '}
                   <span className="green-text">TECHNOLOGIES</span> & TOOLS
                 </h2>
               </div>
@@ -180,11 +159,7 @@ function About() {
             <div className="row">
               <div className="col-12 col-md-6">
                 <div className="prints-container text-center">
-                  <img
-                    className="img-fluid mb-4"
-                    src="./HOME-SCRN.png"
-                    alt="Home Print Screen"
-                  />
+                  <img className="img-fluid mb-4" src="./HOME-SCRN.png" alt="Home Print Screen" />
 
                   <p className="m-0">Test User Credentials</p>
                   <p className="m-0">user: user@example.com</p>
@@ -193,11 +168,7 @@ function About() {
               </div>
               <div className="col-12 col-md-6">
                 <div className="prints-container text-center">
-                  <img
-                    className="img-fluid mb-4"
-                    src="./ADMIN-SCRN.png"
-                    alt="Home Print Screen"
-                  />
+                  <img className="img-fluid mb-4" src="./ADMIN-SCRN.png" alt="Home Print Screen" />
                   <p className="m-0">Test Admin Credentials</p>
                   <p className="m-0">user: admin@example.com</p>
                   <p className="m-0">password: 123456</p>
@@ -210,7 +181,7 @@ function About() {
       <div className="team-container py-5 w-100">
         <div className="container ">
           <div className="row">
-            <SectionHeader bold={"MEET"} normal={"THE TEAM"} />
+            <SectionHeader bold={'MEET'} normal={'THE TEAM'} />
           </div>
 
           <div className="row">

@@ -1,12 +1,12 @@
 import React from 'react';
 import CategoryBannerText from './CategoryBannerText';
 import './ProductCategories.css';
-import SectionHeader from './sectionHeader';
+import SectionHeader from './SectionHeader';
 import axios from 'axios';
 import ShopItemCard from './ShopItemCard';
 import ListedProductsMenu from './ListedProductsMenu';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, NavLink } from 'react-router-dom';
 
 function CompletesList() {
   const params = useParams();
@@ -39,7 +39,9 @@ function CompletesList() {
               id="completesBanner"
             >
               <div className="w-100 justify-content-center g-0">
-                <CategoryBannerText bold={'URBAN'} normal={'RUSH'} />
+                <NavLink to={'/'} className={'text-decoration-none'}>
+                  <CategoryBannerText bold={'URBAN'} normal={'RUSH'} />
+                </NavLink>
               </div>
             </div>
           </section>
