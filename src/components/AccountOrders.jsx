@@ -2,6 +2,7 @@ import Table from 'react-bootstrap/Table';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
+import { format } from 'date-fns';
 
 function AccountOrders() {
   const [orders, setOrders] = useState([]);
@@ -17,11 +18,12 @@ function AccountOrders() {
       },
     });
     setOrders(response.data.orders);
-    console.log(response.data.orders);
+    console.log(response.data.orders)
   };
   useEffect(() => {
     getUser();
   }, []);
+
 
   return (
     orders && (
@@ -36,17 +38,18 @@ function AccountOrders() {
               <th>Details</th>
             </tr>
           </thead>
-          {orders.map((order) => (
             <tbody>
-              <tr>
+          {orders.map((order) => (
+              <tr key={order._id}>
                 <td>{order._id}</td>
-                <td>{order.updatedAt}</td>
-                <td>{order.subtotal}</td>
-                <td>{order.status}</td>
+                <td>{new Date(order.updatedAt).toLocaleDateString()}</td>
+                <td>{order.subtotal.toFixed(2)}</td>
+                <td>{order.status.status}</td>
                 <td>View Order</td>
               </tr>
-            </tbody>
+              
           ))}
+            </tbody>
         </Table>
       </div>
     )
