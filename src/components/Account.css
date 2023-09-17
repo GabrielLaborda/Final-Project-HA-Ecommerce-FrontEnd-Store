@@ -39,3 +39,13 @@
   margin-top: 10px;
   width: 100%;
 }
+
+.order-details {
+  overflow-y: auto;
+  overflow-x: hidden;
+  -ms-overflow-style: none; /* for IE and Edge */
+  scrollbar-width: none; /* for Firefox */
+}
+.order-details::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
