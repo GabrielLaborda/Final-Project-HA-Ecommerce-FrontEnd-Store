@@ -1,10 +1,11 @@
 import React from "react";
 import "./Account.css";
 import { logout } from "../redux/userSlice";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, Link } from "react-router-dom";
 
 function Account() {
+  const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -37,9 +38,12 @@ function Account() {
               <p className="account-data-p">Email: Lucho@gmail.com</p>
               <p className="account-data-p">Phone: 1589647</p>
               <p className="account-data-p">Address: Bulevar Artigas 1182</p>
-              <button className="btn btn-outline-dark border-secondary-subtle rounded-0 account-btn">
-                Edit your Address
-              </button>
+              <Link
+                to={`/edit/${user.id}`}
+                className="btn btn-outline-dark border-secondary-subtle rounded-0 account-btn"
+              >
+                Edit your Account
+              </Link>
             </div>
           </div>
         </div>
