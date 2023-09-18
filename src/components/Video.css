@@ -18,7 +18,7 @@
 
 @media (max-width: 1024px) {
   .container-banner {
-    background-image: url("/VideoHome/ImgHome.png");
+    background-image: url('https://piarwkworivztingyprt.supabase.co/storage/v1/object/public/UrbanRush/img/ImgHome.png');
     background-size: cover;
     background-position: center;
     height: 50vh;

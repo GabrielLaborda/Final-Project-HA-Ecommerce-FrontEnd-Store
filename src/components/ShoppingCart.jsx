@@ -17,6 +17,7 @@ function ShoppintCart() {
 
   const [comment, setComment] = useState(orderInstruction);
   const baseURL = import.meta.env.VITE_API_BASE_URL;
+  const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
 
   const handleCheckout = () => {
     if (user) {
@@ -59,7 +60,7 @@ function ShoppintCart() {
                       <div className=" d-flex flex-row w-75 mx-auto mt-5">
                         {item.product.picture && (
                           <img
-                            src={`${baseURL}/img/${item.product.picture[0]}`}
+                            src={`${storageURL}/${item.product.picture[0]}`}
                             alt="Product Picture"
                             height={150}
                             className="d-none d-md-inline"

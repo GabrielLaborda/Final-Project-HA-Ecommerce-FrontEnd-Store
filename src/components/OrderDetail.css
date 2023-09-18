@@ -1,17 +1,17 @@
 .left-container {
-  background-image: url("Order_Details_Image.webp");
+  background-image: url('https://piarwkworivztingyprt.supabase.co/storage/v1/object/public/UrbanRush/img/Order_Details_Image.webp');
   background-size: cover;
   background-position: bottom;
   height: 100vh;
   padding: 42px;
   color: white;
-  font-family: "Roboto";
+  font-family: 'Roboto';
 }
 
 .account-h1 {
   font-size: 70px;
   color: rgb(255, 255, 255);
-  font-family: "Kalam", cursive;
+  font-family: 'Kalam', cursive;
   font-weight: 700;
 }
 
@@ -45,11 +45,11 @@ td {
 }
 
 @media (max-width: 992px) {
-    .left-container {
-        height: 30vh;
-    }
+  .left-container {
+    height: 30vh;
+  }
 
-    .order-prods-container {
-        height: auto;
-      }
+  .order-prods-container {
+    height: auto;
+  }
 }

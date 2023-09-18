@@ -19,6 +19,7 @@ function FeaturedHome() {
   const params = useParams();
   const categorySlug = params.categorySlug;
   const baseURL = import.meta.env.VITE_API_BASE_URL;
+  const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
   const [products, setProducts] = useState(null);
 
   const getFilteredProducts = async () => {
@@ -113,7 +114,7 @@ function FeaturedHome() {
                       to={`/products/${product.category.slug}/${product.slug}`}
                     >
                       <img
-                        src={`${baseURL}/img/${product.picture[0]}`}
+                        src={`${storageURL}/${product.picture[0]}`}
                         className="card-img-top"
                         alt="..."
                       />

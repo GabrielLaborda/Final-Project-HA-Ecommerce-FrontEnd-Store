@@ -8,6 +8,7 @@ import { useParams, NavLink } from 'react-router-dom';
 import axios from 'axios';
 
 function ProductDetail() {
+  const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
   const params = useParams();
   const slugProducts = params.productSlug;
   const slugCategories = params.categorySlug;
@@ -51,7 +52,7 @@ function ProductDetail() {
               <div
                 className="w-100 m-0 p-0 d-flex justify-content-center align-items-center"
                 style={{
-                  backgroundImage: `url(${baseURL}/img/${category.pictures[0]})`,
+                  backgroundImage: `url(${storageURL}/${category.pictures[0]})`,
                 }}
                 id="completesBanner"
               >

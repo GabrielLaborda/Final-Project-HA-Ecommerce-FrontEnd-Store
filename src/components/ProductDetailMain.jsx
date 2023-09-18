@@ -5,6 +5,7 @@ import Quantity from './Quantity';
 import { useState } from 'react';
 
 function ProductDetailMain({ product }) {
+  const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
   const firstExample = {
     size: 30,
     value: 4.5,
@@ -14,8 +15,8 @@ function ProductDetailMain({ product }) {
   const baseUrl = import.meta.env.VITE_API_BASE_URL;
   const productImgs = product.picture.map((img, index) => {
     return {
-      original: `${baseUrl}/img/${img}`,
-      thumbnail: `${baseUrl}/img/${img}`,
+      original: `${storageURL}/${img}`,
+      thumbnail: `${storageURL}/${img}`,
     };
   });
   const images = [...productImgs];

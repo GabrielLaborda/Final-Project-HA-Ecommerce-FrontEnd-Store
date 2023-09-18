@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react';
 import { useParams, NavLink } from 'react-router-dom';
 
 function CompletesList() {
+  const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
   const params = useParams();
   const baseURL = import.meta.env.VITE_API_BASE_URL;
   const categorySlug = params.categorySlug;
@@ -34,7 +35,7 @@ function CompletesList() {
             <div
               className="w-100 m-0 p-0 d-flex justify-content-center align-items-center"
               style={{
-                backgroundImage: `url(${baseURL}/img/${category.pictures[0]})`,
+                backgroundImage: `url(${storageURL}/${category.pictures[0]})`,
               }}
               id="completesBanner"
             >

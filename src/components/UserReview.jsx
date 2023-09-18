@@ -1,8 +1,7 @@
-import ReactStars from "react-rating-stars-component";
-import UserAvatar from "/User-avatar.png?url";
-import iconShare from "/icons8-share.svg?url";
+import ReactStars from 'react-rating-stars-component';
 
 function UserReview() {
+  const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
   const rating = {
     size: 30,
     value: 4.5,
@@ -12,7 +11,7 @@ function UserReview() {
     <div className="card d-flex flex-column userReview p-3 m-3 mb-5">
       <div className="d-flex align-items-center">
         <img
-          src={UserAvatar}
+          src={`${storageURL}/User-avatar.png`}
           alt=""
           className="rounded-circle me-2 userReviewImg"
         />
@@ -25,15 +24,14 @@ function UserReview() {
         <ReactStars {...rating} />
         <p className="userReviewTextTitle">Review Titlte</p>
         <p className="userReviewTextContent">
-          Review Content...Lorem, ipsum dolor sit amet consectetur adipisicing
-          elit. Laborum sapiente quibusdam tenetur? Facilis in tempora obcaecati
-          sint similique, rerum quasi placeat a blanditiis voluptatibus nostrum
-          iusto rem cupiditate sequi quod explicabo animi quis omnis repellat
-          quo? Provident perferendis eveniet voluptatem inventore consequatur
+          Review Content...Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum
+          sapiente quibusdam tenetur? Facilis in tempora obcaecati sint similique, rerum quasi
+          placeat a blanditiis voluptatibus nostrum iusto rem cupiditate sequi quod explicabo animi
+          quis omnis repellat quo? Provident perferendis eveniet voluptatem inventore consequatur
           aliquid delectus corporis.
         </p>
         <div className="d-flex">
-          <img src={iconShare} alt="" className="userReviewIcon" />
+          <img src={`${storageURL}/icons8-share.svg`} alt="" className="userReviewIcon" />
           <div className="d-flex userReviewTextShare ms-auto">
             <i className="bi bi-hand-thumbs-up-fill me-2"></i>
             <p className="me-2">likes count</p>

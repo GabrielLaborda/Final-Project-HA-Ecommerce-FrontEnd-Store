@@ -1,48 +1,47 @@
 .checkout-left-container {
-    background-image: url("Pages_CheckOut-4_b9aeb030-5e9a-4a2c-9dd2-b71b6133b992.webp");
-    background-size: cover;
-    background-position: bottom;
-    height: 100vh;
-    padding: 42px;
-    color: white;
-    font-family: 'Roboto';
+  background-image: url('https://piarwkworivztingyprt.supabase.co/storage/v1/object/public/UrbanRush/img/Pages_CheckOut-4_b9aeb030-5e9a-4a2c-9dd2-b71b6133b992.webp');
+  background-size: cover;
+  background-position: bottom;
+  height: 100vh;
+  padding: 42px;
+  color: white;
+  font-family: 'Roboto';
 }
 
 .checkout-left-container p {
-    font-family: 'Roboto';
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 30px;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 30px;
 }
 
-
 .left-container-content {
-    overflow-y: auto;
-    overflow-x: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .left-container-content::-webkit-scrollbar {
-    display: none;  /* for Chrome, Safari, and Opera */
+  display: none; /* for Chrome, Safari, and Opera */
 }
 
 .left-container-content {
-    -ms-overflow-style: none;  /* for IE and Edge */
-    scrollbar-width: none;  /* for Firefox */
+  -ms-overflow-style: none; /* for IE and Edge */
+  scrollbar-width: none; /* for Firefox */
 }
 
 .checkout-credit-cards img {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 .custom-button-colour {
-    background-color: white;
+  background-color: white;
 }
 
 #left-container-alignment {
-    align-items: end;
+  align-items: end;
 }
 
 @media (max-width: 992px) {
-    #left-container-alignment {
-        align-items: center;
-    }
+  #left-container-alignment {
+    align-items: center;
+  }
 }

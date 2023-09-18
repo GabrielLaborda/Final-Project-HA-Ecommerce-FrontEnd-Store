@@ -6,8 +6,8 @@ import { addItem } from '../redux/cartSlice';
 import { toast } from 'react-toastify';
 
 function ShopItemCard({ product, categorySlug }) {
+  const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
   const dispatch = useDispatch();
-  // const params = useParams();
 
   const notify = () =>
     toast.error('Insufficient Stock, plese select a smaller amount!', {
@@ -39,11 +39,7 @@ function ShopItemCard({ product, categorySlug }) {
               className={'text-decoration-none text-black'}
               to={`/products/${categorySlug}/${product.slug}`}
             >
-              <img
-                src={`${baseURL}/img/${product.picture[0]}`}
-                className="card-img-top"
-                alt="..."
-              />
+              <img src={`${storageURL}/${product.picture[0]}`} className="card-img-top" alt="..." />
             </NavLink>
             <button
               type="button"

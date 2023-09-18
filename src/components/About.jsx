@@ -13,6 +13,7 @@ import { SiExpress, SiRedux, SiMongoose, SiAxios } from 'react-icons/si';
 
 import './About.css';
 import SectionHeader from './SectionHeader';
+const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
 
 function About() {
   return (
@@ -189,7 +190,7 @@ function About() {
               <div className="d-flex justify-content-between flex-wrap">
                 <div className="user-card text-center m-xl-0 m-auto py-3">
                   <img
-                    src="./User-avatar.png"
+                    src={`${storageURL}/User-avatar.png`}
                     alt="user-avatar"
                     className="img-fluid user-avatar"
                   />
@@ -206,7 +207,7 @@ function About() {
                 </div>
                 <div className="user-card text-center m-xl-0 m-auto py-3">
                   <img
-                    src="./User-avatar.png"
+                    src={`${storageURL}/User-avatar.png`}
                     alt="user-avatar"
                     className="img-fluid user-avatar"
                   />
@@ -223,7 +224,7 @@ function About() {
                 </div>
                 <div className="user-card text-center m-xl-0 m-auto py-3">
                   <img
-                    src="./User-avatar.png"
+                    src={`${storageURL}/User-avatar.png`}
                     alt="user-avatar"
                     className="img-fluid user-avatar"
                   />
@@ -240,7 +241,7 @@ function About() {
                 </div>
                 <div className="user-card text-center m-xl-0 m-auto py-3">
                   <img
-                    src="./User-avatar.png"
+                    src={`${storageURL}/User-avatar.png`}
                     alt="user-avatar"
                     className="img-fluid user-avatar"
                   />
@@ -257,7 +258,7 @@ function About() {
                 </div>
                 <div className="user-card text-center m-xl-0 m-auto py-3">
                   <img
-                    src="./User-avatar.png"
+                    src={`${storageURL}/User-avatar.png`}
                     alt="user-avatar"
                     className="img-fluid user-avatar"
                   />

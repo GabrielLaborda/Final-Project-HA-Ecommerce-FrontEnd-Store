@@ -33,7 +33,6 @@ function AllProducts() {
               className="w-100 m-0 p-0 d-flex justify-content-center align-items-center"
               style={{
                 backgroundColor: 'grey',
-                // backgroundImage: `url(${baseURL}/img/${category.pictures[0]})`,
               }}
               id="completesBanner"
             >
@@ -60,10 +59,6 @@ function AllProducts() {
                         <ShopItemCard
                           key={product.slug}
                           product={product}
-                          // name={product.name}
-                          // picture={product.picture[0]}
-                          // productSlug={product.slug}
-                          // price={product.price}
                           categorySlug={product.category.slug}
                         />
                       ))}

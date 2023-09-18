@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 function CheckoutPayments() {
+  const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
   const user = useSelector((state) => state.user);
   const [cardNumber, setCardNumber] = useState('3782 8224 6310 1005');
   const [securityCode, setSecurityCode] = useState('123');
@@ -20,11 +21,11 @@ function CheckoutPayments() {
             <p className="m-0">Credit Card</p>
           </div>
           <div className="d-flex checkout-credit-cards">
-            <img src="./visa.svg" alt="Visa" />
-            <img src="./master.svg" alt="Master Card" />
-            <img src="./amex.svg" alt="American Express" />
-            <img src="./discover.svg" alt="Discover" />
-            <img src="./diners.svg" alt="Diners" />
+            <img src={`${storageURL}/visa.svg`} alt="Visa" />
+            <img src={`${storageURL}/master.svg`} alt="Master Card" />
+            <img src={`${storageURL}/amex.svg`} alt="American Express" />
+            <img src={`${storageURL}/discover.svg`} alt="Discover" />
+            <img src={`${storageURL}/diners.svg`} alt="Diners" />
           </div>
         </div>
         <input
@@ -98,7 +99,7 @@ function CheckoutPayments() {
               <p className="m-0">PayPal</p>
             </div>
             <div className="d-flex checkout-credit-cards">
-              <img src="./visa.svg" alt="Visa" />
+              <img src={`${storageURL}/visa.svg`} alt="Visa" />
             </div>
           </div>
         </div>
