@@ -100,10 +100,10 @@ function Checkout() {
               <p>Express chechout</p>
             </div>
             <div className="d-flex w-100 py-4">
-              <button className="btn btn-primary w-100 me-2">SHOPPay</button>
-              <button className="btn btn-warning w-100 me-2">PayPal</button>
-              <button className="btn btn-warning w-100 me-2">amazon pay</button>
-              <button className="btn btn-light w-100 me-2">G Pay</button>
+              <button className="btn btn-light w-100 me-2"><img src={`${storageURL}/shopPay.svg`} alt="ShopPay" className="payIcon"/></button>
+              <button className="btn btn-warning w-100 me-2"><img src={`${storageURL}/payPal.svg`} alt="PayPal" className="payIconL"/></button>
+              <button className="btn btn-warning w-100 me-2"><img src={`${storageURL}/amazonPay.svg`} alt="AmazonPay" className="payIconL"/></button>
+              <button className="btn btn-light w-100 me-2"><img src={`${storageURL}/google-pay-logo.svg`} alt="GooglePay" className="payIcon"/></button>
             </div>
             <div className="d-flex justify-content-center">
               <p>OR</p>
