@@ -1,19 +1,19 @@
 .imgLogin {
-  background-image: url("https://piarwkworivztingyprt.supabase.co/storage/v1/object/public/UrbanRush/img/CustomerLogin.webp");
+  background-image: url('https://piarwkworivztingyprt.supabase.co/storage/v1/object/public/UrbanRush/CustomerLogin.webp');
   background-size: cover;
 }
 
 .textTitle {
   font-size: 4rem;
   color: white;
-  font-family: "Kalam", sans-serif;
+  font-family: 'Kalam', sans-serif;
   font-weight: bold;
 }
 
 .textTitleResponsive {
   font-size: 4rem;
   color: white;
-  font-family: "Kalam", sans-serif;
+  font-family: 'Kalam', sans-serif;
   font-weight: bold;
 }
 
