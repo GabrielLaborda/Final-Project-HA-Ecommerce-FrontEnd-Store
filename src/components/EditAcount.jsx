@@ -1,23 +1,23 @@
-import './EditAccount.css';
-import { useNavigate, useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useSelector } from 'react-redux';
+import "./EditAccount.css";
+import { useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useSelector } from "react-redux";
 
 function EditAccount(props) {
   const baseURL = import.meta.env.VITE_API_BASE_URL;
   const params = useParams();
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [address, setAddress] = useState('');
-  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState("");
+  const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
   const user = useSelector((state) => state.user);
 
   useEffect(() => {
     const getUser = async () => {
       try {
         const response = await axios({
-          method: 'GET',
+          method: "GET",
           url: `${baseURL}/users/${params.id}`,
           headers: {
             Authorization: `Bearer ${user.token}`,
@@ -37,7 +37,7 @@ function EditAccount(props) {
     try {
       e.preventDefault();
       await axios({
-        method: 'PATCH',
+        method: "PATCH",
         url: `${baseURL}/users/${params.id}`,
         data: { email, address, phone },
       });
@@ -50,7 +50,7 @@ function EditAccount(props) {
   return (
     <div className="container-fluid">
       <div className="row vh-100">
-        <div className="col d-none d-sm-none d-lg-flex text-start justify-content-center align-items-center imgEdit">
+        <div className="col d-none d-none d-lg-flex text-start justify-content-center align-items-center imgEdit">
           <div className="m-5">
             <div className="m-0">
               <h2 className="textTitle">Edit</h2>
@@ -118,7 +118,10 @@ function EditAccount(props) {
 
                 <br />
                 <div className="d-grid p-0">
-                  <button type="submit" className="btn btn-dark rounded-0 btn-lg p-1">
+                  <button
+                    type="submit"
+                    className="btn btn-dark rounded-0 btn-lg p-1"
+                  >
                     Edit
                   </button>
                 </div>
