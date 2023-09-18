@@ -50,6 +50,10 @@
   height: auto;
 }
 
+.back {
+  cursor: pointer;
+}
+
 @media (max-width: 992px) {
   #left-container-alignment {
     align-items: center;
