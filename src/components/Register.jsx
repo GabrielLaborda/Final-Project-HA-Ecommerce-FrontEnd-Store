@@ -45,10 +45,10 @@ function Register(props) {
         </div>
 
         {/* Responsive */}
-        <div className="col d-flex d-lg-none text-center justify-content-center align-items-center imgLogin responsiveHeight">
+        <div className="col d-flex d-lg-none text-center justify-content-center align-items-center imgLogin ">
           <div className="my-4">
-            <h2 className="textTitleResponsive">Costumer</h2>
-            <h2 className="textTitleResponsive">Register</h2>
+            <h2 className="textTitle">Costumer</h2>
+            <h2 className="textTitle">Register</h2>
           </div>
         </div>
 

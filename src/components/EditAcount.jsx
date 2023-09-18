@@ -50,7 +50,7 @@ function EditAccount(props) {
   return (
     <div className="container-fluid">
       <div className="row vh-100">
-        <div className="col d-none d-none d-lg-flex text-start justify-content-center align-items-center imgEdit">
+        <div className="col d-none d-lg-flex text-start justify-content-center align-items-center imgEdit">
           <div className="m-5">
             <div className="m-0">
               <h2 className="textTitle">Edit</h2>
@@ -60,10 +60,10 @@ function EditAccount(props) {
         </div>
 
         {/* Responsive */}
-        <div className="col d-sm-flex d-lg-none text-center justify-content-center align-items-center imgEdit responsiveHeight">
+        <div className="col d-flex d-lg-none text-center justify-content-center align-items-center imgEdit">
           <div className="mt-2">
-            <h2 className="textTitleResponsive">Edit</h2>
-            <h2 className="textTitleResponsive">Account</h2>
+            <h2 className="textTitle">Edit</h2>
+            <h2 className="textTitle">Account</h2>
           </div>
         </div>
 
