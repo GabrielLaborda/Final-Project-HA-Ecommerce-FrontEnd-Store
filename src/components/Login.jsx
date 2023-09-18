@@ -43,10 +43,10 @@ function Login() {
 
         {/* Responsive */}
 
-        <div className="col d-sm-flex d-lg-none text-center justify-content-center align-items-center imgLogin responsiveHeight ">
-          <div className="mt-2">
-            <h2 className="textTitleResponsive">Costumer</h2>
-            <h2 className="textTitleResponsive">Login</h2>
+        <div className="col d-flex d-lg-none text-center justify-content-center align-items-center imgLogin  ">
+          <div className="">
+            <h2 className="textTitle">Costumer</h2>
+            <h2 className="textTitle">Login</h2>
           </div>
         </div>
 
