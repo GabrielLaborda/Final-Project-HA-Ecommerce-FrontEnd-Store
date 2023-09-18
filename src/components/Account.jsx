@@ -25,7 +25,6 @@ function Account() {
             Authorization: `Bearer ${user.token}`,
           },
         });
-        console.log(response.data);
         setAccount(response.data);
       } catch (err) {
         console.log(err.msg);
