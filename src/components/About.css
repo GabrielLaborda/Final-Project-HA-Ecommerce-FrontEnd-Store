@@ -1,7 +1,7 @@
 .hero-container {
   font-family: Roboto;
   overflow-x: hidden;
-  background-image: url('about-us-fullscreen.png');
+  background-image: url('https://piarwkworivztingyprt.supabase.co/storage/v1/object/public/UrbanRush/img/about-project-white.png');
   background-size: cover;
   background-position: right;
   height: 50vh;
@@ -9,7 +9,7 @@
 
 @media (max-width: 768px) {
   .hero-container {
-    background-image: url('about-project.png');
+    background-image: url('https://piarwkworivztingyprt.supabase.co/storage/v1/object/public/UrbanRush/img/about-project.png');
     background-size: cover;
     background-position: center;
     height: 50vh;
