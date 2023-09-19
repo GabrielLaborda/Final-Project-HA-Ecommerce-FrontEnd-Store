@@ -13,7 +13,6 @@ import Account from "./components/Account";
 import Register from "./components/Register";
 import ShoppingCart from "./components/ShoppingCart";
 import Checkout from "./components/Checkout";
-
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import EditAccount from "./components/EditAcount";
@@ -38,7 +37,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/edit/:id" element={<EditAccount />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/orders/:id" element={<OrderDetail />}/>
+        <Route path="/orders/:id" element={<OrderDetail />} />
       </Routes>
       <Footer />
       <ToastContainer />

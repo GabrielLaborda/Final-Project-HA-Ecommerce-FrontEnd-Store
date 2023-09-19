@@ -48,14 +48,13 @@ nav {
   .text {
     color: white;
   }
-  .transparent-navbar {
+  .black-navbar {
     background-color: black;
     .navbardTitle {
       font-size: 20px;
       font-weight: 800;
       color: white;
       display: inline;
-      margin-left: 10px;
     }
     .navbardTitleBold {
       font-size: 20px;
