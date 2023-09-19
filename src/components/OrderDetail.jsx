@@ -48,20 +48,20 @@ function OrderDetail() {
                 <h6>
                   Order Date: {new Date(order.createdAt).toLocaleDateString()}
                 </h6>
-                <table border="1">
+                <table className=" tableOrder" border="1">
                   <thead>
-                    <tr>
-                      <th>Product</th>
-                      <th>Quantity</th>
-                      <th>Price</th>
+                    <tr className="tableOrderThTd">
+                      <th className="tableOrderThTd">Product</th>
+                      <th className="tableOrderThTd">Quantity</th>
+                      <th className="tableOrderThTd">Price</th>
                     </tr>
                   </thead>
                   <tbody>
                     {order.products.map((item) => (
-                      <tr key={item.name}>
-                        <td>{item.name}</td>
-                        <td>{item.quantity}</td>
-                        <td>USD {item.price}</td>
+                      <tr key={item.name} className="tableOrderThTd">
+                        <td className="tableOrderThTd">{item.name}</td>
+                        <td className="tableOrderThTd">{item.quantity}</td>
+                        <td className="tableOrderThTd">USD {item.price}</td>
                       </tr>
                     ))}
                   </tbody>

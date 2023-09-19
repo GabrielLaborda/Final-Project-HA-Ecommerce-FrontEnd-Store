@@ -1,17 +1,17 @@
 .left-container {
-  background-image: url('https://piarwkworivztingyprt.supabase.co/storage/v1/object/public/UrbanRush/Order_Details_Image.webp');
+  background-image: url("https://piarwkworivztingyprt.supabase.co/storage/v1/object/public/UrbanRush/Order_Details_Image.webp");
   background-size: cover;
   background-position: bottom;
   height: 100vh;
   padding: 42px;
   color: white;
-  font-family: 'Roboto';
+  font-family: "Roboto";
 }
 
 .account-h1 {
   font-size: 70px;
   color: rgb(255, 255, 255);
-  font-family: 'Kalam', cursive;
+  font-family: "Kalam", cursive;
   font-weight: 700;
 }
 
@@ -33,13 +33,12 @@
   scrollbar-width: none; /* for Firefox */
 }
 
-table {
+.tableOrder table {
   border-collapse: collapse;
   background-color: #f2f2f2;
 }
 
-th,
-td {
+.tableOrderThTd {
   border: 1px solid black;
   padding: 8px;
 }
