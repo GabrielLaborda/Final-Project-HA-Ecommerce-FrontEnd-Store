@@ -7,14 +7,31 @@ import { AiOutlineShopping } from "react-icons/ai";
 import { BiSolidUser } from "react-icons/bi";
 
 import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 function NavbardNuevo(props) {
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
   const cart = useSelector((state) => state.cart);
   const [isNavbarTransparent, setIsNavbarTransparent] = useState(true);
+  const [expand, setExpand] = useState(true);
+  const [scrolling, setScrolling] = useState(false);
+
+  useEffect(() => {
+    function handleScroll() {
+      setScrolling(window.scrollY > 0);
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleClick = () => {
+    setExpand(!expand);
+    setIsNavbarTransparent(!isNavbarTransparent);
     if (user) {
       navigate(`/account/${user.id}`);
     } else {
@@ -22,16 +39,29 @@ function NavbardNuevo(props) {
     }
   };
 
+  const handleClickButton = () => {
+    setIsNavbarTransparent(!isNavbarTransparent);
+    setExpand(!expand);
+  };
+
   const handleNavbarToggle = () => {
     setIsNavbarTransparent(!isNavbarTransparent);
+    setExpand(!expand);
   };
-  const navbarClassName = isNavbarTransparent ? "" : "transparent-navbar";
+  const buttonExpand = expand ? "" : "show";
+  const navbarClassName = isNavbarTransparent ? "" : "black-navbar";
   return (
     <>
-      <header className={`w-100 ${navbarClassName}`}>
+      <header
+        className={
+          scrolling
+            ? `scrolling w-100 ${navbarClassName}`
+            : `w-100 ${navbarClassName}`
+        }
+      >
         <div className="container">
           <nav className="navbar navbar-expand-lg">
-            <Link to={"/"} className="navbar-brand">
+            <Link to={"/"} className="navbar-brand" onClick={handleClickButton}>
               <h2 className="navbardTitleBold">
                 <span className="navbardTitle">URBAN</span>RUSH
               </h2>
@@ -60,7 +90,11 @@ function NavbardNuevo(props) {
                 />
               </svg>
             </button>
-            <div className="collapse navbar-collapse " id="navbarNav">
+
+            <div
+              className={`collapse navbar-collapse ${buttonExpand}`}
+              id="navbarNav"
+            >
               <ul className="navbar-nav ms-auto my-2 my-lg-0">
                 <li className="nav-item">
                   <Link
@@ -68,6 +102,7 @@ function NavbardNuevo(props) {
                     className="nav-link scrolling-white text"
                     href="#"
                     aria-disabled="true"
+                    onClick={handleClickButton}
                   >
                     Shop
                   </Link>
@@ -78,6 +113,7 @@ function NavbardNuevo(props) {
                     className="nav-link scrolling-white text about"
                     href="#"
                     aria-disabled="true"
+                    onClick={handleClickButton}
                   >
                     About This Project
                   </Link>
@@ -96,8 +132,9 @@ function NavbardNuevo(props) {
                     to={"/cart"}
                     className="nav-link  scrolling-white text"
                     aria-disabled="true"
+                    onClick={handleClickButton}
                   >
-                    <AiOutlineShopping size={30} />{" "}
+                    <AiOutlineShopping size={30} />
                     <span>
                       {cart.reduce((total, item) => total + item.quantity, 0)}
                     </span>
@@ -108,12 +145,6 @@ function NavbardNuevo(props) {
           </nav>
         </div>
       </header>
-      <script type="text/javascript">
-        {window.addEventListener("scroll", function () {
-          let header = document.querySelector("header");
-          header.classList.toggle("scrolling", window.scrollY > 0);
-        })}
-      </script>
     </>
   );
 }

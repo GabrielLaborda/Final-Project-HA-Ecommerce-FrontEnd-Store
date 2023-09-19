@@ -20,6 +20,20 @@ import EditAccount from './components/EditAcount';
 import OrderDetail from './components/OrderDetail';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import Footer from './components/Footer';
+import About from './components/About';
+import ProductCategories from './components/ProductCategories';
+import Login from './components/Login';
+import AllProducts from './components/AllProducts';
+import Navbar from './components/Navbar';
+import Account from './components/Account';
+import Register from './components/Register';
+import ShoppingCart from './components/ShoppingCart';
+import Checkout from './components/Checkout';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import EditAccount from './components/EditAcount';
+import OrderDetail from './components/OrderDetail';
 
 function App() {
   const location = useLocation();

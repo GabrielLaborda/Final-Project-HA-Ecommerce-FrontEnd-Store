@@ -30,13 +30,13 @@ function AccountOrders() {
       {orders.length === 0 && <p className="account-data-p">You haven't placed any orders yet.</p>}
       {orders.length > 0 && (
         <div className="table-responsive">
-          <Table className="table table-bordered table-hover">
+          <Table className="table p-3 custom-table">
             <thead>
               <tr>
                 <th>Order Id</th>
-                <th>Date</th>
-                <th>Total</th>
-                <th>Status</th>
+                <th className='hide-on-responsive'>Date</th>
+                <th className='hide-on-responsive'>Total</th>
+                <th className='hide-on-responsive'>Status</th>
                 <th>Details</th>
               </tr>
             </thead>
@@ -44,9 +44,9 @@ function AccountOrders() {
               {orders.map((order) => (
                 <tr key={order._id}>
                   <td>{order._id}</td>
-                  <td>{new Date(order.updatedAt).toLocaleDateString()}</td>
-                  <td>{order.subtotal.toFixed(2)}</td>
-                  <td>{order.status.status}</td>
+                  <td className='hide-on-responsive'>{new Date(order.updatedAt).toLocaleDateString()}</td>
+                  <td className='hide-on-responsive'>{order.subtotal.toFixed(2)}</td>
+                  <td className='hide-on-responsive'>{order.status.status}</td>
                   <td>
                     <NavLink to={`/orders/${order._id}`}>View Order</NavLink>
                   </td>

@@ -1,8 +1,8 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { BiLogoVisa, BiLogoPaypal } from "react-icons/bi";
-import { LiaApplePay } from "react-icons/lia";
+import { BiLogoVisa, BiLogoPaypal, BiLogoMastercard } from "react-icons/bi";
+import { LiaApplePay, LiaCcDinersClub } from "react-icons/lia";
 import {
   FaCcDinersClub,
   FaCcMastercard,
@@ -57,15 +57,16 @@ function Footer() {
             </div>
           </div>
           <div className="row">
-            <div className="col-12">
-              <div className="d-flex align-items-center justify-content-between pb-5 mx-5">
-                <BiLogoVisa color="white" size={60} className="d-inline" />
-                <BiLogoPaypal color="white" size={40} />
-                <LiaApplePay color="white" size={60} />
-                <FaCcDinersClub color="white" size={40} />
-                <FaCcMastercard color="white" size={40} />
-                <FaShopify color="white" size={40} />
-                <SiAmericanexpress color="white" size={40} />
+            <div className="col-12 col">
+              <div>
+                <div className="d-flex align-items-center justify-content-between pb-5">
+                  <BiLogoVisa color="white" size={60} />
+                  <BiLogoPaypal color="white" size={40} />
+                  <LiaApplePay color="white" size={60} />
+                  <FaCcDinersClub color="white" size={40} />
+                  <BiLogoMastercard color="white" size={60} />
+                  <SiAmericanexpress color="white" size={40} />
+                </div>
               </div>
             </div>
           </div>
