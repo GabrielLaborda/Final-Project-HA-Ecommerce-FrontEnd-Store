@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { NavLink, useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./OrderDetail.css";
 
 function OrderDetail() {
   const baseURL = import.meta.env.VITE_API_BASE_URL;
   const params = useParams();
+  const navigate = useNavigate();
   const orderId = params.id;
   const user = useSelector((state) => state.user);
   const [order, setOrder] = useState(null);
@@ -38,6 +39,10 @@ function OrderDetail() {
           {order && (
             <div className="right-section vh-100 d-flex flex-column justify-content-center">
               <div className="order-prods-container flex-column d-flex p-3">
+              <div className='d-flex back' onClick={() => navigate(-1)}>
+              <i className="bi bi-arrow-left"></i>
+              <p className='ms-2'>Back</p>
+              </div>
                 <h3 className="mb-5">Order Status: {order.status.status}</h3>
                 <h4>Order ID: {order._id}</h4>
                 <h6>

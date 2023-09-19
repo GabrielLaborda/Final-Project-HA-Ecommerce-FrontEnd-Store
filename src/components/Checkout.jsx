@@ -122,6 +122,10 @@ function Checkout() {
         <div className="col-6">
           <div className="right-section vh-100 d-flex flex-column justify-content-center">
             <div className="cart-prods-container flex-column d-flex">
+              <div className='d-flex ps-5 back' onClick={() => navigate(-1)}>
+              <i class="bi bi-arrow-left"></i>
+              <p className='ms-2'>Back</p>
+              </div>
               {cart.map((item) => (
                 <div key={item.product.slug} className="">
                   <div className=" d-flex flex-row w-75 mx-auto mt-5">
