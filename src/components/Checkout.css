@@ -6,6 +6,7 @@
   padding: 42px;
   color: white;
   font-family: 'Roboto';
+  position: relative;
 }
 
 .checkout-left-container p {
@@ -19,6 +20,22 @@
   overflow-y: auto;
   overflow-x: hidden;
 }
+
+.arrowWrapper {
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.arrowWrapper::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
+.arrowWrapper {
+  -ms-overflow-style: none; /* for IE and Edge */
+  scrollbar-width: none; /* for Firefox */
+}
+
 .left-container-content::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
 }

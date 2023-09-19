@@ -1,14 +1,15 @@
-import CheckoutPayments from './CheckoutPayments';
-import CheckoutUserData from './CheckoutUserData';
-import { NavLink, useNavigate } from 'react-router-dom';
-import { TiDelete } from 'react-icons/ti';
-import { useState } from 'react';
-import { deleteItem, emptyCart } from '../redux/cartSlice';
-import { useSelector, useDispatch } from 'react-redux';
-import { addInstruction } from '../redux/orderInstructionSlice';
-import './Checkout.css';
-import axios from 'axios';
-import { toast } from 'react-toastify';
+import CheckoutPayments from "./CheckoutPayments";
+import CheckoutUserData from "./CheckoutUserData";
+import { NavLink, useNavigate } from "react-router-dom";
+import { TiDelete } from "react-icons/ti";
+import { useState } from "react";
+import { deleteItem, emptyCart } from "../redux/cartSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { addInstruction } from "../redux/orderInstructionSlice";
+import "./Checkout.css";
+import axios from "axios";
+import { toast } from "react-toastify";
+import ScrollArrow from "./ScrollArrow";
 
 function Checkout() {
   const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
@@ -21,14 +22,14 @@ function Checkout() {
   const [comment, setComment] = useState(orderInstruction);
   const notifyError = (message) =>
     toast.error(message, {
-      position: 'top-right',
+      position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: 'light',
+      theme: "light",
     });
 
   const handleRemove = (slug) => {
@@ -39,9 +40,9 @@ function Checkout() {
     try {
       for (const item of cart) {
         await axios({
-          method: 'PATCH',
+          method: "PATCH",
           url: `${baseURL}/products/${item.product.slug}`,
-          params: { transaction: 'buy' },
+          params: { transaction: "buy" },
           data: { quantity: item.quantity },
           headers: {
             Authorization: `Bearer ${user.token}`,
@@ -49,14 +50,14 @@ function Checkout() {
         });
       }
       const orderStatuses = await axios({
-        method: 'GET',
+        method: "GET",
         url: `${baseURL}/orderstatus`,
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
       });
       const response = await axios({
-        method: 'POST',
+        method: "POST",
         url: `${baseURL}/orders`,
         headers: {
           Authorization: `Bearer ${user.token}`,
@@ -70,21 +71,24 @@ function Checkout() {
           status: orderStatuses.data[0],
           subtotal:
             Math.round(
-              cart.reduce((total, item) => total + item.quantity * item.product.price, 0) * 100
+              cart.reduce(
+                (total, item) => total + item.quantity * item.product.price,
+                0
+              ) * 100
             ) / 100,
         },
       });
       await axios({
-        method: 'PATCH',
+        method: "PATCH",
         url: `${baseURL}/users/${user.id}`,
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
-        params: { transaction: 'newOrder' },
+        params: { transaction: "newOrder" },
         data: { orderId: response.data.orderId },
       });
       dispatch(emptyCart());
-      dispatch(addInstruction(''));
+      dispatch(addInstruction(""));
       navigate(`/account/${user.id}`);
     } catch (error) {
       notifyError(error.response.data.msg);
@@ -132,9 +136,10 @@ function Checkout() {
               Pay Now
             </button>
           </div>
+          <ScrollArrow colour={"white"}/>
         </div>
 
-        <div className="col-6">
+        <div className="col-sm-12 col-lg-6">
           <div className="right-section vh-100 d-flex flex-column justify-content-center">
             <div className="cart-prods-container flex-column d-flex">
               <div className="d-flex ps-5 back" onClick={() => navigate(-1)}>
@@ -166,8 +171,9 @@ function Checkout() {
                       <TiDelete size={30} onClick={() => handleRemove(item.product.slug)} />
                     </div>
                   </div>
-                </div>
-              ))}
+                  </div>
+                ))}
+                <ScrollArrow colour={"black"} />
             </div>
             <textarea
               className="w-75 mx-auto border-0 bg-secondary-subtle fs-5 fw-light mt-5 p-3 mb-5"
@@ -182,15 +188,20 @@ function Checkout() {
                 <span className="fs-5 fw-light">Total: </span>
                 {cart && (
                   <span className="fw-bold">
-                    USD{' '}
+                    USD{" "}
                     {Math.round(
-                      cart.reduce((total, item) => total + item.quantity * item.product.price, 0) *
-                        100
+                      cart.reduce(
+                        (total, item) =>
+                          total + item.quantity * item.product.price,
+                        0
+                      ) * 100
                     ) / 100}
                   </span>
                 )}
               </p>
-              <p className="small-text fw-lighter mt-0">Shipping & taxes included</p>
+              <p className="small-text fw-lighter mt-0">
+                Shipping & taxes included
+              </p>
             </div>
           </div>
         </div>
