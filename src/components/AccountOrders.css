@@ -1,12 +1,23 @@
 th {
   font-family: Roboto;
-  font-size: 18px;
+  font-size: 16px;
 }
 td {
   font-family: Roboto;
-  font-size: 14px;
+  font-size: 13px;
   background-color: white;
 }
 .bs-table-bg-type {
   background-color: white;
+}
+
+@media (max-width: 992px) {
+  .hide-on-responsive {
+    display: none;
+  }
+}
+.custom-table td,
+.custom-table th {
+  border: 1px solid #c4c8cb;
+  padding: 8px;
 }

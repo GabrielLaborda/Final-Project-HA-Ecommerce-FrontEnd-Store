@@ -42,13 +42,13 @@ function Account() {
     <>
       <div className="container-fluid">
         <div className="row">
-          <div className="col-md-6 col-lg-6 d-flex flex-column justify-content-center align-items-center vh-100 background-image">
+          <div className="col-sm-12 col-lg-6 d-flex flex-column justify-content-center align-items-center background-image ">
             <h1 className="account-h1">My Account</h1>
             <span onClick={handleLogout} className="account-logOut">
               Log out
             </span>
           </div>
-          <div className=" col-md-6 col-lg-6 d-flex flex-column align-items-center">
+          <div className=" col-sm-12 col-lg-6 d-flex flex-column align-items-center">
             <div className=" d-flex flex-column justify-content-center align-items-start vh-100 px-2">
               <div className="order-details mt-5 pt-5">
                 <h3 className="account-data mb-3 ">ORDER HISTORY</h3>
