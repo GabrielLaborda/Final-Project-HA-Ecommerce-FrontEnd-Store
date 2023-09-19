@@ -43,6 +43,9 @@ function Checkout() {
           url: `${baseURL}/products/${item.product.slug}`,
           params: { transaction: 'buy' },
           data: { quantity: item.quantity },
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
         });
       }
       const orderStatuses = await axios({
@@ -100,10 +103,22 @@ function Checkout() {
               <p>Express chechout</p>
             </div>
             <div className="d-flex w-100 py-4">
-              <button className="btn btn-light w-100 me-2"><img src={`${storageURL}/shopPay.svg`} alt="ShopPay" className="payIcon"/></button>
-              <button className="btn btn-warning w-100 me-2"><img src={`${storageURL}/payPal.svg`} alt="PayPal" className="payIconL"/></button>
-              <button className="btn btn-warning w-100 me-2"><img src={`${storageURL}/amazonPay.svg`} alt="AmazonPay" className="payIconL"/></button>
-              <button className="btn btn-light w-100 me-2"><img src={`${storageURL}/google-pay-logo.svg`} alt="GooglePay" className="payIcon"/></button>
+              <button className="btn btn-light w-100 me-2">
+                <img src={`${storageURL}/shopPay.svg`} alt="ShopPay" className="payIcon" />
+              </button>
+              <button className="btn btn-warning w-100 me-2">
+                <img src={`${storageURL}/payPal.svg`} alt="PayPal" className="payIconL" />
+              </button>
+              <button className="btn btn-warning w-100 me-2">
+                <img src={`${storageURL}/amazonPay.svg`} alt="AmazonPay" className="payIconL" />
+              </button>
+              <button className="btn btn-light w-100 me-2">
+                <img
+                  src={`${storageURL}/google-pay-logo.svg`}
+                  alt="GooglePay"
+                  className="payIcon"
+                />
+              </button>
             </div>
             <div className="d-flex justify-content-center">
               <p>OR</p>
@@ -122,9 +137,9 @@ function Checkout() {
         <div className="col-6">
           <div className="right-section vh-100 d-flex flex-column justify-content-center">
             <div className="cart-prods-container flex-column d-flex">
-              <div className='d-flex ps-5 back' onClick={() => navigate(-1)}>
-              <i class="bi bi-arrow-left"></i>
-              <p className='ms-2'>Back</p>
+              <div className="d-flex ps-5 back" onClick={() => navigate(-1)}>
+                <i class="bi bi-arrow-left"></i>
+                <p className="ms-2">Back</p>
               </div>
               {cart.map((item) => (
                 <div key={item.product.slug} className="">
