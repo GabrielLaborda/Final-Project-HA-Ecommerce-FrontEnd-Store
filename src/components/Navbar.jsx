@@ -14,7 +14,7 @@ function NavbardNuevo(props) {
   const user = useSelector((state) => state.user);
   const cart = useSelector((state) => state.cart);
   const [isNavbarTransparent, setIsNavbarTransparent] = useState(true);
-  const [expand, setExpand] = useState(false);
+  const [expand, setExpand] = useState(true);
   const [scrolling, setScrolling] = useState(false);
 
   useEffect(() => {
@@ -49,7 +49,7 @@ function NavbardNuevo(props) {
     setExpand(!expand);
   };
   const buttonExpand = expand ? "" : "show";
-  const navbarClassName = isNavbarTransparent ? "black-navbar" : "";
+  const navbarClassName = isNavbarTransparent ? "" : "black-navbar";
   return (
     <>
       <header
