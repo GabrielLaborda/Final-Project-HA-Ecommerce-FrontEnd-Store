@@ -1,4 +1,7 @@
 import './AboutHome.css';
+import Ellipse from "../assets/Ellipse 1.svg"
+import { NavLink } from 'react-router-dom';
+
 function AboutHome() {
   const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
   return (
@@ -23,10 +26,17 @@ function AboutHome() {
       </div>
       <div className="row mb-5">
         <div className="col-12 col-lg-7"></div>
-        <div className="col-12 col-lg-5">
+        
+        <div className="col-12 col-lg-5 callToAction">
+        <NavLink to={"/about"} className="text-decoration-none text-black">
           <h2 className="aboutTitleBold">ABOUT THIS</h2>
           <h2 className="aboutTitle">PROJECT</h2>
+          <div>
+            <img src={Ellipse} alt="About this project Call To Action" className='callToActionSvg'/>
         </div>
+        </NavLink>
+        </div>
+        
       </div>
     </div>
   );
