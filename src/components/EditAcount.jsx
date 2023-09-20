@@ -68,64 +68,70 @@ function EditAccount(props) {
         </div>
 
         {/* Termina Responsive */}
+        <div className="container-fluid col-sm-12 col-lg-6 d-flex flex-column justify-content-center">
+          <div className='d-flex back' onClick={() => navigate(-1)}>
+              <i className="bi bi-arrow-left"></i>
+              <p className='ms-2'>Back</p>
+          </div>
+          <div className="d-flex justify-content-center  align-items-center">
+            
+            <div className="px-3 inputWidth mt-2">
+              <div>
+                <form onSubmit={handleSubmit}>
+                  <div>
+                    <label hidden htmlFor="email">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      className="form-control my-2 rounded-0"
+                      id="email"
+                      name="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <label hidden htmlFor="address">
+                      Address
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control my-2 rounded-0"
+                      id="address"
+                      name="address"
+                      required
+                      value={address}
+                      onChange={(e) => setAddress(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <label hidden htmlFor="phone">
+                      Phone
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control my-2 rounded-0"
+                      id="phone"
+                      name="phone"
+                      required
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                    />
+                  </div>
 
-        <div className="container-fluid col-sm-12 col-lg-6 text-start d-flex justify-content-center  align-items-center">
-          <div className="px-3 inputWidth mt-2">
-            <div>
-              <form onSubmit={handleSubmit}>
-                <div>
-                  <label hidden htmlFor="email">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    className="form-control my-2 rounded-0"
-                    id="email"
-                    name="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
-                <div>
-                  <label hidden htmlFor="address">
-                    Address
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control my-2 rounded-0"
-                    id="address"
-                    name="address"
-                    required
-                    value={address}
-                    onChange={(e) => setAddress(e.target.value)}
-                  />
-                </div>
-                <div>
-                  <label hidden htmlFor="phone">
-                    Phone
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control my-2 rounded-0"
-                    id="phone"
-                    name="phone"
-                    required
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                  />
-                </div>
-
-                <br />
-                <div className="d-grid p-0">
-                  <button
-                    type="submit"
-                    className="btn btn-dark rounded-0 btn-lg p-1"
-                  >
-                    Edit
-                  </button>
-                </div>
-              </form>
+                  <br />
+                  <div className="d-grid p-0">
+                    <button
+                      type="submit"
+                      className="btn btn-dark rounded-0 btn-lg p-1"
+                    >
+                      Edit
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>

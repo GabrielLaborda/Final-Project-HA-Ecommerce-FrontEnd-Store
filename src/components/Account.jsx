@@ -48,28 +48,34 @@ function Account() {
               Log out
             </span>
           </div>
-          <div className=" col-sm-12 col-lg-6 d-flex flex-column align-items-center">
-            <div className=" d-flex flex-column justify-content-center align-items-start vh-100 px-2">
-              <div className="order-details mt-5 pt-5">
-                <h3 className="account-data mb-3 ">ORDER HISTORY</h3>
-                <AccountOrders />
-              </div>
-              <div className="mb-5">
-                <h3 className="mt-5 mb-3 account-data">ACCOUNT DETAILS</h3>
-                <p className="account-data-p">Name: {account.firstname}</p>
-                <p className="account-data-p">Lastname: {account.lastname}</p>
-                <p className="account-data-p">Email: {account.email}</p>
-                <p className="account-data-p">Phone: {account.phone}</p>
-                <p className="account-data-p">Address: {account.address}</p>
-                <Link
-                  to={`/edit/${user.id}`}
-                  className="btn btn-outline-dark border-secondary-subtle rounded-0 account-btn"
-                >
-                  Edit your Account
-                </Link>
+          
+            
+            <div className='col-sm-12 col-lg-6 d-flex flex-column align-items-center'>
+              <div className=" d-flex flex-column justify-content-center align-items-start vh-100 px-2">
+              <div className='d-flex back  mt-5 pt-5' onClick={() => navigate(-1)}>
+                <i className="bi bi-arrow-left"></i>
+                <p className='ms-2'>Back</p>
+            </div>
+                <div className="order-details">
+                  <h3 className="account-data mb-3 ">ORDER HISTORY</h3>
+                  <AccountOrders />
+                </div>
+                <div className="mb-5">
+                  <h3 className="mt-5 mb-3 account-data">ACCOUNT DETAILS</h3>
+                  <p className="account-data-p">Name: {account.firstname}</p>
+                  <p className="account-data-p">Lastname: {account.lastname}</p>
+                  <p className="account-data-p">Email: {account.email}</p>
+                  <p className="account-data-p">Phone: {account.phone}</p>
+                  <p className="account-data-p">Address: {account.address}</p>
+                  <Link
+                    to={`/edit/${user.id}`}
+                    className="btn btn-outline-dark border-secondary-subtle rounded-0 account-btn"
+                  >
+                    Edit your Account
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </>
