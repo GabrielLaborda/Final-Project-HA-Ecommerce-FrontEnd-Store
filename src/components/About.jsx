@@ -169,10 +169,6 @@ function About() {
                       alt="Home Print Screen"
                     />
                   </NavLink>
-
-                  {/* <p className="m-0">Test User Credentials</p>
-                  <p className="m-0">user: user@example.com</p>
-                  <p className="m-0">password: 123456</p> */}
                 </div>
               </div>
               <div className="col-12 col-md-6">
@@ -180,13 +176,10 @@ function About() {
                   <a href="https://urbanrush-admin.vercel.app" target="_blank">
                     <img
                       className="img-fluid mb-4"
-                      src={`${storageURL}/PrintScreenStore.png`}
+                      src={`${storageURL}/PrintScreenAdmin.png`}
                       alt="Home Print Screen"
                     />
                   </a>
-                  {/* <p className="m-0">Test Admin Credentials</p>
-                  <p className="m-0">user: admin@example.com</p>
-                  <p className="m-0">password: 123456</p> */}
                 </div>
               </div>
             </div>
