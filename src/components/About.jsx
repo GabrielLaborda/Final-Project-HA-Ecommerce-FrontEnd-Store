@@ -13,6 +13,7 @@ import { SiExpress, SiRedux, SiMongoose, SiAxios } from 'react-icons/si';
 
 import './About.css';
 import SectionHeader from './SectionHeader';
+import { NavLink } from 'react-router-dom';
 const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
 
 function About() {
@@ -158,21 +159,34 @@ function About() {
         <div className="w-100 ptscreen-container">
           <div className="container pt-5 mt-5">
             <div className="row">
+              <h2 className="mb-4"> APPLICATIONS</h2>
               <div className="col-12 col-md-6">
                 <div className="prints-container text-center">
-                  <img className="img-fluid mb-4" src="./HOME-SCRN.png" alt="Home Print Screen" />
+                  <NavLink to={'/login'}>
+                    <img
+                      className="img-fluid mb-4"
+                      src={`${storageURL}/PrintScreenStore.png`}
+                      alt="Home Print Screen"
+                    />
+                  </NavLink>
 
-                  <p className="m-0">Test User Credentials</p>
+                  {/* <p className="m-0">Test User Credentials</p>
                   <p className="m-0">user: user@example.com</p>
-                  <p className="m-0">password: 123456</p>
+                  <p className="m-0">password: 123456</p> */}
                 </div>
               </div>
               <div className="col-12 col-md-6">
                 <div className="prints-container text-center">
-                  <img className="img-fluid mb-4" src="./ADMIN-SCRN.png" alt="Home Print Screen" />
-                  <p className="m-0">Test Admin Credentials</p>
+                  <a href="https://urbanrush-admin.vercel.app" target="_blank">
+                    <img
+                      className="img-fluid mb-4"
+                      src={`${storageURL}/PrintScreenStore.png`}
+                      alt="Home Print Screen"
+                    />
+                  </a>
+                  {/* <p className="m-0">Test Admin Credentials</p>
                   <p className="m-0">user: admin@example.com</p>
-                  <p className="m-0">password: 123456</p>
+                  <p className="m-0">password: 123456</p> */}
                 </div>
               </div>
             </div>
