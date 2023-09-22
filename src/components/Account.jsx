@@ -43,10 +43,12 @@ function Account() {
       <div className="container-fluid">
         <div className="row">
           <div className="col-sm-12 col-lg-6 d-flex flex-column justify-content-center align-items-center background-image ">
+            <div className='d-flex flex-column align-items-start'>
             <h1 className="account-h1">My Account</h1>
             <span onClick={handleLogout} className="account-logOut">
               Log out
             </span>
+            </div>
           </div>
           
             
