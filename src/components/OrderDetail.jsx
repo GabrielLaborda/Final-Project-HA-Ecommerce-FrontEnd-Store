@@ -21,7 +21,6 @@ function OrderDetail() {
       },
     });
     setOrder(response.data);
-    console.log(response.data);
   };
 
   useEffect(() => {

@@ -18,7 +18,6 @@ function AccountOrders() {
       },
     });
     setOrders(response.data.orders);
-    console.log(response.data.orders);
   };
   useEffect(() => {
     getUser();
