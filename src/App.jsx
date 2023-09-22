@@ -29,20 +29,22 @@ function App() {
   return (
     <>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products/:categorySlug/:productSlug" element={<ProductDetail />} />
-        <Route path="/cart" element={<ShoppingCart />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/products/:categorySlug" element={<ProductCategories />} />
-        <Route path="/products" element={<AllProducts />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/account/:id" element={<Account />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/edit/:id" element={<EditAccount />} />
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path="/orders/:id" element={<OrderDetail />} />
-      </Routes>
+      <div className='content-height'>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products/:categorySlug/:productSlug" element={<ProductDetail />} />
+          <Route path="/cart" element={<ShoppingCart />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/products/:categorySlug" element={<ProductCategories />} />
+          <Route path="/products" element={<AllProducts />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/account/:id" element={<Account />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/edit/:id" element={<EditAccount />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/orders/:id" element={<OrderDetail />} />
+        </Routes>
+      </div>
       <Footer />
       <ToastContainer />
     </>
