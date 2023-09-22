@@ -51,13 +51,13 @@ function EditPassword(props) {
         </div>
 
         {/* Termina Responsive */}
-        <div className="d-flex justify-content-center  align-items-center">
-          <div className="px-3 inputWidth mt-2">
-            <div className="container-fluid col-sm-12 col-lg-6 d-flex flex-column justify-content-center ">
-              <div className="d-flex back " onClick={() => navigate(-1)}>
-                <i className="bi bi-arrow-left"></i>
-                <p className="ms-2">Back</p>
-              </div>
+        <div className="container-fluid col-sm-12 col-lg-6 d-flex flex-column justify-content-center align-items-center">
+          <div className="d-flex flex-column justify-content-center align-items-start">
+            <div className="d-flex back" onClick={() => navigate(-1)}>
+              <i className="bi bi-arrow-left ps-3"></i>
+              <p className="ms-2">Back</p>
+            </div>
+            <div className="px-3 inputWidth mt-2">
               <div>
                 <form onSubmit={handleSubmit}>
                   <div>

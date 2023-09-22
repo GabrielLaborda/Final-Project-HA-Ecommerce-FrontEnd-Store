@@ -75,7 +75,7 @@ function Account() {
                 >
                   Edit your Account
                 </Link>
-                <Link to={`/password/${user.id}`}>Change my password</Link>
+                <Link to={`/resetpassword/${user.id}`}>Change my password</Link>
               </div>
             </div>
           </div>
