@@ -31,7 +31,7 @@ function AboutHome() {
 
         <div className="col-12 col-lg-5 callToAction">
           <NavLink to={'/about'} className="text-decoration-none text-black about-hover">
-            <h2 className="aboutTitleBold">ABOUT THIS</h2>
+            <h2 className="aboutTitleBold2">ABOUT THIS</h2>
             <h2 className="aboutTitle d-inline">PROJECT</h2>
             <TbHandClick size={100} className="ms-5 aboutTitle" />
           </NavLink>

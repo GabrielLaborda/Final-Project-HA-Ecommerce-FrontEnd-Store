@@ -160,8 +160,8 @@ function About() {
           <div className="container pt-5 mt-5">
             <div className="row">
               <h2 className="mb-4"> APPLICATIONS</h2>
-              <div className="col-12 col-md-6">
-                <div className="prints-container text-center">
+              <div className="col-12">
+                <div className="prints-container text-start w-100">
                   <NavLink to={'/login'}>
                     <img
                       className="img-fluid mb-4"
@@ -171,11 +171,13 @@ function About() {
                   </NavLink>
                 </div>
               </div>
-              <div className="col-12 col-md-6">
-                <div className="prints-container text-center">
+            </div>
+            <div className="row">
+              <div className="col-12">
+                <div className="prints-container text-end w-100">
                   <a href="https://urbanrush-admin.vercel.app" target="_blank">
                     <img
-                      className="img-fluid mb-4"
+                      className="img-fluid mb-4 m-auto"
                       src={`${storageURL}/PrintScreenAdmin.png`}
                       alt="Home Print Screen"
                     />
@@ -204,10 +206,10 @@ function About() {
                   <p className="mt-2 mb-0 fw-bold">Andres Amorin</p>
                   <p className="mb-1 mt-0">Full Stack Developer</p>
                   <div>
-                    <a className="text-dark" href="http://">
+                    <a className="text-dark" href="http://" target="_blank">
                       <BiLogoGithub size={35} />
                     </a>
-                    <a className="text-dark" href="http://">
+                    <a className="text-dark" href="http://" target="_blank">
                       <BiLogoLinkedinSquare size={35} />
                     </a>
                   </div>
@@ -221,10 +223,18 @@ function About() {
                   <p className="mt-2 mb-0 fw-bold">Gabriel Laborda</p>
                   <p className="mb-1 mt-0">Full Stack Developer</p>
                   <div>
-                    <a className="text-dark" href="http://">
+                    <a
+                      className="text-dark"
+                      href="https://www.linkedin.com/in/laborda-gabriel/"
+                      target="_blank"
+                    >
                       <BiLogoGithub size={35} />
                     </a>
-                    <a className="text-dark" href="http://">
+                    <a
+                      className="text-dark"
+                      href="https://github.com/GabrielLaborda"
+                      target="_blank"
+                    >
                       <BiLogoLinkedinSquare size={35} />
                     </a>
                   </div>
@@ -238,10 +248,10 @@ function About() {
                   <p className="mt-2 mb-0 fw-bold">Gonzalo Cuello</p>
                   <p className="mb-1 mt-0">Full Stack Developer</p>
                   <div>
-                    <a className="text-dark" href="http://">
+                    <a className="text-dark" href="http://" target="_blank">
                       <BiLogoGithub size={35} />
                     </a>
-                    <a className="text-dark" href="http://">
+                    <a className="text-dark" href="http://" target="_blank">
                       <BiLogoLinkedinSquare size={35} />
                     </a>
                   </div>
@@ -255,27 +265,39 @@ function About() {
                   <p className="mt-2 mb-0 fw-bold">José Pedro Lavaggi</p>
                   <p className="mb-1 mt-0">Full Stack Developer</p>
                   <div>
-                    <a className="text-dark" href="http://">
+                    <a
+                      className="text-dark"
+                      href="https://github.com/JosePedroLavaggi"
+                      target="_blank"
+                    >
                       <BiLogoGithub size={35} />
                     </a>
-                    <a className="text-dark" href="http://">
+                    <a
+                      className="text-dark"
+                      href="https://www.linkedin.com/in/jose-pedro-lavaggi/"
+                      target="_blank"
+                    >
                       <BiLogoLinkedinSquare size={35} />
                     </a>
                   </div>
                 </div>
                 <div className="user-card text-center m-xl-0 m-auto py-3">
                   <img
-                    src={`${storageURL}/User-avatar.png`}
+                    src={`${storageURL}/pedro-de-souza.jpg`}
                     alt="user-avatar"
                     className="img-fluid user-avatar"
                   />
                   <p className="mt-2 mb-0 fw-bold">Pedro de Souza</p>
                   <p className="mb-1 mt-0">Full Stack Developer</p>
                   <div>
-                    <a className="text-dark" href="http://">
+                    <a className="text-dark" href="https://github.com/soloSouza" target="_blank">
                       <BiLogoGithub size={35} />
                     </a>
-                    <a className="text-dark" href="http://">
+                    <a
+                      className="text-dark"
+                      href="https://www.linkedin.com/in/desouzap/"
+                      target="_blank"
+                    >
                       <BiLogoLinkedinSquare size={35} />
                     </a>
                   </div>
