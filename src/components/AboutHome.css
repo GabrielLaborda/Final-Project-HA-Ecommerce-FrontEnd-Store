@@ -21,3 +21,10 @@
   margin-bottom: -15px;
   margin-left: -15px;
 }
+
+.aboutTitleBold:hover {
+  color: rgb(205, 86, 89);
+}
+.aboutTitle:hover {
+  color: rgb(205, 86, 89);
+}
