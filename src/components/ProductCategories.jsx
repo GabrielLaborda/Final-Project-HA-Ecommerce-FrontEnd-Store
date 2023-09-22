@@ -62,10 +62,6 @@ function CompletesList() {
                         <ShopItemCard
                           key={product.slug}
                           product={product}
-                          // name={product.name}
-                          // picture={product.picture[0]}
-                          // productSlug={product.slug}
-                          // price={product.price}
                           categorySlug={categorySlug}
                         />
                       ))}

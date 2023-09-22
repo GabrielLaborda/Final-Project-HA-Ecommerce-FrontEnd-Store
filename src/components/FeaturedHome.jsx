@@ -48,8 +48,19 @@ function FeaturedHome() {
     categorySlug ? getFilteredProducts() : getProducts();
   }, [categorySlug]);
 
-  const notify = () =>
-    toast.error('Insufficient Stock, plese select a smaller amount!', {
+  const notifyError = () =>
+    toast.error('Ops, insufficient stock!', {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
+  const notifySuccess = () =>
+    toast.success('Item added to cart!', {
       position: 'top-right',
       autoClose: 5000,
       hideProgressBar: false,
@@ -67,8 +78,9 @@ function FeaturedHome() {
       } else {
         dispatch(addItem({ product, categorySlug: product.category.slug, quantity: 1 }));
       }
+      notifySuccess();
     } else {
-      notify();
+      notifyError();
     }
   };
 

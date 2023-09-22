@@ -9,8 +9,19 @@ function ShopItemCard({ product, categorySlug }) {
   const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
   const dispatch = useDispatch();
 
-  const notify = () =>
-    toast.error('Insufficient Stock, plese select a smaller amount!', {
+  const notifyError = () =>
+    toast.error('Ops, insufficient stock!', {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
+  const notifySuccess = () =>
+    toast.success('Item added to cart!', {
       position: 'top-right',
       autoClose: 5000,
       hideProgressBar: false,
@@ -24,8 +35,9 @@ function ShopItemCard({ product, categorySlug }) {
   const hanldeAddToCart = () => {
     if (product.stock >= 1) {
       dispatch(addItem({ product, categorySlug: categorySlug, quantity: 1 }));
+      notifySuccess();
     } else {
-      notify();
+      notifyError();
     }
   };
 

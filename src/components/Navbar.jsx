@@ -1,13 +1,13 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
-import "./Navbar.css";
-import { AiOutlineShopping } from "react-icons/ai";
-import { BiSolidUser } from "react-icons/bi";
+import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import './Navbar.css';
+import { AiOutlineShopping } from 'react-icons/ai';
+import { BiSolidUser } from 'react-icons/bi';
 
-import { useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 function NavbardNuevo(props) {
   const navigate = useNavigate();
@@ -22,10 +22,10 @@ function NavbardNuevo(props) {
       setScrolling(window.scrollY > 0);
     }
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -35,7 +35,7 @@ function NavbardNuevo(props) {
     if (user) {
       navigate(`/account/${user.id}`);
     } else {
-      navigate("/login");
+      navigate('/login');
     }
   };
 
@@ -48,20 +48,16 @@ function NavbardNuevo(props) {
     setIsNavbarTransparent(!isNavbarTransparent);
     setExpand(!expand);
   };
-  const buttonExpand = expand ? "" : "show";
-  const navbarClassName = isNavbarTransparent ? "" : "black-navbar";
+  const buttonExpand = expand ? '' : 'show';
+  const navbarClassName = isNavbarTransparent ? '' : 'black-navbar';
   return (
     <>
       <header
-        className={
-          scrolling
-            ? `scrolling w-100 ${navbarClassName}`
-            : `w-100 ${navbarClassName}`
-        }
+        className={scrolling ? `scrolling w-100 ${navbarClassName}` : `w-100 ${navbarClassName}`}
       >
         <div className="container">
           <nav className="navbar navbar-expand-lg">
-            <Link to={"/"} className="navbar-brand" onClick={handleClickButton}>
+            <Link to={'/'} className="navbar-brand" onClick={handleClickButton}>
               <h2 className="navbardTitleBold">
                 <span className="navbardTitle">URBAN</span>RUSH
               </h2>
@@ -91,14 +87,11 @@ function NavbardNuevo(props) {
               </svg>
             </button>
 
-            <div
-              className={`collapse navbar-collapse ${buttonExpand}`}
-              id="navbarNav"
-            >
+            <div className={`collapse navbar-collapse ${buttonExpand}`} id="navbarNav">
               <ul className="navbar-nav ms-auto my-2 my-lg-0">
                 <li className="nav-item">
                   <Link
-                    to={"/products/"}
+                    to={'/products/'}
                     className="nav-link scrolling-white text"
                     href="#"
                     aria-disabled="true"
@@ -109,7 +102,7 @@ function NavbardNuevo(props) {
                 </li>
                 <li className="nav-item">
                   <Link
-                    to={"/about"}
+                    to={'/about'}
                     className="nav-link scrolling-white text about"
                     href="#"
                     aria-disabled="true"
@@ -129,14 +122,14 @@ function NavbardNuevo(props) {
                 </li>
                 <li className="nav-item">
                   <Link
-                    to={"/cart"}
+                    to={'/cart'}
                     className="nav-link  scrolling-white text"
                     aria-disabled="true"
                     onClick={handleClickButton}
                   >
                     <AiOutlineShopping size={30} />
                     <span>
-                      {cart.reduce((total, item) => total + item.quantity, 0)}
+                      {cart.reduce((total, item) => Number(total) + Number(item.quantity), 0)}
                     </span>
                   </Link>
                 </li>
