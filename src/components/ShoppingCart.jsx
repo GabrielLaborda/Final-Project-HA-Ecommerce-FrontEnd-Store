@@ -1,14 +1,15 @@
 import './ShoppingCart.css';
 
 import { NavLink, useNavigate } from 'react-router-dom';
-import { TiDelete } from 'react-icons/ti';
+
+import { IoIosAddCircle, IoIosRemoveCircleOutline } from 'react-icons/io';
 import { useState } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteItem } from '../redux/cartSlice';
+import { addItem, deleteItem } from '../redux/cartSlice';
 import { addInstruction } from '../redux/orderInstructionSlice';
 
-function ShoppintCart() {
+function ShoppingCart() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const cart = useSelector((state) => state.cart);
@@ -29,7 +30,11 @@ function ShoppintCart() {
   };
 
   const handleRemove = (slug) => {
-    dispatch(deleteItem(slug));
+    dispatch(deleteItem({ slug }));
+  };
+
+  const handleAdd = (slug) => {
+    dispatch(addItem({ product: { slug }, quantity: 1 }));
   };
 
   return (
@@ -38,7 +43,7 @@ function ShoppintCart() {
         <div className="col-lg-6 col-12 p-0">
           <div className="left-section vh-100 d-none d-lg-flex flex-column align-items-center justify-content-center">
             <h2 className="title w-50">Shopping Cart</h2>
-            <p className="text-white w-50 fw-bold">
+            <p className="text-white w-50 fw-bold text-background">
               We are shipping daily (M-F), and orders are expected to process in 1-2 business days.
               Orders must be placed by 9am (Pacific Standard Time) on a business day to ship same
               day. International shipments may be subject to import duties, taxes or other customs
@@ -57,29 +62,56 @@ function ShoppintCart() {
                 <div className="cart-prods-container flex-column d-flex">
                   {cart.map((item) => (
                     <div key={item.product.slug} className="">
-                      <div className=" d-flex flex-row w-75 mx-auto mt-5">
+                      <div className=" d-flex flex-row w-75 mx-auto mt-5 align-items-center">
                         {item.product.picture && (
-                          <img
-                            src={`${storageURL}/${item.product.picture[0]}`}
-                            alt="Product Picture"
-                            height={150}
-                            className="d-none d-md-inline"
-                          />
+                          <>
+                            <img
+                              src={`${storageURL}/${item.product.picture[0]}`}
+                              alt="Product Picture"
+                              height={150}
+                              className="d-none d-md-inline"
+                            />
+                            <img
+                              src={`${storageURL}/${item.product.picture[0]}`}
+                              alt="Product Picture"
+                              height={100}
+                              className="d-inline d-md-none"
+                            />
+                          </>
                         )}
-                        <div className="w-100 ms-3">
+                        <div className="w-100 ms-3 d-none d-md-inline">
                           <NavLink
                             to={`/products/${item.categorySlug}/${item.product.slug}`}
                             className={'text-decoration-none'}
                           >
                             <p className="mb-0">{item.product.name}</p>
                           </NavLink>
-                          <p>USD {item.product.price}</p>
+                          <p className="mb-0">USD {item.product.price}</p>
+                          <p className="text-body-tertiary">Quantity: {item.quantity}</p>
+                        </div>
+                        <div className="w-100 ms-3 d-inline d-md-none small-text">
+                          <NavLink
+                            to={`/products/${item.categorySlug}/${item.product.slug}`}
+                            className={'text-decoration-none'}
+                          >
+                            <p className="mb-0">{item.product.name}</p>
+                          </NavLink>
+                          <p className="mb-0">USD {item.product.price}</p>
+                          <p className="text-body-tertiary">Quantity: {item.quantity}</p>
                         </div>
                         <div className="m-auto d-flex align-items-center justify-content-end w-100  ">
-                          <span className="bg-secondary-subtle py-1 px-3 mx-3">
-                            {item.quantity}
-                          </span>
-                          <TiDelete size={30} onClick={() => handleRemove(item.product.slug)} />
+                          <IoIosRemoveCircleOutline
+                            size={30}
+                            onClick={() => handleRemove(item.product.slug)}
+                            role="button"
+                            className="text-body-tertiary"
+                          />
+                          <IoIosAddCircle
+                            size={30}
+                            onClick={() => handleAdd(item.product.slug)}
+                            role="button"
+                            className="text-body-tertiary"
+                          />
                         </div>
                       </div>
                     </div>
@@ -130,4 +162,4 @@ function ShoppintCart() {
   );
 }
 
-export default ShoppintCart;
+export default ShoppingCart;

@@ -12,6 +12,7 @@
 .right-section {
   font-family: Roboto;
   font-size: larger;
+  z-index: -1;
 }
 
 .small-text {
@@ -19,8 +20,8 @@
 }
 
 .cart-prods-container {
-  overflow-y: auto;
-  height: 50%;
+  overflow-y: scroll;
+  height: 45%;
 }
 
 .cart-prods-container::-webkit-scrollbar {
@@ -30,4 +31,12 @@
 .cart-prods-container {
   -ms-overflow-style: none; /* for IE and Edge */
   scrollbar-width: none; /* for Firefox */
+}
+
+.small-text {
+  font-size: smaller;
+}
+
+.text-background {
+  text-shadow: -1px -1px 1px black;
 }

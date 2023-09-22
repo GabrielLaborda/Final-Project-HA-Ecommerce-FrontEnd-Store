@@ -1,7 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-// [{product: PRODUCTO COMPLETEO}, categorySlug: categorySlug, quantity: Q}]
-
 const cartSlice = createSlice({
   name: 'cart',
   initialState: [],
@@ -13,7 +11,13 @@ const cartSlice = createSlice({
     },
 
     deleteItem(state, action) {
-      return state.filter((item) => item.product.slug != action.payload);
+      const item = state.find((item) => item.product.slug === action.payload.slug);
+
+      if (item.quantity > 1) {
+        item.quantity = item.quantity - 1;
+      } else {
+        return state.filter((item) => item.product.slug != action.payload.slug);
+      }
     },
     emptyCart(state, action) {
       return [];
