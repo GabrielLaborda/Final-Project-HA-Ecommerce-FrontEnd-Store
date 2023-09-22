@@ -206,10 +206,18 @@ function About() {
                   <p className="mt-2 mb-0 fw-bold">Andres Amorin</p>
                   <p className="mb-1 mt-0">Full Stack Developer</p>
                   <div>
-                    <a className="text-dark" href="http://" target="_blank">
+                    <a
+                      className="text-dark"
+                      href="https://github.com/Andres19881500"
+                      target="_blank"
+                    >
                       <BiLogoGithub size={35} />
                     </a>
-                    <a className="text-dark" href="http://" target="_blank">
+                    <a
+                      className="text-dark"
+                      href="https://www.linkedin.com/in/andres-amorin-fullstack-developer-javascript-reactjs-html5-css3-nodejs/"
+                      target="_blank"
+                    >
                       <BiLogoLinkedinSquare size={35} />
                     </a>
                   </div>
@@ -225,14 +233,14 @@ function About() {
                   <div>
                     <a
                       className="text-dark"
-                      href="https://www.linkedin.com/in/laborda-gabriel/"
+                      href="https://github.com/GabrielLaborda"
                       target="_blank"
                     >
                       <BiLogoGithub size={35} />
                     </a>
                     <a
                       className="text-dark"
-                      href="https://github.com/GabrielLaborda"
+                      href="https://www.linkedin.com/in/laborda-gabriel/"
                       target="_blank"
                     >
                       <BiLogoLinkedinSquare size={35} />
@@ -248,7 +256,11 @@ function About() {
                   <p className="mt-2 mb-0 fw-bold">Gonzalo Cuello</p>
                   <p className="mb-1 mt-0">Full Stack Developer</p>
                   <div>
-                    <a className="text-dark" href="http://" target="_blank">
+                    <a
+                      className="text-dark"
+                      href="https://github.com/GonzaloCuello01"
+                      target="_blank"
+                    >
                       <BiLogoGithub size={35} />
                     </a>
                     <a className="text-dark" href="http://" target="_blank">
