@@ -1,5 +1,5 @@
 .categoryH2 {
-  font-size: 90px;
+  font-size: 80px;
   color: white;
   font-family: "Kalam", cursive;
   font-weight: 700;
@@ -38,6 +38,6 @@
 
 @media (max-width: 768px) {
   .categoryH2 {
-    font-size: 70px;
+    font-size: 65px;
   }
 }
