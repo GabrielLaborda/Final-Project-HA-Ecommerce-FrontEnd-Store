@@ -199,9 +199,11 @@ function About() {
               <div className="d-flex justify-content-between flex-wrap">
                 <div className="user-card text-center m-xl-0 m-auto py-3">
                   <img
-                    src={`${storageURL}/User-avatar.png`}
+                    src={`${storageURL}/Andres-Amorin.png`}
                     alt="user-avatar"
                     className="img-fluid user-avatar"
+                    width={200}
+                    height={200}
                   />
                   <p className="mt-2 mb-0 fw-bold">Andres Amorin</p>
                   <p className="mb-1 mt-0">Full Stack Developer</p>
@@ -263,7 +265,11 @@ function About() {
                     >
                       <BiLogoGithub size={35} />
                     </a>
-                    <a className="text-dark" href="http://" target="_blank">
+                    <a
+                      className="text-dark"
+                      href="https://www.linkedin.com/in/gonzalo-cuello-de-los-santos/"
+                      target="_blank"
+                    >
                       <BiLogoLinkedinSquare size={35} />
                     </a>
                   </div>
