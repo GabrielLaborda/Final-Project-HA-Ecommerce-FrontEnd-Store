@@ -19,6 +19,7 @@ import "react-toastify/dist/ReactToastify.css";
 import EditAccount from "./components/EditAcount";
 import OrderDetail from "./components/OrderDetail";
 import EditPassword from "./components/EditPassword";
+import GoToTopBtn from "./components/GoToTopBtn";
 
 function App() {
   const location = useLocation();
@@ -29,6 +30,7 @@ function App() {
 
   return (
     <>
+      <GoToTopBtn />
       <Navbar />
       <div className="content-height">
         <Routes>
