@@ -52,9 +52,10 @@ function ShoppingCart() {
             </p>
           </div>
           <div className="left-section d-lg-none d-flex flex-column align-items-center justify-content-center">
-            <h2 className="title w-50 fs-1 py-5 my-5">Shopping Cart</h2>
+            <h2 className="title w-75 mx-auto py-5 my-5">Shopping Cart</h2>
           </div>
         </div>
+
         <div className="col-lg-6 col-12">
           <div className="right-section">
             {cart.length > 0 ? (

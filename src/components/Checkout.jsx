@@ -1,15 +1,15 @@
-import CheckoutPayments from "./CheckoutPayments";
-import CheckoutUserData from "./CheckoutUserData";
-import { NavLink, useNavigate } from "react-router-dom";
-import { TiDelete } from "react-icons/ti";
-import { useState } from "react";
-import { deleteItem, emptyCart } from "../redux/cartSlice";
-import { useSelector, useDispatch } from "react-redux";
-import { addInstruction } from "../redux/orderInstructionSlice";
-import "./Checkout.css";
-import axios from "axios";
-import { toast } from "react-toastify";
-import ScrollArrow from "./ScrollArrow";
+import CheckoutPayments from './CheckoutPayments';
+import CheckoutUserData from './CheckoutUserData';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { TiDelete } from 'react-icons/ti';
+import { useState } from 'react';
+import { deleteItem, emptyCart } from '../redux/cartSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import { addInstruction } from '../redux/orderInstructionSlice';
+import './Checkout.css';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+import ScrollArrow from './ScrollArrow';
 
 function Checkout() {
   const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
@@ -22,14 +22,26 @@ function Checkout() {
   const [comment, setComment] = useState(orderInstruction);
   const notifyError = (message) =>
     toast.error(message, {
-      position: "top-right",
+      position: 'top-right',
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: "light",
+      theme: 'light',
+    });
+
+  const notifySuccess = (message) =>
+    toast.success(message, {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
     });
 
   const handleRemove = (slug) => {
@@ -40,9 +52,9 @@ function Checkout() {
     try {
       for (const item of cart) {
         await axios({
-          method: "PATCH",
+          method: 'PATCH',
           url: `${baseURL}/products/${item.product.slug}`,
-          params: { transaction: "buy" },
+          params: { transaction: 'buy' },
           data: { quantity: item.quantity },
           headers: {
             Authorization: `Bearer ${user.token}`,
@@ -50,14 +62,14 @@ function Checkout() {
         });
       }
       const orderStatuses = await axios({
-        method: "GET",
+        method: 'GET',
         url: `${baseURL}/orderstatus`,
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
       });
       const response = await axios({
-        method: "POST",
+        method: 'POST',
         url: `${baseURL}/orders`,
         headers: {
           Authorization: `Bearer ${user.token}`,
@@ -71,24 +83,23 @@ function Checkout() {
           status: orderStatuses.data[0],
           subtotal:
             Math.round(
-              cart.reduce(
-                (total, item) => total + item.quantity * item.product.price,
-                0
-              ) * 100
+              cart.reduce((total, item) => total + item.quantity * item.product.price, 0) * 100
             ) / 100,
         },
       });
+
       await axios({
-        method: "PATCH",
+        method: 'PATCH',
         url: `${baseURL}/users/${user.id}`,
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
-        params: { transaction: "newOrder" },
+        params: { transaction: 'newOrder' },
         data: { orderId: response.data.orderId },
       });
+      notifySuccess('Your order has been received!');
       dispatch(emptyCart());
-      dispatch(addInstruction(""));
+      dispatch(addInstruction(''));
       navigate(`/account/${user.id}`);
     } catch (error) {
       notifyError(error.response.data.msg);
@@ -136,7 +147,7 @@ function Checkout() {
               Pay Now
             </button>
           </div>
-          <ScrollArrow colour={"white"}/>
+          <ScrollArrow colour={'white'} />
         </div>
 
         <div className="col-sm-12 col-lg-6">
@@ -148,32 +159,47 @@ function Checkout() {
               </div>
               {cart.map((item) => (
                 <div key={item.product.slug} className="">
-                  <div className=" d-flex flex-row w-75 mx-auto mt-5">
+                  <div className=" d-flex flex-row w-75 mx-auto mt-5 align-items-center">
                     {item.product.picture && (
-                      <img
-                        src={`${storageURL}/${item.product.picture[0]}`}
-                        alt="Product Picture"
-                        height={150}
-                        className="d-none d-md-inline"
-                      />
+                      <>
+                        <img
+                          src={`${storageURL}/${item.product.picture[0]}`}
+                          alt="Product Picture"
+                          height={150}
+                          className="d-none d-md-inline"
+                        />
+                        <img
+                          src={`${storageURL}/${item.product.picture[0]}`}
+                          alt="Product Picture"
+                          height={100}
+                          className="d-inline d-md-none"
+                        />
+                      </>
                     )}
-                    <div className="w-100 ms-3">
+                    <div className="w-100 ms-3 d-none d-md-inline">
                       <NavLink
                         to={`/products/${item.categorySlug}/${item.product.slug}`}
                         className={'text-decoration-none'}
                       >
                         <p className="mb-0">{item.product.name}</p>
                       </NavLink>
-                      <p>USD {item.product.price}</p>
+                      <p className="mb-0">USD {item.product.price}</p>
+                      <p className="text-body-tertiary">Quantity: {item.quantity}</p>
                     </div>
-                    <div className="m-auto d-flex align-items-center justify-content-end w-100  ">
-                      <span className="bg-secondary-subtle py-1 px-3 mx-3">{item.quantity}</span>
-                      <TiDelete size={30} onClick={() => handleRemove(item.product.slug)} />
+                    <div className="w-100 ms-3 d-inline d-md-none small-text">
+                      <NavLink
+                        to={`/products/${item.categorySlug}/${item.product.slug}`}
+                        className={'text-decoration-none'}
+                      >
+                        <p className="mb-0">{item.product.name}</p>
+                      </NavLink>
+                      <p className="mb-0">USD {item.product.price}</p>
+                      <p className="text-body-tertiary">Quantity: {item.quantity}</p>
                     </div>
                   </div>
-                  </div>
-                ))}
-                <ScrollArrow colour={"black"} />
+                </div>
+              ))}
+              <ScrollArrow colour={'black'} />
             </div>
             <textarea
               className="w-75 mx-auto border-0 bg-secondary-subtle fs-5 fw-light mt-5 p-3 mb-5"
@@ -188,20 +214,15 @@ function Checkout() {
                 <span className="fs-5 fw-light">Total: </span>
                 {cart && (
                   <span className="fw-bold">
-                    USD{" "}
+                    USD{' '}
                     {Math.round(
-                      cart.reduce(
-                        (total, item) =>
-                          total + item.quantity * item.product.price,
-                        0
-                      ) * 100
+                      cart.reduce((total, item) => total + item.quantity * item.product.price, 0) *
+                        100
                     ) / 100}
                   </span>
                 )}
               </p>
-              <p className="small-text fw-lighter mt-0">
-                Shipping & taxes included
-              </p>
+              <p className="small-text fw-lighter mt-0">Shipping & taxes included</p>
             </div>
           </div>
         </div>

@@ -40,3 +40,9 @@
 .text-background {
   text-shadow: -1px -1px 1px black;
 }
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 65px;
+  }
+}
