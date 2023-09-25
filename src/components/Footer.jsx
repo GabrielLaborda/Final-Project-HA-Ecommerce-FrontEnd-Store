@@ -17,7 +17,7 @@ import './Footer.css';
 import { toast } from 'react-toastify';
 
 const notifyAlert = () =>
-  toast.warn('Sory, this feature is still under development!', {
+  toast.warn('Sorry, this feature is still under development!', {
     position: 'top-right',
     autoClose: 5000,
     hideProgressBar: false,

@@ -47,19 +47,24 @@
   color: white;
 }
 .green-text {
-  color: #cfe265;
+  color: rgb(207, 226, 101);
   font-weight: bold;
 }
 .purple-text {
-  color: #d5b7f9;
+  color: rgb(213, 183, 249);
   font-weight: bold;
 }
 .acqua-text {
-  color: #00c4cc;
+  color: rgb(0, 197, 204);
   font-weight: bold;
 }
 .salmon-text {
-  color: #ed6d75;
+  color: rgb(237, 109, 117);
+  font-weight: bold;
+}
+
+.orange-text {
+  color: rgb(255, 151, 89);
   font-weight: bold;
 }
 
@@ -71,10 +76,6 @@
   object-fit: fill;
   object-position: center;
 }
-
-/* .user-avatar {
-  border-radius: 50%;
-} */
 
 .prints-img {
   object-fit: fill;

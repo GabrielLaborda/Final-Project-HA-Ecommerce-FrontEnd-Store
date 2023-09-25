@@ -44,12 +44,6 @@ function About() {
                 a <span className="green-text">e-commerce website</span> within a tight{' '}
                 <span className="green-text">three-week timeframe</span>.
               </p>
-              <p>
-                This project <span className="green-text">represents</span> the culmination of
-                extensive <span className="green-text">training, dedication, and innovation</span>.
-                We <span className="green-text">invite</span> you to explore our platform and
-                rigorously <span className="green-text">test its functionalities</span>.
-              </p>
             </div>
           </div>
           <div className="pt-5">
@@ -93,7 +87,7 @@ function About() {
               <div className="col-12">
                 <h2 className="mb-4">
                   {' '}
-                  <span className="green-text">TECHNOLOGIES</span> & TOOLS
+                  <span className="orange-text">TECHNOLOGIES & TOOLS</span>
                 </h2>
               </div>
               <div className="col-12">
@@ -159,29 +153,46 @@ function About() {
         <div className="w-100 ptscreen-container">
           <div className="container pt-5 mt-5">
             <div className="row">
-              <h2 className="mb-4"> APPLICATIONS</h2>
-              <div className="col-12">
-                <div className="prints-container text-start w-100">
-                  <NavLink to={'/login'}>
-                    <img
-                      className="img-fluid mb-4"
-                      src={`${storageURL}/PrintScreenStore.png`}
-                      alt="Home Print Screen"
-                    />
-                  </NavLink>
-                </div>
+              <div className="col-12 col-lg-4">
+                <h2 className="green-text">APPLICATIONS</h2>
+              </div>
+              <div className="col-12 col-lg-8">
+                <p>
+                  This project <span className="green-text">represents</span> the culmination of
+                  extensive <span className="green-text">training, dedication, and innovation</span>
+                  . We <span className="green-text">invite</span> you to explore our{' '}
+                  <span className="green-text">dynamic e-commerce store</span> and our{' '}
+                  <span className="green-text">admin panel platform</span> and rigorously{' '}
+                  <span className="green-text">test its functionalities</span>.
+                </p>
               </div>
             </div>
-            <div className="row">
-              <div className="col-12">
-                <div className="prints-container text-end w-100">
-                  <a href="https://urbanrush-admin.vercel.app" target="_blank">
-                    <img
-                      className="img-fluid mb-4 m-auto"
-                      src={`${storageURL}/PrintScreenAdmin.png`}
-                      alt="Home Print Screen"
-                    />
-                  </a>
+
+            <div className="pt-3">
+              <div className="row">
+                <div className="col-12">
+                  <div className="prints-container text-start w-100">
+                    <NavLink to={'/login'}>
+                      <img
+                        className="img-fluid mb-4"
+                        src={`${storageURL}/PrintScreenStore.png`}
+                        alt="Home Print Screen"
+                      />
+                    </NavLink>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-12">
+                  <div className="prints-container w-100">
+                    <a href="https://urbanrush-admin.vercel.app" target="_blank">
+                      <img
+                        className="img-fluid mb-4 m-auto"
+                        src={`${storageURL}/PrintScreenAdmin.png`}
+                        alt="Home Print Screen"
+                      />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -202,8 +213,6 @@ function About() {
                     src={`${storageURL}/Andres-Amorin.png`}
                     alt="user-avatar"
                     className="img-fluid user-avatar"
-                    width={200}
-                    height={200}
                   />
                   <p className="mt-2 mb-0 fw-bold">Andres Amorin</p>
                   <p className="mb-1 mt-0">Full Stack Developer</p>
@@ -251,7 +260,7 @@ function About() {
                 </div>
                 <div className="user-card text-center m-xl-0 m-auto py-3">
                   <img
-                    src={`${storageURL}/User-avatar.png`}
+                    src={`${storageURL}/Gonzalo-Cuello.png`}
                     alt="user-avatar"
                     className="img-fluid user-avatar"
                   />
@@ -276,7 +285,7 @@ function About() {
                 </div>
                 <div className="user-card text-center m-xl-0 m-auto py-3">
                   <img
-                    src={`${storageURL}/User-avatar.png`}
+                    src={`${storageURL}/Jose-Pedro-lavaggi.png`}
                     alt="user-avatar"
                     className="img-fluid user-avatar"
                   />
