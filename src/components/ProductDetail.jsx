@@ -1,7 +1,6 @@
 import './ProductDetail.css';
 import ProductDetailMain from './ProductDetailMain';
 import FeaturedHome from './FeaturedHome';
-import UserReviewSwiper from './UserReviewSwiper';
 import CategoryBannerText from './CategoryBannerText';
 import { useState, useEffect } from 'react';
 import { useParams, NavLink } from 'react-router-dom';
@@ -67,9 +66,6 @@ function ProductDetail() {
           <div className="mt-5">
             <ProductDetailMain product={product} />
             <FeaturedHome />
-            <div className="mb-5">
-              <UserReviewSwiper />
-            </div>
           </div>
         </>
       )}
