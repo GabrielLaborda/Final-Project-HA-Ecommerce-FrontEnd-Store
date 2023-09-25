@@ -44,7 +44,7 @@ function DBreset() {
   return (
     <>
       <Modal show={show} onHide={handleClose} animation={false} centered>
-        <Modal.Header closeButton className="bg-black text-light">
+        <Modal.Header closeButton className="bg-black text-light rounded-0">
           <Modal.Title>Woohoo, welcome to UrbanRush!</Modal.Title>
         </Modal.Header>
         <Modal.Body className="bg-black  text-light">
@@ -56,11 +56,11 @@ function DBreset() {
             Don't worry, in order to achieve that you just need to click the Reset DB button below.
           </p>
         </Modal.Body>
-        <Modal.Footer className="bg-black text-light">
-          <button className="btn btn-outline-light" onClick={handleClose}>
+        <Modal.Footer className="bg-black text-light rounded-0">
+          <button className="btn btn-outline-light rounded-0" onClick={handleClose}>
             Close
           </button>
-          <button className="btn btn-outline-light" onClick={handleReset}>
+          <button className="btn btn-outline-light rounded-0" onClick={handleReset}>
             Reset DB
           </button>
         </Modal.Footer>
