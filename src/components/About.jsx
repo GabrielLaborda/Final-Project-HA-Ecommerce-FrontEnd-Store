@@ -260,7 +260,7 @@ function About() {
                 </div>
                 <div className="user-card text-center m-xl-0 m-auto py-3">
                   <img
-                    src={`${storageURL}/Gonzalo-Cuello.png`}
+                    src={`${storageURL}/gonzaloCuello.png`}
                     alt="user-avatar"
                     className="img-fluid user-avatar"
                   />
