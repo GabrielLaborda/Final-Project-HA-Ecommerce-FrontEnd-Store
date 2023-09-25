@@ -21,6 +21,8 @@ import OrderDetail from './components/OrderDetail';
 import EditPassword from './components/EditPassword';
 import GoToTopBtn from './components/GoToTopBtn';
 
+import DBreset from './components/DBreset';
+
 function App() {
   const location = useLocation();
 
@@ -30,6 +32,7 @@ function App() {
 
   return (
     <>
+      <DBreset />
       <GoToTopBtn />
       <Navbar />
       <div className="content-height">
