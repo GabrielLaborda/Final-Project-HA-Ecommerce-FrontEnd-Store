@@ -226,7 +226,7 @@ function About() {
                 </div>
                 <div className="user-card text-center m-xl-0 m-auto py-3">
                   <img
-                    src={`${storageURL}/User-avatar.png`}
+                    src={`${storageURL}/Gabriel-Laborda.png`}
                     alt="user-avatar"
                     className="img-fluid user-avatar"
                   />
@@ -276,7 +276,7 @@ function About() {
                 </div>
                 <div className="user-card text-center m-xl-0 m-auto py-3">
                   <img
-                    src={`${storageURL}/Gabriel-Laborda.png`}
+                    src={`${storageURL}/User-avatar.png`}
                     alt="user-avatar"
                     className="img-fluid user-avatar"
                   />
