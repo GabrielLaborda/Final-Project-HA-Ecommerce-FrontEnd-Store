@@ -133,12 +133,10 @@ function ShoppingCart() {
                     {cart && (
                       <span className="fw-bold">
                         USD{' '}
-                        {Math.round(
-                          cart.reduce(
+                        {cart.reduce(
                             (total, item) => total + item.quantity * item.product.price,
                             0
-                          ) * 100
-                        ) / 100}
+                          ).toFixed(2)}
                       </span>
                     )}
                   </p>
