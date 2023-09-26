@@ -9,7 +9,7 @@ function ProductDetailMain({ product }) {
     size: 30,
     value: 4.5,
     isHalf: true,
-    edit: true,
+    edit: false,
   };
   const baseUrl = import.meta.env.VITE_API_BASE_URL;
   const productImgs = product.picture.map((img, index) => {
