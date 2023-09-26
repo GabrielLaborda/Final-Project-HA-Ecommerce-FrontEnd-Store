@@ -4,8 +4,12 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import './DBreset.css';
 
-function DBreset() {
+import { useDispatch } from 'react-redux';
+import { logout } from '../redux/userSlice';
+import { emptyCart } from '../redux/cartSlice';
 
+function DBreset() {
+  const dispatch = useDispatch();
   const baseURL = import.meta.env.VITE_API_BASE_URL;
   const [show, setShow] = useState(true);
   const handleClose = () => setShow(false);
@@ -26,6 +30,8 @@ function DBreset() {
 
   const handleReset = async () => {
     await resetSeeders();
+    dispatch(logout());
+    dispatch(emptyCart());
     setShow(false);
   };
 
