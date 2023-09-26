@@ -39,8 +39,8 @@ function EditAccount() {
         setAddress(response.data.address);
         setPhone(response.data.phone);
       } catch (err) {
-        notifyError(err.ressponse.data.msg)
         console.log(err.response.data.msg);
+        return notifyError(err.ressponse.data.msg);
       }
     };
     getUser();
@@ -54,10 +54,10 @@ function EditAccount() {
         url: `${baseURL}/users/${params.id}`,
         data: { email, address, phone },
       });
-      navigate(`/account/${params.id}`);
+      return navigate(`/account/${params.id}`);
     } catch (err) {
-        notifyError(err.ressponse.data.msg)
-        console.log(err.response.data.msg);
+      console.log(err.response.data.msg);
+      return notifyError(err.ressponse.data.msg);
     }
   };
 

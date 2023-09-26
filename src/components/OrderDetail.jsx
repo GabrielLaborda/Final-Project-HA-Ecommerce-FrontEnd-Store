@@ -11,17 +11,33 @@ function OrderDetail() {
   const orderId = params.id;
   const user = useSelector((state) => state.user);
   const [order, setOrder] = useState(null);
+  const notifyError = (message) =>
+    toast.error(message, {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
 
   const getOrder = async () => {
-    const response = await axios({
-      method: "GET",
-      url: `${baseURL}/orders/${orderId}`,
-      headers: {
-        Authorization: `Bearer ${user.token}`,
-      },
-    });
-    setOrder(response.data);
-  };
+    try {
+      const response = await axios({
+        method: "GET",
+        url: `${baseURL}/orders/${orderId}`,
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
+      return setOrder(response.data);
+    } catch (err) {
+      console.log(err.response.data.msg);
+      return notifyError("Oops! Something went wrong, try again");
+    }
+  }
 
   useEffect(() => {
     getOrder();

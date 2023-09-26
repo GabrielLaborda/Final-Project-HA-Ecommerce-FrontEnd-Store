@@ -96,10 +96,10 @@ function Checkout() {
       notifySuccess('Your order has been received!');
       dispatch(emptyCart());
       dispatch(addInstruction(''));
-      navigate(`/account/${user.id}`);
+      return navigate(`/account/${user.id}`);
     } catch (error) {
-      notifyError(error.response.data.msg);
       console.log(error.response.data.msg);
+      return notifyError(error.response.data.msg);
     }
   };
 

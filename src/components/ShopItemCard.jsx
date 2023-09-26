@@ -35,9 +35,9 @@ function ShopItemCard({ product, categorySlug }) {
   const hanldeAddToCart = () => {
     if (product.stock >= 1) {
       dispatch(addItem({ product, categorySlug: categorySlug, quantity: 1 }));
-      notifySuccess();
+      return notifySuccess();
     } else {
-      notifyError();
+      return notifyError();
     }
   };
 

@@ -37,10 +37,10 @@ function Account() {
             Authorization: `Bearer ${user.token}`,
           },
         });
-        setAccount(response.data);
+        return setAccount(response.data);
       } catch (err) {
-        notifyError(err.response.data.msg);
         console.log(err.response.data.msg);
+        return notifyError(err.response.data.msg);
       }
     };
     getUser();

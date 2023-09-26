@@ -36,8 +36,8 @@ function CheckoutUserData() {
       setAddress(response.data.address);
       setPhone(response.data.phone);
     } catch (err) {
-      notifyError(err.response.data.msg);
       console.log(err.response.data.msg);
+      return notifyError(err.response.data.msg);
     }
   }
 

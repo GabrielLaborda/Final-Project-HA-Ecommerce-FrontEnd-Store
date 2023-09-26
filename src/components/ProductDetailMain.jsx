@@ -2,7 +2,6 @@ import ReactStars from 'react-rating-stars-component';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import Quantity from './Quantity';
-import { useState } from 'react';
 
 function ProductDetailMain({ product }) {
   const storageURL = import.meta.env.VITE_API_SUPABASE_URL;

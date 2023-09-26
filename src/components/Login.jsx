@@ -3,9 +3,10 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import "./RegisterYLogin.css";
+import "./RegisterAndLogin.css";
 import { login } from "../redux/userSlice";
 import { useSelector } from "react-redux";
+import { toast } from 'react-toastify';
 
 function Login() {
   const [email, setEmail] = useState("user@example.com");
@@ -14,21 +15,38 @@ function Login() {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const notifyError = (message) =>
+    toast.error(message, {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios({
-      url: `${baseURL}/login/user`,
-      method: "POST",
-      data: { password, email },
-    });
-    if (response.data.token) {
-      dispatch(login(response.data));
-      cart.length > 0 ? navigate("/cart") : navigate("/");
-    } else if (response.data.error) {
-      navigate(`/login`);
+    try {
+      const response = await axios({
+        url: `${baseURL}/login/user`,
+        method: "POST",
+        data: { password, email },
+      });
+      if (response.data.token) {
+        dispatch(login(response.data));
+        return cart.length > 0 ? navigate("/cart") : navigate("/");
+      } else if (response.data.error) {
+        return navigate(`/login`);
+      }
+    } catch (err) {
+      console.log(err.response.data.msg);
+      return notifyError(err.response.data.msg);
     }
   };
+
   return (
     <div className="container-fluid">
       <div className="row vh-100">
@@ -53,27 +71,24 @@ function Login() {
         {/* Termina Responsive */}
 
         <div className="col-sm-12 col-lg-6 text-start d-flex justify-content-center container-fluid align-items-center">
-          <div className="inputWidth">
+          <div className="inputWidth w-50">
             <form action="/login" method="post" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="email" className="form-label"></label>
                 <input
                   type="text"
                   name="email"
-                  id="emails"
+                  id="email"
                   className="form-control rounded-0"
-                  /* placeholder="user@example.com" */
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
-                <label htmlFor="firstName" className="form-label"></label>
                 <label htmlFor="password" className="form-label"></label>
                 <input
                   type="password"
                   name="password"
                   id="password"
                   className="form-control rounded-0"
-                  /* placeholder="123456" */
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />

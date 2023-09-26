@@ -31,10 +31,10 @@ function AllProducts() {
             method: 'GET',
             url: `${baseURL}/products`,
           });
-          setAllProducts(response.data);
+          return setAllProducts(response.data);
         } catch (err) {
           console.log(err.response.data.msg);
-          notifyError(err.response.data.msg);
+          return notifyError(err.response.data.msg);
         }
       };
     getAllProducts();

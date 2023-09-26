@@ -31,10 +31,10 @@ function AccountOrders() {
           Authorization: `Bearer ${user.token}`,
         },
       });
-      setOrders(response.data.orders);
+      return setOrders(response.data.orders);
     } catch (err) {
-      notifyError(err.response.data.msg);
       console.log(err.response.data.msg);
+      return notifyError(err.response.data.msg);
       }
     };
       getUser();

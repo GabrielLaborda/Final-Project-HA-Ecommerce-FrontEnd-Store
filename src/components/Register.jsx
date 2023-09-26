@@ -1,9 +1,10 @@
-import "./RegisterYLogin.css";
+import "./RegisterAndLogin.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
-import { useDispatch } from "react-redux";
-function Register(props) {
+import { toast } from 'react-toastify';
+
+function Register() {
   const baseURL = import.meta.env.VITE_API_BASE_URL;
   const navigate = useNavigate();
   const [firstname, setFirstname] = useState("");
@@ -12,6 +13,17 @@ function Register(props) {
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
+  const notifyError = (message) =>
+    toast.error(message, {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
 
   const handleSubmit = async (e) => {
     try {
@@ -21,7 +33,7 @@ function Register(props) {
         url: `${baseURL}/users`,
         data: { firstname, lastname, email, address, phone, password },
       });
-      navigate("/login");
+      return navigate("/login");
     } catch (error) {
       setFirstname("");
       setLastname("");
@@ -29,6 +41,8 @@ function Register(props) {
       setAddress("");
       setPhone("");
       setPassword("");
+      console.log(err.response.data.msg)
+      return notifyError("Oops! Something went wrong. Please try again.");
     }
   };
 
@@ -55,7 +69,7 @@ function Register(props) {
         {/* Termina Responsive */}
 
         <div className="container-fluid col-sm-12 col-lg-6 text-start d-flex justify-content-center  align-items-center">
-          <div className="px-3 inputWidth mt-2">
+          <div className="px-3 inputWidth w-50 mt-2">
             <div>
               <form onSubmit={handleSubmit}>
                 <div>

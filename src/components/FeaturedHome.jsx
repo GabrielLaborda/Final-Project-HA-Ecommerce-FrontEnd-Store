@@ -53,10 +53,10 @@ function FeaturedHome() {
         url: `${baseURL}/products`,
         params: { featured: true, category: category.data._id },
       });
-      setProducts(response.data);
+      return setProducts(response.data);
     } catch (err) {
-      notifyError(err.response.data.msg);
       console.log(err.response.data.msg);
+      return notifyError(err.response.data.msg);
   }}
     
   const getProducts = async () => {
@@ -66,10 +66,10 @@ function FeaturedHome() {
         url: `${baseURL}/products`,
         params: { featured: true },
       });
-      setProducts(response.data);
+      return setProducts(response.data);
     } catch (err) {
-      notifyError(err.response.data.msg);
-      console.log(err.response.data.msg);
+      console.log(err.response);
+      return notifyError(err.response);
     }
   }
 

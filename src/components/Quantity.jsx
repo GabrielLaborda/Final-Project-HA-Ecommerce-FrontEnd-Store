@@ -1,7 +1,6 @@
 import { useState } from 'react';
-
-import { useSelector, useDispatch } from 'react-redux';
-import { addItem, deleteItem } from '../redux/cartSlice';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../redux/cartSlice';
 import { useParams } from 'react-router-dom';
 
 import { toast } from 'react-toastify';
@@ -41,16 +40,16 @@ function Quantity({ product }) {
   const hanldeAddToCart = () => {
     if (product.stock >= quantity) {
       dispatch(addItem({ product, categorySlug: params.categorySlug, quantity: quantity }));
-      notifySuccess();
+      return notifySuccess();
     } else {
-      notifyError();
+      return notifyError();
     }
   };
 
   return (
     <>
       <div>
-        <label>Quantity</label>
+        <label htmlFor='quantity'>Quantity</label>
         <div className="mt-2 buttonsQuantity">
           <div className="d-flex">
             <input

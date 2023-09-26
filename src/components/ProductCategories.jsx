@@ -7,6 +7,7 @@ import ShopItemCard from './ShopItemCard';
 import ListedProductsMenu from './ListedProductsMenu';
 import { useState, useEffect } from 'react';
 import { useParams, NavLink } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 function CompletesList() {
   const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
@@ -14,14 +15,30 @@ function CompletesList() {
   const baseURL = import.meta.env.VITE_API_BASE_URL;
   const categorySlug = params.categorySlug;
   const [category, setCategory] = useState(null);
+  const notifyError = (message) =>
+    toast.error(message, {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
 
   const getCategory = async () => {
-    const response = await axios({
-      method: 'GET',
-      url: `${baseURL}/categories/${categorySlug}`,
-    });
-    setCategory(response.data);
-  };
+    try {
+      const response = await axios({
+        method: 'GET',
+        url: `${baseURL}/categories/${categorySlug}`,
+      });
+      return setCategory(response.data);
+    } catch (err) {
+      console.log(err.response.data.msg);
+      return notifyError("Oops! Something went wrong. Please try again.");
+    }
+  }
 
   useEffect(() => {
     getCategory();

@@ -32,15 +32,15 @@ function EditPassword() {
           params: { transaction: "changePassword" },
           data: { password },
         });
-        navigate(`/account/${params.id}`);
+        return navigate(`/account/${params.id}`);
       } else {
         setPassword("");
         setConfirmPassword("");
-        notifyError("Oops, it seems like your passwords do not match. Please try again")
+        return notifyError("Oops, it seems like your passwords do not match. Please try again")
       }
     } catch (err) {
-      notifyError(err.response.data.msg);
       console.log(err.response.data.msg);
+      return notifyError(err.response.data.msg);
     }
   };
 

@@ -14,22 +14,22 @@ header {
   color: white !important;
 }
 
-.navbardTitle {
+.navbarTitle {
   font-size: 20px;
   font-weight: 800;
   display: none;
 }
-.navbardTitleBold {
+.navbarTitleBold {
   font-size: 20px;
   font-weight: 400;
   display: none;
 }
 
-.scrolling .navbardTitle {
+.scrolling .navbarTitle {
   color: white;
   display: inline;
 }
-.scrolling .navbardTitleBold {
+.scrolling .navbarTitleBold {
   color: white;
   display: inline-block;
 }
@@ -50,13 +50,13 @@ nav {
   }
   .black-navbar {
     background-color: black;
-    .navbardTitle {
+    .navbarTitle {
       font-size: 20px;
       font-weight: 800;
       color: white;
       display: inline;
     }
-    .navbardTitleBold {
+    .navbarTitleBold {
       font-size: 20px;
       font-weight: 400;
       color: white;

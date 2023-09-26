@@ -9,7 +9,7 @@ import { BiSolidUser } from 'react-icons/bi';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
-function NavbardNuevo(props) {
+function navbarNuevo() {
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
   const cart = useSelector((state) => state.cart);
@@ -33,9 +33,9 @@ function NavbardNuevo(props) {
     setExpand(!expand);
     setIsNavbarTransparent(!isNavbarTransparent);
     if (user) {
-      navigate(`/account/${user.id}`);
+      return navigate(`/account/${user.id}`);
     } else {
-      navigate('/login');
+      return navigate('/login');
     }
   };
 
@@ -58,8 +58,8 @@ function NavbardNuevo(props) {
         <div className="container">
           <nav className="navbar navbar-expand-lg">
             <Link to={'/'} className="navbar-brand" onClick={handleClickButton}>
-              <h2 className="navbardTitleBold">
-                <span className="navbardTitle">URBAN</span>RUSH
+              <h2 className="navbarTitleBold">
+                <span className="navbarTitle">URBAN</span>RUSH
               </h2>
             </Link>
             <button
@@ -141,4 +141,4 @@ function NavbardNuevo(props) {
     </>
   );
 }
-export default NavbardNuevo;
+export default navbarNuevo;

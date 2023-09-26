@@ -5,6 +5,7 @@ import CategoryBannerText from './CategoryBannerText';
 import { useState, useEffect } from 'react';
 import { useParams, NavLink } from 'react-router-dom';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 function ProductDetail() {
   const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
@@ -14,6 +15,17 @@ function ProductDetail() {
   const baseURL = import.meta.env.VITE_API_BASE_URL;
   const [product, setProduct] = useState(null);
   const [category, setCategory] = useState(null);
+  const notifyError = (message) =>
+    toast.error(message, {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
 
   const getProduct = async () => {
     const response = await axios({
@@ -24,12 +36,17 @@ function ProductDetail() {
   };
 
   const getCategory = async () => {
-    const response = await axios({
-      method: 'GET',
-      url: `${baseURL}/categories/${slugCategories}`,
-    });
-    setCategory(response.data);
-  };
+    try {
+      const response = await axios({
+        method: 'GET',
+        url: `${baseURL}/categories/${slugCategories}`,
+      });
+      return setCategory(response.data);
+    } catch (err) {
+      console.log(err.response.data.msg);
+      return notifyError("Oops! Something went wrong. Please try again.")
+    }
+  }
 
   useEffect(() => {
     getProduct();
