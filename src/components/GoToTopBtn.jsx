@@ -28,7 +28,7 @@ function GoToTopBtn() {
         }, []);
 
         return (
-            <div id="goTopButton">
+            <div className="d-none d-lg-block" id="goTopButton">
                 {isVisible && (
                     <div className="top-btn" onClick={goToBtn}>
                         <FaArrowUp className="icon" />

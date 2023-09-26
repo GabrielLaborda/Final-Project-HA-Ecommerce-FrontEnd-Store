@@ -28,7 +28,7 @@ function CartResponsive() {
     }, []);
 
     return (
-        <div id="goCartButton">
+        <div className="d-lg-none" id="goCartButton">
             {isVisible && (
                 <Link to={'/cart'}>
                     <div className="cart-btn">
