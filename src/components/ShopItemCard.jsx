@@ -57,8 +57,12 @@ function ShopItemCard({ product, categorySlug }) {
                   className="card-img-top"
                   alt="..."
                 />
-                {product.stock <= 5 && (
+
+                {product.stock <= 5 && product.stock > 0 && (
                   <img src="/last5Units.svg" alt="last5units" className="last-units" />
+                )}
+                {product.stock <= 0 && (
+                  <img src="/outOfStock.svg" alt="outOfStock" className="last-units" />
                 )}
                 {product.featured && product.stock >= 5 && (
                   <img src="/featured.svg" alt="featured" className="last-units" />

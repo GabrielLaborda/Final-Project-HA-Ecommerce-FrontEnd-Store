@@ -20,7 +20,7 @@
   .container-banner {
     background-image: url('/ImgHome.png');
     background-size: cover;
-    background-position: center;
+    background-position: auto;
     height: 50vh;
   }
   .videoBlock {
