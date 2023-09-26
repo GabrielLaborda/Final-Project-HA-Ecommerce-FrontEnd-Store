@@ -51,7 +51,19 @@ function ShopItemCard({ product, categorySlug }) {
               className={'text-decoration-none text-black'}
               to={`/products/${categorySlug}/${product.slug}`}
             >
-              <img src={`${storageURL}/${product.picture[0]}`} className="card-img-top" alt="..." />
+              <div className="img-container">
+                <img
+                  src={`${storageURL}/${product.picture[0]}`}
+                  className="card-img-top"
+                  alt="..."
+                />
+                {product.stock <= 5 && (
+                  <img src="/last5Units.svg" alt="last5units" className="last-units" />
+                )}
+                {product.featured && product.stock >= 5 && (
+                  <img src="/featured.svg" alt="featured" className="last-units" />
+                )}
+              </div>
             </NavLink>
             <button
               type="button"

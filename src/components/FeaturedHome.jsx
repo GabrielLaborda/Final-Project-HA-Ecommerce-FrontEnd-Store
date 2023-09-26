@@ -57,8 +57,9 @@ function FeaturedHome() {
     } catch (err) {
       console.log(err.response.data.msg);
       return notifyError(err.response.data.msg);
-  }}
-    
+    }
+  };
+
   const getProducts = async () => {
     try {
       const response = await axios({
@@ -71,12 +72,11 @@ function FeaturedHome() {
       console.log(err.response);
       return notifyError(err.response);
     }
-  }
+  };
 
   useEffect(() => {
     categorySlug ? getFilteredProducts() : getProducts();
   }, [categorySlug]);
-
 
   const hanldeAddToCart = (product) => {
     if (product.stock >= 1) {
@@ -132,11 +132,16 @@ function FeaturedHome() {
                       className={'text-decoration-none text-black'}
                       to={`/products/${product.category.slug}/${product.slug}`}
                     >
-                      <img
-                        src={`${storageURL}/${product.picture[0]}`}
-                        className="card-img-top"
-                        alt="category image"
-                      />
+                      <div className="img-container">
+                        <img
+                          src={`${storageURL}/${product.picture[0]}`}
+                          className="card-img-top"
+                          alt="category image"
+                        />
+                        {product.stock <= 5 && (
+                          <img src="/last5Units.svg" alt="last5units" className="last-units" />
+                        )}
+                      </div>
                     </NavLink>
                     <div className="card-body">
                       <h5 className="card-title">USD {product.price}</h5>
