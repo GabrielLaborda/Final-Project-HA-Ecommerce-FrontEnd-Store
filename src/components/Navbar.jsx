@@ -86,6 +86,7 @@ function navbarNuevo() {
                 />
               </svg>
             </button>
+            
 
             <div className={`collapse navbar-collapse ${buttonExpand}`} id="navbarNav">
               <ul className="navbar-nav ms-auto my-2 my-lg-0">

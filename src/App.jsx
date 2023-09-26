@@ -20,6 +20,7 @@ import EditAccount from './components/EditAcount';
 import OrderDetail from './components/OrderDetail';
 import EditPassword from './components/EditPassword';
 import GoToTopBtn from './components/GoToTopBtn';
+import CartResponsive from './components/CartResponsive';
 
 import DBreset from './components/DBreset';
 
@@ -34,6 +35,7 @@ function App() {
     <>
       <DBreset />
       <GoToTopBtn />
+      <CartResponsive />
       <Navbar />
       <div className="content-height">
         <Routes>
