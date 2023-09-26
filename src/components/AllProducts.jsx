@@ -45,16 +45,14 @@ function AllProducts() {
           </section>
           <main>
             <div className="container">
-              <div className="row my-5">
-                <SectionHeader bold={'ALL'} normal={'PRODUCTS'} />
-              </div>
               <div className="row g-0">
-                <div className="col-sm-12 col-md-3 col-lg-3 col-xl-3 d-flex justify-content-start">
+                <div className="col-sm-12 col-md-3 col-lg-3 col-xl-3 d-flex flex-column align-items-start stickyCategorySidebar">
+                  <SectionHeader bold={'ALL'} normal={'PRODUCTS'} />
                   <ListedProductsMenu />
                 </div>
                 <div className="col-sm-12 col-md-9">
                   <div className="container">
-                    <div className="row">
+                    <div className="row productsContainer">
                       {allProducts.map((product) => (
                         <ShopItemCard
                           key={product.slug}

@@ -12,3 +12,20 @@ li {
   font-size: large;
   padding-left: 2em !important;
 }
+
+.stickyCategorySidebar {
+  position: sticky;
+  top: 10%;
+  height: 80vh;
+}
+
+.productsContainer {
+  padding-top: 160px;
+}
+
+@media (max-width: 767px) {
+  .stickyCategorySidebar {
+    position: relative;
+    height: 40vh;
+  }
+}

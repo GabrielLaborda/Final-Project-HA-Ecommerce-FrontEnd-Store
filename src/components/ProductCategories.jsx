@@ -48,16 +48,17 @@ function CompletesList() {
           </section>
           <main>
             <div className="container">
-              <div className="row my-5">
-                <SectionHeader bold={category.name.toUpperCase()} normal={'SECTION'} />
-              </div>
+              {/* <div className="row my-5">
+          
+              </div> */}
               <div className="row g-0">
-                <div className="col-sm-12 col-md-3 col-lg-3 col-xl-3 d-flex justify-content-start">
+                <div className="col-sm-12 col-md-3 col-lg-3 col-xl-3 d-flex flex-column align-items-start stickyCategorySidebar">
+                  <SectionHeader bold={category.name.toUpperCase()} normal={'SECTION'} />
                   <ListedProductsMenu />
                 </div>
                 <div className="col-sm-12 col-md-9">
                   <div className="container">
-                    <div className="row">
+                    <div className="row productsContainer">
                       {category.products.map((product) => (
                         <ShopItemCard
                           key={product.slug}

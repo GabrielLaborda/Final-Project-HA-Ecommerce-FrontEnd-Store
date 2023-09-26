@@ -5,19 +5,36 @@
 
 #bold {
   font-weight: 800;
-  font-size: 60px;
+  font-size: 55px;
 }
 
 #normal {
   font-weight: 400;
 }
 
-@media (max-width:720px) {
+@media (max-width: 720px) {
   #bold {
     font-size: 1em;
   }
 
   #normal {
     font-size: 1em;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1400px) {
+  .section-header {
+    font-family: Roboto;
+    font-size: 30px;
+  }
+
+  #bold {
+    font-weight: 800;
+    font-size: 35px;
+  }
+
+  #normal {
+    font-weight: 400;
+    font-size: 30px;
   }
 }
