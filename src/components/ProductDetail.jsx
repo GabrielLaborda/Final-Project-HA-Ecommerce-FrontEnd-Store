@@ -68,7 +68,7 @@ function ProductDetail() {
               <div
                 className="w-100 m-0 p-0 d-flex justify-content-center align-items-center"
                 style={{
-                  backgroundImage: `url(${storageURL}/${category.pictures[0]})`,
+                  backgroundImage: `url(/${category.pictures[0]})`,
                 }}
                 id="completesBanner"
               >

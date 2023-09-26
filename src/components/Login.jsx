@@ -9,8 +9,8 @@ import { useSelector } from "react-redux";
 import { toast } from 'react-toastify';
 
 function Login() {
-  const [email, setEmail] = useState("user@example.com");
-  const [password, setPassword] = useState("123456");
+  const [email, setEmail] = useState('user@example.com');
+  const [password, setPassword] = useState('123456');
   const baseURL = import.meta.env.VITE_API_BASE_URL;
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
@@ -101,10 +101,7 @@ function Login() {
               </div>
             </form>
             <p className="text-center mt-4 little-text">
-              Don't have an account?<Link to={"/register"}> Sign up</Link>
-            </p>
-            <p className="text-center mt-4 little-text">
-              <Link href="#">Forgot your password?</Link>
+              Don't have an account?<Link to={'/register'}> Sign up</Link>
             </p>
           </div>
         </div>

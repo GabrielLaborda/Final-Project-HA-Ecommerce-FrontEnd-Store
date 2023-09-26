@@ -3,8 +3,6 @@ import { NavLink } from 'react-router-dom';
 import { TbHandClick } from 'react-icons/tb';
 
 function AboutHome() {
-  const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
-  
   return (
     <div className="container bg-white">
       <div className="row my-5">
@@ -17,11 +15,7 @@ function AboutHome() {
       </div>
       <div className="row mb-5">
         <div className="col-12 col-md-8">
-          <img
-            className="aboutImg img-fluid w-100"
-            src={`${storageURL}/AboutHome.png`}
-            alt="section-img"
-          />
+          <img className="aboutImg img-fluid w-100" src={`/AboutHome.png`} alt="section-img" />
         </div>
         <div className="col-4 d-none d-md-block"></div>
       </div>
