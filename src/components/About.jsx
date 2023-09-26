@@ -15,9 +15,6 @@ import SectionHeader from './SectionHeader';
 import { NavLink } from 'react-router-dom';
 
 function About() {
-
-  const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
-
   return (
     <>
       <div className="w-100 hero-container">
@@ -176,7 +173,7 @@ function About() {
                     <NavLink to={'/login'}>
                       <img
                         className="img-fluid mb-4"
-                        src={`${storageURL}/PrintScreenStore.png`}
+                        src={`/PrintScreenStore.png`}
                         alt="Home Print Screen"
                       />
                     </NavLink>
@@ -189,7 +186,7 @@ function About() {
                     <a href="https://urbanrush-admin.vercel.app" target="_blank">
                       <img
                         className="img-fluid mb-4 m-auto"
-                        src={`${storageURL}/PrintScreenAdmin.png`}
+                        src={`/PrintScreenAdmin.png`}
                         alt="Home Print Screen"
                       />
                     </a>
@@ -211,7 +208,7 @@ function About() {
               <div className="d-flex justify-content-between flex-wrap">
                 <div className="user-card text-center m-xl-0 m-auto py-3">
                   <img
-                    src={`${storageURL}/Andres-Amorin.png`}
+                    src={`/Andres-Amorin.png`}
                     alt="user-avatar"
                     className="img-fluid user-avatar"
                   />
@@ -236,7 +233,7 @@ function About() {
                 </div>
                 <div className="user-card text-center m-xl-0 m-auto py-3">
                   <img
-                    src={`${storageURL}/Gabriel-Laborda.png`}
+                    src={`/Gabriel-Laborda.png`}
                     alt="user-avatar"
                     className="img-fluid user-avatar"
                   />
@@ -261,7 +258,7 @@ function About() {
                 </div>
                 <div className="user-card text-center m-xl-0 m-auto py-3">
                   <img
-                    src={`${storageURL}/gonzaloCuello.png`}
+                    src={`/gonzaloCuello.png`}
                     alt="user-avatar"
                     className="img-fluid user-avatar"
                   />
@@ -286,7 +283,7 @@ function About() {
                 </div>
                 <div className="user-card text-center m-xl-0 m-auto py-3">
                   <img
-                    src={`${storageURL}/Jose-Pedro-lavaggi.png`}
+                    src={`/Jose-Pedro-lavaggi.png`}
                     alt="user-avatar"
                     className="img-fluid user-avatar"
                   />
@@ -311,7 +308,7 @@ function About() {
                 </div>
                 <div className="user-card text-center m-xl-0 m-auto py-3">
                   <img
-                    src={`${storageURL}/pedro-de-souza.jpg`}
+                    src={`/pedro-de-souza.jpg`}
                     alt="user-avatar"
                     className="img-fluid user-avatar"
                   />

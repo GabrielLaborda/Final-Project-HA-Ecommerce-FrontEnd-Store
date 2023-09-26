@@ -5,8 +5,6 @@ import CategoryBtn from './CategoryBtn';
 import { Link } from 'react-router-dom';
 
 function CategoryHome() {
-  const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
-
   return (
     <>
       <div className="container-fluid">
@@ -33,30 +31,18 @@ function CategoryHome() {
           <div className="col-6 d-none d-xl-flex flex-column justify-content-center align-items-center p-0 m-0">
             <Parallax
               strength={150}
-              bgImage={`${storageURL}/ImgCategoryCompletes.png`}
+              bgImage={`/ImgCategoryCompletes.png`}
               className="w-100 p-0 m-0"
             >
               <div className="content"></div>
             </Parallax>
-            <Parallax
-              strength={150}
-              bgImage={`${storageURL}/ImgCategoryDecks.png`}
-              className="w-100 p-0 m-0"
-            >
+            <Parallax strength={150} bgImage={`/ImgCategoryDecks.png`} className="w-100 p-0 m-0">
               <div className="content"></div>
             </Parallax>
-            <Parallax
-              strength={150}
-              bgImage={`${storageURL}/ImgCategoryTrucks.png`}
-              className="w-100 p-0 m-0"
-            >
+            <Parallax strength={150} bgImage={`/ImgCategoryTrucks.png`} className="w-100 p-0 m-0">
               <div className="content"></div>
             </Parallax>
-            <Parallax
-              strength={150}
-              bgImage={`${storageURL}/ImgCategoryWheels.png`}
-              className="w-100 p-0 m-0"
-            >
+            <Parallax strength={150} bgImage={`/ImgCategoryWheels.png`} className="w-100 p-0 m-0">
               <div className="content"></div>
             </Parallax>
           </div>
@@ -66,7 +52,7 @@ function CategoryHome() {
           <div className="col d-xl-none d-flex flex-column justify-content-center align-items-center p-0 m-0">
             <Parallax
               strength={150}
-              bgImage={`${storageURL}/ImgCategoryCompletes.png`}
+              bgImage={`/ImgCategoryCompletes.png`}
               className="w-100 p-0 m-0"
             >
               <div className="contentResponsive  d-flex flex-column text-center justify-content-center">
@@ -78,11 +64,7 @@ function CategoryHome() {
                 </div>
               </div>
             </Parallax>
-            <Parallax
-              strength={150}
-              bgImage={`${storageURL}/ImgCategoryDecks.png`}
-              className="w-100 p-0 m-0"
-            >
+            <Parallax strength={150} bgImage={`/ImgCategoryDecks.png`} className="w-100 p-0 m-0">
               <div className="contentResponsive d-flex flex-column text-center justify-content-center ">
                 <div>
                   <h2 className="categoryH2">DECKS</h2>
@@ -92,11 +74,7 @@ function CategoryHome() {
                 </div>
               </div>
             </Parallax>
-            <Parallax
-              strength={150}
-              bgImage={`${storageURL}/ImgCategoryTrucks.png`}
-              className="w-100 p-0 m-0"
-            >
+            <Parallax strength={150} bgImage={`/ImgCategoryTrucks.png`} className="w-100 p-0 m-0">
               <div className="contentResponsive d-flex flex-column text-center justify-content-center ">
                 <div>
                   <h2 className="categoryH2">TRUCKS</h2>
@@ -106,11 +84,7 @@ function CategoryHome() {
                 </div>
               </div>
             </Parallax>
-            <Parallax
-              strength={150}
-              bgImage={`${storageURL}/ImgCategoryWheels.png`}
-              className="w-100 p-0 m-0"
-            >
+            <Parallax strength={150} bgImage={`/ImgCategoryWheels.png`} className="w-100 p-0 m-0">
               <div className="contentResponsive d-flex flex-column text-center justify-content-center ">
                 <div>
                   <h2 className="categoryH2">WHEELS</h2>
