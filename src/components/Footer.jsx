@@ -1,12 +1,8 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import { BiLogoVisa, BiLogoPaypal, BiLogoMastercard } from 'react-icons/bi';
-import { LiaApplePay, LiaCcDinersClub } from 'react-icons/lia';
+import { LiaApplePay } from 'react-icons/lia';
 import {
   FaCcDinersClub,
-  FaCcMastercard,
-  FaShopify,
   FaXTwitter,
   FaFacebookF,
   FaInstagram,
@@ -41,8 +37,8 @@ function Footer() {
             <div className="col-12 col-md-6 py-3">
               <h6 className="fw-bold fs-5">URBAN RUSH</h6>
               <p className="w-75">
-                Urban Rush stocks the highest quality Skateboard Decks, Completes, Wheels, Trucks,
-                Tools & Accessories for the surf and skate lifestyle!
+                Urban Rush stocks the highest quality Longboard Decks, Completes, Wheels, Trucks,
+                Tools & Accessories for the longboard lifestyle!
               </p>
               <div className="d-flex justify-content-around w-50">
                 <FaFacebookF color="white" size={20} onClick={handleNotify} role="button" />

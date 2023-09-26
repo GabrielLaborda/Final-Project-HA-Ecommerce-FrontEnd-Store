@@ -9,14 +9,15 @@ import {
 } from 'react-icons/bi';
 import { DiCss3, DiScrum } from 'react-icons/di';
 import { FaBootstrap, FaNodeJs } from 'react-icons/fa';
-import { SiExpress, SiRedux, SiMongoose, SiAxios } from 'react-icons/si';
-
+import { SiExpress, SiRedux, SiMongoose } from 'react-icons/si';
 import './About.css';
 import SectionHeader from './SectionHeader';
 import { NavLink } from 'react-router-dom';
-const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
 
 function About() {
+
+  const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
+
   return (
     <>
       <div className="w-100 hero-container">

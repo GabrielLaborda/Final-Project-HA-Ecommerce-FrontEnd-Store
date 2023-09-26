@@ -1,9 +1,8 @@
 import CheckoutPayments from './CheckoutPayments';
 import CheckoutUserData from './CheckoutUserData';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { TiDelete } from 'react-icons/ti';
 import { useState } from 'react';
-import { deleteItem, emptyCart } from '../redux/cartSlice';
+import { emptyCart } from '../redux/cartSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { addInstruction } from '../redux/orderInstructionSlice';
 import './Checkout.css';
@@ -20,6 +19,7 @@ function Checkout() {
   const user = useSelector((state) => state.user);
   const orderInstruction = useSelector((state) => state.orderInstruction);
   const [comment, setComment] = useState(orderInstruction);
+
   const notifyError = (message) =>
     toast.error(message, {
       position: 'top-right',
@@ -43,10 +43,6 @@ function Checkout() {
       progress: undefined,
       theme: 'light',
     });
-
-  const handleRemove = (slug) => {
-    dispatch(deleteItem(slug));
-  };
 
   const handleCheckOut = async () => {
     try {
@@ -103,6 +99,7 @@ function Checkout() {
       navigate(`/account/${user.id}`);
     } catch (error) {
       notifyError(error.response.data.msg);
+      console.log(error.response.data.msg);
     }
   };
 
@@ -215,10 +212,8 @@ function Checkout() {
                 {cart && (
                   <span className="fw-bold">
                     USD{' '}
-                    {Math.round(
-                      cart.reduce((total, item) => total + item.quantity * item.product.price, 0) *
-                        100
-                    ) / 100}
+                    {(
+                      cart.reduce((total, item) => total + item.quantity * item.product.price, 0).toFixed(2))}
                   </span>
                 )}
               </p>

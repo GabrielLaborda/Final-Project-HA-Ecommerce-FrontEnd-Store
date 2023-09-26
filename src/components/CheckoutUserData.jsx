@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 
 function CheckoutUserData() {
   const user = useSelector((state) => state.user);
@@ -11,18 +12,34 @@ function CheckoutUserData() {
   const [address, setAddress] = useState('');
   const [phone, setPhone] = useState('');
   const [country, setCountry] = useState('United States');
+   const notifyError = (message) =>
+    toast.error(message, {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
 
   const getUser = async () => {
-    const response = await axios({
-      method: 'GET',
-      url: `${baseURL}/users/${user.id}`,
-    });
-    setEmail(response.data.email);
-    setFirstname(response.data.firstname);
-    setLastname(response.data.lastname);
-    setAddress(response.data.address);
-    setPhone(response.data.phone);
-  };
+    try {
+      const response = await axios({
+        method: 'GET',
+        url: `${baseURL}/users/${user.id}`,
+      });
+      setEmail(response.data.email);
+      setFirstname(response.data.firstname);
+      setLastname(response.data.lastname);
+      setAddress(response.data.address);
+      setPhone(response.data.phone);
+    } catch (err) {
+      notifyError(err.response.data.msg);
+      console.log(err.response.data.msg);
+    }
+  }
 
   useEffect(() => {
     getUser();

@@ -1,11 +1,10 @@
 import './AboutHome.css';
-
 import { NavLink } from 'react-router-dom';
-
 import { TbHandClick } from 'react-icons/tb';
 
 function AboutHome() {
   const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
+  
   return (
     <div className="container bg-white">
       <div className="row my-5">

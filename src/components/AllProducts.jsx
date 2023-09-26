@@ -6,21 +6,37 @@ import axios from 'axios';
 import ShopItemCard from './ShopItemCard';
 import ListedProductsMenu from './ListedProductsMenu';
 import { useState, useEffect } from 'react';
-import { useParams, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 function AllProducts() {
   const baseURL = import.meta.env.VITE_API_BASE_URL;
   const [allProducts, setAllProducts] = useState(null);
-
-  const getAllProducts = async () => {
-    const response = await axios({
-      method: 'GET',
-      url: `${baseURL}/products`,
+  const notifyError = (message) =>
+    toast.error(message, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
     });
-    setAllProducts(response.data);
-  };
 
-  useEffect(() => {
+    useEffect(() => {
+      const getAllProducts = async () => {
+        try {
+          const response = await axios({
+            method: 'GET',
+            url: `${baseURL}/products`,
+          });
+          setAllProducts(response.data);
+        } catch (err) {
+          console.log(err.response.data.msg);
+          notifyError(err.response.data.msg);
+        }
+      };
     getAllProducts();
   }, []);
 

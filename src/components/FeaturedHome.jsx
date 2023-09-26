@@ -10,44 +10,15 @@ import { NavLink } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
-
 import { addItem } from '../redux/cartSlice';
 
 function FeaturedHome() {
   const dispatch = useDispatch();
-
   const params = useParams();
   const categorySlug = params.categorySlug;
   const baseURL = import.meta.env.VITE_API_BASE_URL;
   const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
   const [products, setProducts] = useState(null);
-
-  const getFilteredProducts = async () => {
-    const category = await axios({
-      method: 'GET',
-      url: `${baseURL}/categories/${categorySlug}`,
-    });
-    const response = await axios({
-      method: 'GET',
-      url: `${baseURL}/products`,
-      params: { featured: true, category: category.data._id },
-    });
-    setProducts(response.data);
-  };
-
-  const getProducts = async () => {
-    const response = await axios({
-      method: 'GET',
-      url: `${baseURL}/products`,
-      params: { featured: true },
-    });
-    setProducts(response.data);
-  };
-
-  useEffect(() => {
-    categorySlug ? getFilteredProducts() : getProducts();
-  }, [categorySlug]);
-
   const notifyError = () =>
     toast.error('Ops, insufficient stock!', {
       position: 'top-right',
@@ -70,6 +41,42 @@ function FeaturedHome() {
       progress: undefined,
       theme: 'light',
     });
+
+  const getFilteredProducts = async () => {
+    try {
+      const category = await axios({
+        method: 'GET',
+        url: `${baseURL}/categories/${categorySlug}`,
+      });
+      const response = await axios({
+        method: 'GET',
+        url: `${baseURL}/products`,
+        params: { featured: true, category: category.data._id },
+      });
+      setProducts(response.data);
+    } catch (err) {
+      notifyError(err.response.data.msg);
+      console.log(err.response.data.msg);
+  }}
+    
+  const getProducts = async () => {
+    try {
+      const response = await axios({
+        method: 'GET',
+        url: `${baseURL}/products`,
+        params: { featured: true },
+      });
+      setProducts(response.data);
+    } catch (err) {
+      notifyError(err.response.data.msg);
+      console.log(err.response.data.msg);
+    }
+  }
+
+  useEffect(() => {
+    categorySlug ? getFilteredProducts() : getProducts();
+  }, [categorySlug]);
+
 
   const hanldeAddToCart = (product) => {
     if (product.stock >= 1) {
@@ -128,7 +135,7 @@ function FeaturedHome() {
                       <img
                         src={`${storageURL}/${product.picture[0]}`}
                         className="card-img-top"
-                        alt="..."
+                        alt="category image"
                       />
                     </NavLink>
                     <div className="card-body">

@@ -3,8 +3,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import { toast } from 'react-toastify';
 
-function EditAccount(props) {
+function EditAccount() {
   const baseURL = import.meta.env.VITE_API_BASE_URL;
   const params = useParams();
   const navigate = useNavigate();
@@ -12,6 +13,17 @@ function EditAccount(props) {
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
   const user = useSelector((state) => state.user);
+  const notifyError = (message) =>
+    toast.error(message, {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
 
   useEffect(() => {
     const getUser = async () => {
@@ -27,7 +39,8 @@ function EditAccount(props) {
         setAddress(response.data.address);
         setPhone(response.data.phone);
       } catch (err) {
-        console.log(err.msg);
+        notifyError(err.ressponse.data.msg)
+        console.log(err.response.data.msg);
       }
     };
     getUser();
@@ -43,7 +56,8 @@ function EditAccount(props) {
       });
       navigate(`/account/${params.id}`);
     } catch (err) {
-      console.log(err.msg);
+        notifyError(err.ressponse.data.msg)
+        console.log(err.response.data.msg);
     }
   };
 

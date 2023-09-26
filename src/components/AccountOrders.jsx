@@ -3,25 +3,42 @@ import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import './AccountOrders.css';
+import { toast } from 'react-toastify';
 
 function AccountOrders() {
   const [orders, setOrders] = useState([]);
   const user = useSelector((state) => state.user);
   const baseURL = import.meta.env.VITE_API_BASE_URL;
-
-  const getUser = async () => {
-    const response = await axios({
-      method: 'GET',
-      url: `${baseURL}/users/${user.id}`,
-      headers: {
-        Authorization: `Bearer ${user.token}`,
-      },
+  const notifyError = (message) =>
+    toast.error(message, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
     });
-    setOrders(response.data.orders);
-  };
-  useEffect(() => {
-    getUser();
-  }, []);
+
+    useEffect(() => {
+  const getUser = async () => {
+    try {
+      const response = await axios({
+        method: 'GET',
+        url: `${baseURL}/users/${user.id}`,
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
+      setOrders(response.data.orders);
+    } catch (err) {
+      notifyError(err.response.data.msg);
+      console.log(err.response.data.msg);
+      }
+    };
+      getUser();
+    }, []);
 
   return (
     <div>

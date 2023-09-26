@@ -2,13 +2,25 @@ import "./EditAccount.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import { toast } from 'react-toastify';
 
-function EditPassword(props) {
+function EditPassword() {
   const baseURL = import.meta.env.VITE_API_BASE_URL;
   const params = useParams();
   const navigate = useNavigate();
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const notifyError = (message) =>
+    toast.error(message, {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
 
   const handleSubmit = async (e) => {
     try {
@@ -24,9 +36,11 @@ function EditPassword(props) {
       } else {
         setPassword("");
         setConfirmPassword("");
+        notifyError("Oops, it seems like your passwords do not match. Please try again")
       }
     } catch (err) {
-      console.log(err);
+      notifyError(err.response.data.msg);
+      console.log(err.response.data.msg);
     }
   };
 

@@ -2,24 +2,12 @@ import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-
 import './DBreset.css';
 
 function DBreset() {
-  // const functionThatReturnPromise = () => new Promise(resolve => setTimeout(resolve, 3000));
-  // toast.promise(
-  //     functionThatReturnPromise,
-  //     {
-  //       pending: 'Promise is pending',
-  //       success: 'Promise resolved 👌',
-  //       error: 'Promise rejected 🤯'
-  //     }
-  // )
-
-  const [show, setShow] = useState(true);
 
   const baseURL = import.meta.env.VITE_API_BASE_URL;
-
+  const [show, setShow] = useState(true);
   const handleClose = () => setShow(false);
 
   const resetSeeders = async () => {

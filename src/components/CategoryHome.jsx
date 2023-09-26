@@ -6,11 +6,12 @@ import { Link } from 'react-router-dom';
 
 function CategoryHome() {
   const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
+
   return (
     <>
       <div className="container-fluid">
         <div className="row">
-          <div className="col-6 d-none d-xl-flex bg-black  flex-column justify-content-around align-items-start">
+          <div className="col-6 d-none d-xl-flex bg-black flex-column justify-content-around align-items-start">
             <div className="categoryText">
               <h2 className="categoryH2">COMPLETES</h2>
               <CategoryBtn href={'/products/completes'} />
@@ -31,28 +32,28 @@ function CategoryHome() {
 
           <div className="col-6 d-none d-xl-flex flex-column justify-content-center align-items-center p-0 m-0">
             <Parallax
-              strength={200}
+              strength={150}
               bgImage={`${storageURL}/ImgCategoryCompletes.png`}
               className="w-100 p-0 m-0"
             >
               <div className="content"></div>
             </Parallax>
             <Parallax
-              strength={200}
+              strength={150}
               bgImage={`${storageURL}/ImgCategoryDecks.png`}
               className="w-100 p-0 m-0"
             >
               <div className="content"></div>
             </Parallax>
             <Parallax
-              strength={200}
+              strength={150}
               bgImage={`${storageURL}/ImgCategoryTrucks.png`}
               className="w-100 p-0 m-0"
             >
               <div className="content"></div>
             </Parallax>
             <Parallax
-              strength={200}
+              strength={150}
               bgImage={`${storageURL}/ImgCategoryWheels.png`}
               className="w-100 p-0 m-0"
             >
@@ -64,7 +65,7 @@ function CategoryHome() {
 
           <div className="col d-xl-none d-flex flex-column justify-content-center align-items-center p-0 m-0">
             <Parallax
-              strength={200}
+              strength={150}
               bgImage={`${storageURL}/ImgCategoryCompletes.png`}
               className="w-100 p-0 m-0"
             >
@@ -78,7 +79,7 @@ function CategoryHome() {
               </div>
             </Parallax>
             <Parallax
-              strength={200}
+              strength={150}
               bgImage={`${storageURL}/ImgCategoryDecks.png`}
               className="w-100 p-0 m-0"
             >
@@ -92,7 +93,7 @@ function CategoryHome() {
               </div>
             </Parallax>
             <Parallax
-              strength={200}
+              strength={150}
               bgImage={`${storageURL}/ImgCategoryTrucks.png`}
               className="w-100 p-0 m-0"
             >
@@ -106,7 +107,7 @@ function CategoryHome() {
               </div>
             </Parallax>
             <Parallax
-              strength={200}
+              strength={150}
               bgImage={`${storageURL}/ImgCategoryWheels.png`}
               className="w-100 p-0 m-0"
             >
