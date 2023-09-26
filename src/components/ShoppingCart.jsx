@@ -17,7 +17,6 @@ function ShoppingCart() {
   const orderInstruction = useSelector((state) => state.orderInstruction);
 
   const [comment, setComment] = useState(orderInstruction);
-  const baseURL = import.meta.env.VITE_API_BASE_URL;
   const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
 
   const handleCheckout = () => {
@@ -133,10 +132,9 @@ function ShoppingCart() {
                     {cart && (
                       <span className="fw-bold">
                         USD{' '}
-                        {cart.reduce(
-                            (total, item) => total + item.quantity * item.product.price,
-                            0
-                          ).toFixed(2)}
+                        {cart
+                          .reduce((total, item) => total + item.quantity * item.product.price, 0)
+                          .toFixed(2)}
                       </span>
                     )}
                   </p>
