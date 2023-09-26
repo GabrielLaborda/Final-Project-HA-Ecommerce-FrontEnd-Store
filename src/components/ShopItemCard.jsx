@@ -58,31 +58,21 @@ function ShopItemCard({ product, categorySlug }) {
                   alt="..."
                 />
 
-                {
-                  (product.stock = 5 && (
-                    <img src="/last5Units.svg" alt="last5units" className="last-units" />
-                  ))
-                }
-                {
-                  (product.stock = 4 && (
-                    <img src="/last4Units.svg" alt="last4units" className="last-units" />
-                  ))
-                }
-                {
-                  (product.stock = 3 && (
-                    <img src="/last3Units.svg" alt="last3units" className="last-units" />
-                  ))
-                }
-                {
-                  (product.stock = 2 && (
-                    <img src="/last2Units.svg" alt="last2units" className="last-units" />
-                  ))
-                }
-                {
-                  (product.stock = 1 && (
-                    <img src="/lastUnit.svg" alt="lastUnits" className="last-units" />
-                  ))
-                }
+                {product.stock === 5 && (
+                  <img src="/last5Units.svg" alt="last5units" className="last-units" />
+                )}
+                {product.stock === 4 && (
+                  <img src="/last4Units.svg" alt="last4units" className="last-units" />
+                )}
+                {product.stock === 3 && (
+                  <img src="/last3Units.svg" alt="last3units" className="last-units" />
+                )}
+                {product.stock === 2 && (
+                  <img src="/last2Units.svg" alt="last2units" className="last-units" />
+                )}
+                {product.stock === 1 && (
+                  <img src="/lastUnit.svg" alt="lastUnits" className="last-units" />
+                )}
                 {product.stock <= 0 && (
                   <img src="/outOfStock.svg" alt="outOfStock" className="last-units" />
                 )}
