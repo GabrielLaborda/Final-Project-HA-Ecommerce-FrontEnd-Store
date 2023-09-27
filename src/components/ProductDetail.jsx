@@ -69,6 +69,7 @@ function ProductDetail() {
                 className="w-100 m-0 p-0 d-flex justify-content-center align-items-center"
                 style={{
                   backgroundImage: `url(${storageURL}/${category.pictures[0]})`,
+                  opacity: 0.9,
                 }}
                 id="completesBanner"
               >
