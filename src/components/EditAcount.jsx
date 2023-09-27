@@ -1,17 +1,17 @@
-import "./EditAccount.css";
-import { useNavigate, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { useSelector } from "react-redux";
+import './EditAccount.css';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 
 function EditAccount() {
   const baseURL = import.meta.env.VITE_API_BASE_URL;
   const params = useParams();
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [address, setAddress] = useState("");
-  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState('');
+  const [address, setAddress] = useState('');
+  const [phone, setPhone] = useState('');
   const user = useSelector((state) => state.user);
   const notifyError = (message) =>
     toast.error(message, {
@@ -25,32 +25,43 @@ function EditAccount() {
       theme: 'light',
     });
 
+  const checkUser = () => {
+    if (!user) return navigate('/login');
+  };
+
   useEffect(() => {
-    const getUser = async () => {
-      try {
-        const response = await axios({
-          method: "GET",
-          url: `${baseURL}/users/${params.id}`,
-          headers: {
-            Authorization: `Bearer ${user.token}`,
-          },
-        });
-        setEmail(response.data.email);
-        setAddress(response.data.address);
-        setPhone(response.data.phone);
-      } catch (err) {
-        console.log(err.response.data.msg);
-        return notifyError(err.ressponse.data.msg);
-      }
-    };
-    getUser();
-  }, []);
+    checkUser();
+  }, [user]);
+
+  const getUser = async () => {
+    try {
+      const response = await axios({
+        method: 'GET',
+        url: `${baseURL}/users/${params.id}`,
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
+      setEmail(response.data.email);
+      setAddress(response.data.address);
+      setPhone(response.data.phone);
+    } catch (err) {
+      console.log(err.response.data.msg);
+      return notifyError(err.ressponse.data.msg);
+    }
+  };
+
+  useEffect(() => {
+    if (user) {
+      getUser();
+    }
+  }, [user]);
 
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
       await axios({
-        method: "PATCH",
+        method: 'PATCH',
         url: `${baseURL}/users/${params.id}`,
         data: { email, address, phone },
       });
@@ -84,12 +95,11 @@ function EditAccount() {
         {/* Termina Responsive */}
         <div className="container-fluid col-sm-12 col-lg-6 d-flex flex-column justify-content-center align-items-center">
           <div className="d-flex flex-column justify-content-center align-items-start">
-            <div className='d-flex back ps-3' onClick={() => navigate(-1)}>
-                <i className="bi bi-arrow-left"></i>
-                <p className='ms-2'>Back</p>
+            <div className="d-flex back ps-3" onClick={() => navigate(-1)}>
+              <i className="bi bi-arrow-left"></i>
+              <p className="ms-2">Back</p>
             </div>
             <div className="d-flex justify-content-center  align-items-center">
-              
               <div className="px-3 inputWidth mt-2">
                 <div>
                   <form onSubmit={handleSubmit}>
@@ -138,10 +148,7 @@ function EditAccount() {
 
                     <br />
                     <div className="d-grid p-0">
-                      <button
-                        type="submit"
-                        className="btn btn-dark rounded-0 btn-lg p-1"
-                      >
+                      <button type="submit" className="btn btn-dark rounded-0 btn-lg p-1">
                         Edit
                       </button>
                     </div>

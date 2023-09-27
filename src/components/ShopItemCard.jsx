@@ -41,7 +41,6 @@ function ShopItemCard({ product, categorySlug }) {
     }
   };
 
-  const baseURL = import.meta.env.VITE_API_BASE_URL;
   return (
     <div className="d-flex col-sm-12 col-md-6 col-lg-4 col-xl-3 h-100">
       <div className="card border-0 mb-3 h-100">

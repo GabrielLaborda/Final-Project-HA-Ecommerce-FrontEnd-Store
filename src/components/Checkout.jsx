@@ -1,7 +1,7 @@
 import CheckoutPayments from './CheckoutPayments';
 import CheckoutUserData from './CheckoutUserData';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { emptyCart } from '../redux/cartSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { addInstruction } from '../redux/orderInstructionSlice';
@@ -19,6 +19,14 @@ function Checkout() {
   const user = useSelector((state) => state.user);
   const orderInstruction = useSelector((state) => state.orderInstruction);
   const [comment, setComment] = useState(orderInstruction);
+
+  const checkUser = () => {
+    if (!user) return navigate('/login');
+  };
+
+  useEffect(() => {
+    checkUser();
+  }, [user]);
 
   const notifyError = (message) =>
     toast.error(message, {
@@ -131,8 +139,8 @@ function Checkout() {
             <div className="d-flex justify-content-center">
               <p>OR</p>
             </div>
-            <CheckoutUserData />
-            <CheckoutPayments />
+            {user && <CheckoutUserData />}
+            {user && <CheckoutPayments />}
             <button
               onClick={handleCheckOut}
               className="btn btn-outline-secondary w-100 my-3 p-3 custom-button-colour"

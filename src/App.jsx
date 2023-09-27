@@ -23,6 +23,7 @@ import GoToTopBtn from './components/GoToTopBtn';
 import CartResponsive from './components/CartResponsive';
 
 import DBreset from './components/DBreset';
+import NoMatch from './components/NoMatch';
 
 function App() {
   const location = useLocation();
@@ -52,6 +53,7 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/orders/:id" element={<OrderDetail />} />
           <Route path="/resetpassword/:id" element={<EditPassword />} />
+          <Route path="*" element={<NoMatch />} />
         </Routes>
       </div>
       <Footer />

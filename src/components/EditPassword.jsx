@@ -1,15 +1,27 @@
-import "./EditAccount.css";
-import { useNavigate, useParams } from "react-router-dom";
-import { useState } from "react";
-import axios from "axios";
+import './EditAccount.css';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import { toast } from 'react-toastify';
+
+import { useSelector } from 'react-redux';
 
 function EditPassword() {
   const baseURL = import.meta.env.VITE_API_BASE_URL;
   const params = useParams();
   const navigate = useNavigate();
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const user = useSelector((state) => state.user);
+
+  const checkUser = () => {
+    if (!user) return navigate('/login');
+  };
+
+  useEffect(() => {
+    checkUser();
+  }, [user]);
+
   const notifyError = (message) =>
     toast.error(message, {
       position: 'top-right',
@@ -27,16 +39,16 @@ function EditPassword() {
       e.preventDefault();
       if (password === confirmPassword) {
         await axios({
-          method: "PATCH",
+          method: 'PATCH',
           url: `${baseURL}/users/${params.id}`,
-          params: { transaction: "changePassword" },
+          params: { transaction: 'changePassword' },
           data: { password },
         });
         return navigate(`/account/${params.id}`);
       } else {
-        setPassword("");
-        setConfirmPassword("");
-        return notifyError("Oops, it seems like your passwords do not match. Please try again")
+        setPassword('');
+        setConfirmPassword('');
+        return notifyError('Oops, it seems like your passwords do not match. Please try again');
       }
     } catch (err) {
       console.log(err.response.data.msg);
@@ -107,10 +119,7 @@ function EditPassword() {
 
                   <br />
                   <div className="d-grid p-0">
-                    <button
-                      type="submit"
-                      className="btn btn-dark rounded-0 btn-lg p-1"
-                    >
+                    <button type="submit" className="btn btn-dark rounded-0 btn-lg p-1">
                       Change
                     </button>
                   </div>
