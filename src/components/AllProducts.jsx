@@ -10,33 +10,34 @@ import { NavLink } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 function AllProducts() {
+  const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
   const baseURL = import.meta.env.VITE_API_BASE_URL;
   const [allProducts, setAllProducts] = useState(null);
   const notifyError = (message) =>
     toast.error(message, {
-      position: "top-right",
+      position: 'top-right',
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: "light",
+      theme: 'light',
     });
 
-    useEffect(() => {
-      const getAllProducts = async () => {
-        try {
-          const response = await axios({
-            method: 'GET',
-            url: `${baseURL}/products`,
-          });
-          return setAllProducts(response.data);
-        } catch (err) {
-          console.log(err.response.data.msg);
-          return notifyError(err.response.data.msg);
-        }
-      };
+  useEffect(() => {
+    const getAllProducts = async () => {
+      try {
+        const response = await axios({
+          method: 'GET',
+          url: `${baseURL}/products`,
+        });
+        return setAllProducts(response.data);
+      } catch (err) {
+        console.log(err.response.data.msg);
+        return notifyError(err.response.data.msg);
+      }
+    };
     getAllProducts();
   }, []);
 
@@ -48,7 +49,7 @@ function AllProducts() {
             <div
               className="w-100 m-0 p-0 d-flex justify-content-center align-items-center"
               style={{
-                backgroundColor: 'grey',
+                backgroundImage: `url(${storageURL}/cover-5.png)`,
               }}
               id="completesBanner"
             >

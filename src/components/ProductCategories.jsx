@@ -36,9 +36,9 @@ function CompletesList() {
       return setCategory(response.data);
     } catch (err) {
       console.log(err.response.data.msg);
-      return notifyError("Oops! Something went wrong. Please try again.");
+      return notifyError('Oops! Something went wrong. Please try again.');
     }
-  }
+  };
 
   useEffect(() => {
     getCategory();
@@ -52,7 +52,7 @@ function CompletesList() {
             <div
               className="w-100 m-0 p-0 d-flex justify-content-center align-items-center"
               style={{
-                backgroundImage: `url(/${category.pictures[0]})`,
+                backgroundImage: `url(${storageURL}/${category.pictures[0]}`,
               }}
               id="completesBanner"
             >
