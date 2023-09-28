@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addItem } from '../redux/cartSlice';
 import { useParams } from 'react-router-dom';
 
 import { toast } from 'react-toastify';
 
 function Quantity({ product }) {
+  const cart = useSelector((state) => state.cart);
   const params = useParams();
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
@@ -38,18 +39,29 @@ function Quantity({ product }) {
     });
 
   const hanldeAddToCart = () => {
-    if (product.stock >= quantity) {
-      dispatch(addItem({ product, categorySlug: params.categorySlug, quantity: quantity }));
-      return notifySuccess();
+    const cartItem = cart.find((item) => item.product.slug === product.slug);
+
+    if (cartItem) {
+      if (product.stock >= quantity && product.stock > cartItem.quantity) {
+        dispatch(addItem({ product, categorySlug: params.categorySlug, quantity: quantity }));
+        return notifySuccess();
+      } else {
+        return notifyError();
+      }
     } else {
-      return notifyError();
+      if (product.stock >= quantity) {
+        dispatch(addItem({ product, categorySlug: params.categorySlug, quantity: quantity }));
+        return notifySuccess();
+      } else {
+        return notifyError();
+      }
     }
   };
 
   return (
     <>
       <div>
-        <label htmlFor='quantity'>Quantity</label>
+        <label htmlFor="quantity">Quantity</label>
         <div className="mt-2 buttonsQuantity">
           <div className="d-flex">
             <input

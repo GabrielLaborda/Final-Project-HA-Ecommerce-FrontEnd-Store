@@ -1,14 +1,14 @@
 import React from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import './ShopItemCard.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addItem } from '../redux/cartSlice';
 import { toast } from 'react-toastify';
 
 function ShopItemCard({ product, categorySlug }) {
   const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
   const dispatch = useDispatch();
-
+  const cart = useSelector((state) => state.cart);
   const notifyError = () =>
     toast.error('Ops, insufficient stock!', {
       position: 'top-right',
@@ -33,11 +33,21 @@ function ShopItemCard({ product, categorySlug }) {
     });
 
   const hanldeAddToCart = () => {
-    if (product.stock >= 1) {
-      dispatch(addItem({ product, categorySlug: categorySlug, quantity: 1 }));
-      return notifySuccess();
+    const cartItem = cart.find((item) => item.product.slug === product.slug);
+    if (cartItem) {
+      if (product.stock >= 1 && product.stock > cartItem.quantity) {
+        dispatch(addItem({ product, categorySlug: categorySlug, quantity: 1 }));
+        return notifySuccess();
+      } else {
+        return notifyError();
+      }
     } else {
-      return notifyError();
+      if (product.stock >= 1) {
+        dispatch(addItem({ product, categorySlug: categorySlug, quantity: 1 }));
+        return notifySuccess();
+      } else {
+        return notifyError();
+      }
     }
   };
 

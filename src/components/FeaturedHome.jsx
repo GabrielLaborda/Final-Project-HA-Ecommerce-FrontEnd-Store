@@ -8,7 +8,7 @@ import './FeaturedHome.css';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { addItem } from '../redux/cartSlice';
 
@@ -19,6 +19,7 @@ function FeaturedHome() {
   const baseURL = import.meta.env.VITE_API_BASE_URL;
   const storageURL = import.meta.env.VITE_API_SUPABASE_URL;
   const [products, setProducts] = useState(null);
+  const cart = useSelector((state) => state.cart);
   const notifyError = () =>
     toast.error('Ops, insufficient stock!', {
       position: 'top-right',
@@ -79,15 +80,30 @@ function FeaturedHome() {
   }, [categorySlug]);
 
   const hanldeAddToCart = (product) => {
-    if (product.stock >= 1) {
-      if (categorySlug) {
-        dispatch(addItem({ product, categorySlug: categorySlug, quantity: 1 }));
+    const cartItem = cart.find((item) => item.product.slug === product.slug);
+
+    if (cartItem) {
+      if (product.stock >= 1 && product.stock > cartItem.quantity) {
+        if (categorySlug) {
+          dispatch(addItem({ product, categorySlug: categorySlug, quantity: 1 }));
+        } else {
+          dispatch(addItem({ product, categorySlug: product.category.slug, quantity: 1 }));
+        }
+        notifySuccess();
       } else {
-        dispatch(addItem({ product, categorySlug: product.category.slug, quantity: 1 }));
+        notifyError();
       }
-      notifySuccess();
     } else {
-      notifyError();
+      if (product.stock >= 1) {
+        if (categorySlug) {
+          dispatch(addItem({ product, categorySlug: categorySlug, quantity: 1 }));
+        } else {
+          dispatch(addItem({ product, categorySlug: product.category.slug, quantity: 1 }));
+        }
+        notifySuccess();
+      } else {
+        notifyError();
+      }
     }
   };
 

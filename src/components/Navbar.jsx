@@ -86,7 +86,6 @@ function navbarNuevo() {
                 />
               </svg>
             </button>
-            
 
             <div className={`collapse navbar-collapse ${buttonExpand}`} id="navbarNav">
               <ul className="navbar-nav ms-auto my-2 my-lg-0">
@@ -104,7 +103,7 @@ function navbarNuevo() {
                 <li className="nav-item">
                   <Link
                     to={'/about'}
-                    className="nav-link scrolling-white text about"
+                    className="nav-link text about"
                     href="#"
                     aria-disabled="true"
                     onClick={handleClickButton}
